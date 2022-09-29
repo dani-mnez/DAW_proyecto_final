@@ -1,0 +1,1 @@
+let side_menu_selector = document.getElementById('bkg_sel');

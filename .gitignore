@@ -1,8 +1,16 @@
 # Ignora todo (para que solo se controlen los siguientes archivos)
-*
+/*
 
 # Controla estos archivos:
-!htdocs
-!var/mysql/proyecto/*
+!htdocs/
+htdocs/*
+!htdocs/DAW_proyecto_final/
+
+!var/
+var/*
+!var/mysql/
+var/mysql/*
+!var/mysql/proyecto/
+
 !README.md
 !.gitignore

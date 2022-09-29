@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* \\ General */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* \\ Menús */
+nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
+    text-decoration: none;
+}
+
+nav a:hover {
+    font-weight: 600;
+}
+
+/* \\ Texto */
+text, h1, h2, h3, p, a {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
