@@ -1,0 +1,181 @@
+@import ./base_styles
+
+$trans_time: .2s
+
+#main_frame
+    display: grid
+    grid-template-areas: "m_menu m_menu" "s_menu content" "footer footer"
+    grid-row-gap: 25px
+    grid-template-columns: 160px auto
+    grid-template-rows: 80px auto 100px
+
+
+a
+    width: auto
+    line-height: auto
+    display: block
+
+
+#main_menu
+    height: 80px
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    grid-area: m_menu
+
+    img
+        height: 50px
+
+    ul
+        display: flex
+        justify-content: space-between
+        border: 3px solid $c_main
+        column-gap: 10px
+        border-radius: 10px
+        padding: 3px
+
+        li
+            margin: 5px
+
+    a
+        color: $c_main
+
+    #user_control
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: fit-content
+        column-gap: 10px
+
+        &>*
+            margin: 0
+
+        p
+            color: $c_main
+
+        a
+            display: inline-block
+            height: 24px
+
+            img
+                height: 100%
+
+        .profile_pic
+            height: 36px
+            clip-path: circle(18px at center)
+
+
+#side_menu
+    width: fit-content
+    position: relative
+    grid-area: s_menu
+
+    nav
+        height: fit-content
+        width: fit-content
+        padding: 25px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        background-color: burlywood
+        border-radius: 15px
+
+        a
+            margin: 10px
+            padding: 5px
+            width: fit-content
+            z-index: 1
+
+    #bkg_sel
+        position: absolute
+        top: 0px
+        background-color: white
+        height: 40px
+        width: 100px
+        border-radius: 10px
+        z-index: 0
+        transition: width $trans_time, top $trans_time
+
+
+#content
+    grid-area: content
+    background-color: #263328
+
+
+#access_view
+    background-color: white
+    width: fit-content
+    border-radius: 15px
+    display: flex
+    flex-direction: column
+    padding: 15px
+
+    // Centrado en el padre (body)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    #log_form, #reg_form
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+
+    .log_links
+        display: grid
+        grid-template-areas: "pwd_loss mail_loss" "register register"
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+        justify-items: center
+        align-items: center
+        margin-top: 30px
+
+        a
+            display: inline-block
+
+            &:nth-of-type(1)
+                grid-area: pwd_loss
+            &:nth-of-type(2)
+                grid-area: mail_loss
+            &:nth-of-type(3)
+                grid-area: register
+
+
+#footer
+    grid-area: footer
+    width: 100%
+    height: 100%
+    font-family: 'Roboto', sans-serif
+    display: flex
+    justify-content: space-between
+    font-size: 0.8em
+
+    a, p, li
+        color: $color2
+
+    .title
+        color: $c_main
+        font-weight: 600
+
+#profile_pic_menu
+    width: fit-content
+    height: fit-content
+    background-color: white
+    // visibility: hidden
+    position: absolute
+    font-size: 0.8em
+    padding: 15px
+    border-radius: 10px
+
+    ul
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        row-gap: 7px
+
+        li
+            text-align: center
+
+            a
+                display: inline-block

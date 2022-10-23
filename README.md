@@ -1,4 +1,5 @@
-# Proyecto final DAW
+# Sol de marzo
+![Logo](htdocs/DAW_proyecto_final/assets/img/Logo_2.svg)
 
 ## Integrantes:
 * Dani Martínez Pascual
@@ -19,13 +20,18 @@ Nuestra principal idea es crear una plataforma 360. Una plataforma que abarque d
 
 
 ## Estructura:
-* assets: Archivos multimedia
-    * img: Imágenes
-* lib: Librerías que se usen en `index`
-    * functions.js
-    * functions.php
-* styles: Estilos css (`base_styles` archivo principal, `styles` pequeñas modificaciones de `base_styles`)
+* `assets`: Archivos multimedia
+    * `img`: Imágenes
+    * `db_data`: Imágenes subidas por los usuarios
+        * `products`: Imágenes de los productos
+        * `users`: Imágenes de perfil de los usuarios
+    * `icons`: Iconos usados en la web (principalmente .svg)
+* `lib`: Librerías que se usen en `index`
+    * scripts.js
+* `modules`: Archivos .php donde se encuentra la lógica
+* `styles`: Estilos css (`base_styles` archivo principal, `styles` pequeñas modificaciones de `base_styles`)
     * base_styles.css
     * style.css
-* reademe.md: Este archivo - punto de referencia del proyecto
+* `templates`: Plantillas php (parte estructural de php)
+* readme.md: Este archivo - punto de referencia del proyecto
 * .gitignore: Aquí pondremos los nombres de los archivos que no queremos que se incluyan en el control de versiones

@@ -10,7 +10,7 @@ htdocs/*
 var/*
 !var/mysql/
 var/mysql/*
-!var/mysql/proyecto/
+!var/mysql/project/
 
 !README.md
 !.gitignore
