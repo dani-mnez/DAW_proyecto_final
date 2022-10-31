@@ -3,7 +3,7 @@
     <!-- TODO Hacer un par de tabs para elegir entre productor o comprador -->
     <button onclick='hide_log_reg()'>Cerrar ventana</button>
     <div id="forms">
-        <form action="./modules/login_logic.php" method="post" id='log_form'>
+        <form action="/DAW_proyecto_final/modules/login_logic.php" method="post" id='log_form'>
             <label for="mail">Email:</label>
             <input type="email" name="mail" id="inp_mail">
             <label for="pwd">Contraseña:</label>

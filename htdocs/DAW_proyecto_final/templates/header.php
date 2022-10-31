@@ -1,15 +1,20 @@
 <?php
-    include_once('modules/classes.php');
-    include_once('modules/init_code.php');
+    include_once(__DIR__ . '/../modules/functions.php');
+    include_once(__DIR__ . '/../modules/classes.php');
+    include_once(__DIR__ . '/../modules/init_code.php');
+
+    $baseName = basename($_SERVER['SCRIPT_FILENAME'], ".php");
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="./styles/base_styles.css">
-        <link rel="stylesheet" href="./styles/styles.css">
-        <script type="text/javascript" src="./lib/scripts.js"></script>
+        <link rel="stylesheet" href="/DAW_proyecto_final/styles/styles.css">
+        <script type="text/javascript" src="/DAW_proyecto_final/lib/functions.js"></script>
+        <script type="text/javascript" src="/DAW_proyecto_final/lib/early_scripts.js"></script>
+        <title><?php echo getTitle($baseName) ?></title>
+        <link rel="icon" type="image/jpg" href="/DAW_proyecto_final/assets/img/ico.ico"/>
     </head>
-    <body>
+    <body class="<?php echo bodyClassGen($baseName) ?>" data-page="<?php echo $baseName ?>">
         <div id="main_frame">
-            <?php include_once('templates/main_menu.php'); ?>
+            <?php include_once(__DIR__ . '/main_menu.php'); ?>

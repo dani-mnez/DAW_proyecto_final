@@ -2,6 +2,9 @@
 // Clase con la que se gestionará toda la BBDD
 class DBAccess
 {
+    # Darle seguridad a la conexión:
+        # TODO Hashear los datos sensibles, como contraseñas y demás
+
     public function __construct(
         public string $server,
         public string $user,
@@ -10,33 +13,49 @@ class DBAccess
     )
     {}
 
-    private function connect()
+    private function connect($user = null, $password = null)
     {
-        $connection = new mysqli(
-            $this->server,
-            $this->user,
-            $this->password,
-            $this->dbName
-        );
-        $connection->set_charset("utf8");
+        if ($user == null || $password == null) {
+            $user = $this->user;
+            $password = $this->password;
+        }
 
-        return $connection;
+        try {
+            $dsn = "mysql:dbname=$this->dbName;host=$this->server;charset=utf8";
+            $dbGest = new PDO($dsn, $user, $password);
+        } catch (PDOException $ex) {
+            echo "Ha habido un error en el establecimiento de la conexión con la base de datos: " . $ex->getMessage();
+        }
+
+        return $dbGest;
     }
 
-    public function changeUser(string $user, string $password)
-    {
-        $conn = $this->connect();
-        $conn->change_user($user, $password, $this->dbName);
-        $conn->close();
-    }
-
-    public function execQuery(string $query)
+    public function execQuery(string $prepStmt, $query)
     {
         $con = $this->connect();
-        $result = $con->query($query);
-        $con->close();
+        $statement = $this->getStatement($prepStmt);
 
+        if ($query) {
+            $preparedStatement = $con->prepare($statement);
+            $preparedStatement->execute($query);
+            $result = $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $result = $con->query($statement);
+        }
+        $con = null;
         return $result;
+    }
+
+    private function getStatement(string $statement)
+    {
+        return match ($statement) {
+            'all_cat_prods' => 'SELECT DISTINCT `type` FROM `products` ORDER BY `qty` DESC',
+            'all_prods' => 'SELECT * FROM `products`',
+            // TODO Trabajarse esta query de abajo -> revisar apuntes
+            'cart_prods' => 'SELECT products.name, products.price, products.type, products.prod_img_name, carts.prod_qty FROM (products INNER JOIN carts ON carts.prod_id = products.id) WHERE carts.user_id=?',
+            'chk_created_user' => 'SELECT mail, password FROM users WHERE mail=? UNION SELECT mail, password FROM temp_users WHERE mail=?', // TODO Terminar esta consulta
+            'insert_new_user' => 'INSERT INTO temp_users (mail, password, name, profile_img_path, mail_verification_code) VALUES (?, ?, ?, ?, ?)'
+        };
     }
 }
 
@@ -78,7 +97,7 @@ class User
     // }
 }
 
-
+// OJO En principio, A DÍA DE HOY, no hay necesidad de utilizar clases hijas de la User
 class Buyer extends User
 {
     // OJO De momento no habría diferencia con la clase padre

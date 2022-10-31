@@ -2,12 +2,11 @@
                 <ul>
                     <li class='title'>PRODUCTOS</li>
                     <?php
-                        $result = $db_access->execQuery("SELECT DISTINCT `type` FROM `products` ORDER BY `qty` DESC");
+                        $result = $db_access->execQuery('all_cat_prods', null);
 
-                        if ($result->num_rows > 0) {
-                            $flat_array = call_user_func_array('array_merge', $result->fetch_all());
-                            foreach ($flat_array as $val) {
-                                echo "<li><a>$val</a></li>";
+                        if ($result) {
+                            foreach ($result as $row) {
+                                echo "<a>{$row['type']}</a>";
                             }
                         }
                     ?>
@@ -49,5 +48,6 @@
                 </ul>
             </nav>
         </div>
+        <script src="/DAW_proyecto_final/lib/late_scripts.js"></script>
     </body>
 </html>

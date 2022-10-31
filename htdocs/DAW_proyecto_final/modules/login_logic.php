@@ -10,20 +10,20 @@ session_start();
 if (isset($_POST['submit'])) {
     $db_access = unserialize($_SESSION['db_acc']);
 
-    $account = $db_access->execQuery("SELECT * FROM users WHERE mail='{$_POST['mail']}'");
+    $account = $db_access->execQuery('chk_created_user', [$_POST['mail'], $_POST['mail']]);
 
-    if ($account->num_rows == 0) {
-        echo 'El mail instroducido es incorrecto';
-    } else {
-        $acc_info = $account->fetch_assoc();
+    print_r($account);
 
-        if ($acc_info['password'] == $_POST['pwd']) {
-            $_SESSION['user'] = serialize(new Buyer($acc_info));
+    if ($account) {
+        if ($account[0]['password'] == $_POST['pwd']) {
+            $_SESSION['user'] = serialize(new User($account[0]));
             header("Location: ../index.php");
             exit();
         } else {
             echo 'La contraseña es incorrecta';
         }
+    } else {
+        echo 'El mail introducido es incorrecto';
     }
 }
 /*

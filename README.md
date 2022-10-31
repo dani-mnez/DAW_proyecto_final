@@ -27,7 +27,9 @@ Nuestra principal idea es crear una plataforma 360. Una plataforma que abarque d
         * `users`: Imágenes de perfil de los usuarios
     * `icons`: Iconos usados en la web (principalmente .svg)
 * `lib`: Librerías que se usen en `index`
-    * scripts.js
+    * early_scripts.js
+    * late_scripts.js
+    * functions.js
 * `modules`: Archivos .php donde se encuentra la lógica
 * `styles`: Estilos css (`base_styles` archivo principal, `styles` pequeñas modificaciones de `base_styles`)
     * base_styles.css

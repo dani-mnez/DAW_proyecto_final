@@ -16,9 +16,11 @@ body {
 }
 
 #main_frame {
+  grid-row-gap: 25px;
+  display: grid;
   width: 1200px;
   height: 100%;
-  padding: 10px;
+  padding: 10px 10px 30px 10px;
 }
 
 nav > ul {
@@ -33,17 +35,13 @@ nav a:active {
   text-decoration: none;
 }
 
-text, h1, h2, h3, p, a {
+text, h1, h2, h3, p, a, span {
   color: black;
   font-family: "Roboto", sans-serif;
 }
 
-#main_frame {
-  display: grid;
-  grid-template-areas: "m_menu m_menu" "s_menu content" "footer footer";
-  grid-row-gap: 25px;
-  grid-template-columns: 160px auto;
-  grid-template-rows: 80px auto 100px;
+a {
+  cursor: pointer;
 }
 
 a {
@@ -63,16 +61,16 @@ a {
 #main_menu img {
   height: 50px;
 }
-#main_menu ul {
+#main_menu > ul {
   display: flex;
   justify-content: space-between;
   border: 3px solid #45E566;
   -moz-column-gap: 10px;
        column-gap: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 3px;
 }
-#main_menu ul li {
+#main_menu > ul li {
   margin: 5px;
 }
 #main_menu a {
@@ -106,50 +104,36 @@ a {
   -webkit-clip-path: circle(18px at center);
           clip-path: circle(18px at center);
 }
-
-#side_menu {
+#main_menu #user_control #profile_pic_menu {
+  display: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  position: relative;
-  grid-area: s_menu;
-}
-#side_menu nav {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 25px;
+  background-color: white;
+  position: absolute;
+  font-size: 0.8em;
+  padding: 15px;
+  border-radius: 15px;
+  transform: translateX(calc(-50% + 18px));
+}
+#main_menu #user_control #profile_pic_menu ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: burlywood;
-  border-radius: 15px;
+  row-gap: 7px;
 }
-#side_menu nav a {
-  margin: 10px;
-  padding: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  z-index: 1;
+#main_menu #user_control #profile_pic_menu ul li {
+  text-align: center;
 }
-#side_menu #bkg_sel {
-  position: absolute;
-  top: 0px;
-  background-color: white;
-  height: 40px;
-  width: 100px;
-  border-radius: 10px;
-  z-index: 0;
-  transition: width 0.2s, top 0.2s;
+#main_menu #user_control #profile_pic_menu ul li a {
+  display: inline-block;
 }
 
 #content {
   grid-area: content;
-  background-color: #263328;
 }
 
 #access_view {
@@ -210,28 +194,147 @@ a {
   font-weight: 600;
 }
 
-#profile_pic_menu {
+.index_body #main_frame {
+  grid-template-columns: auto;
+  grid-template-areas: "m_menu" "content" "footer";
+}
+
+.shop_body #main_frame {
+  grid-template-columns: 160px auto;
+  grid-template-areas: "m_menu m_menu" "s_menu content" "footer footer";
+}
+.shop_body #side_menu {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
+  grid-area: s_menu;
+}
+.shop_body #side_menu nav {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: white;
-  position: absolute;
-  font-size: 0.8em;
-  padding: 15px;
-  border-radius: 10px;
-}
-#profile_pic_menu ul {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: 7px;
+  background-color: burlywood;
+  border-radius: 15px;
 }
-#profile_pic_menu ul li {
-  text-align: center;
+.shop_body #side_menu nav a {
+  margin: 10px;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 1;
 }
-#profile_pic_menu ul li a {
+.shop_body #side_menu #bkg_sel {
+  position: absolute;
+  top: 0px;
+  background-color: white;
+  height: 40px;
+  width: 100px;
+  border-radius: 15px;
+  z-index: 0;
+  transition: width 0.2s, top 0.2s;
+}
+.shop_body #products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.shop_body #products .product {
+  padding: 10px;
+  display: block;
+  width: 200px;
+  background-color: white;
+  border-radius: 15px;
+}
+.shop_body #products .product .product_img_wrapper {
+  width: 100%;
+  display: flex;
+}
+.shop_body #products .product .product_img_wrapper img {
+  width: 100%;
+  border-radius: 15px;
+}
+.shop_body #products .product .buttons {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: space-between;
+  padding: 5px 0;
+  left: -35px;
+}
+.shop_body #products .product .buttons .like_btn, .shop_body #products .product .buttons .add_cart_btn {
   display: inline-block;
+  background-color: white;
+  border-radius: 20px;
+  line-height: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.shop_body #products .product .buttons .like_btn img, .shop_body #products .product .buttons .add_cart_btn img {
+  width: 20px;
+  margin: 5px;
+}
+.shop_body #products .product p {
+  margin: 0;
+  display: inline-block;
+}
+.shop_body #products .product .name {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.shop_body #products .product .category {
+  padding: 3px 5px;
+  background-color: #d6ae62;
+  border-radius: 15px;
+}
+
+#cart_items {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#cart_items .cart_item {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+#cart_items .cart_item img {
+  border-radius: 15px;
+  width: 100px;
+}
+#cart_items .cart_item .cart_text_wrap p {
+  margin: 0;
+}
+#cart_items .cart_item .cart_text_wrap .name {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+#cart_resume {
+  grid-area: resume;
+}
+
+.cart_body #main_frame {
+  grid-template-columns: auto 160px;
+  grid-template-areas: "m_menu m_menu" "content resume" "footer footer";
+  grid-template-rows: 80px auto 100px;
 }/*# sourceMappingURL=styles.css.map */

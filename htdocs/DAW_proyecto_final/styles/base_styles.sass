@@ -28,9 +28,11 @@ body
     margin: 0
 
 #main_frame
+    grid-row-gap: 25px
+    display: grid
     width: $web_width
     height: 100%
-    padding: 10px
+    padding: 10px 10px 30px 10px
 
 
 // || Menus
@@ -48,6 +50,9 @@ nav
 
 
 // || Text
-text, h1, h2, h3, p, a
+text, h1, h2, h3, p, a, span
     color: black
     font-family: 'Roboto', sans-serif
+
+a
+    cursor: pointer
