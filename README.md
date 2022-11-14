@@ -1,5 +1,5 @@
 # Sol de marzo
-![Logo](htdocs/DAW_proyecto_final/assets/img/Logo_2.svg)
+![Logo](/DAW_proyecto_final/assets/img/Logo_2.svg)
 
 ## Integrantes:
 * Dani Martínez Pascual
