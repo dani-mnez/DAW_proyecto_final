@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+
+
+// || Variables
+$c_main: #45E566
+$color1: #555f53
+$color2: #D2E83A
+$color3: #707750
+$color4: #B6A0AF
+$c_bkg: #5d6342
+$web_width: 1200px
+$bord_rad: 15px
+
+
+// || Estilos predefinidos
+
+
+// || General
+html
+    scroll-behavior: smooth
+    box-sizing: border-box
+    background-color: $c_bkg
+    display: flex
+    flex-direction: column
+    align-items: center
+
+body
+    margin: 0
+
+#main_frame
+    display: flex
+    flex-direction: column
+    row-gap: 25px
+    width: $web_width
+    height: 100%
+    padding: 10px 10px 30px 10px
+
+
+#main_menu
+    height: 80px
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    grid-area: m_menu
+
+    img
+        height: 50px
+
+    &>ul
+        display: flex
+        justify-content: space-between
+        border: 3px solid $c_main
+        column-gap: 10px
+        border-radius: $bord_rad
+        padding: 3px
+
+        li
+            margin: 5px
+
+    a
+        color: $c_main
+
+    #user_control
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: fit-content
+        column-gap: 10px
+
+        &>*
+            margin: 0
+
+        p
+            color: $c_main
+
+        a
+            display: inline-block
+            height: 24px
+
+            img
+                height: 100%
+
+        .profile_pic
+            height: 36px
+            clip-path: circle(18px at center)
+
+        #profile_pic_menu
+            display: none
+            width: fit-content
+            height: fit-content
+            background-color: white
+            position: absolute
+            font-size: 0.8em
+            padding: 15px
+            border-radius: $bord_rad
+            transform: translateX(calc(-50% + 18px))
+
+            ul
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                row-gap: 7px
+
+                li
+                    text-align: center
+
+                    a
+                        display: inline-block
+
+
+// || Menus
+ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+nav
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active
+        text-decoration: none
+
+
+// || Text
+text, h1, h2, h3, p, a, span
+    color: black
+    font-family: 'Roboto', sans-serif
+
+a
+    cursor: pointer
+    width: auto
+    line-height: auto
+    display: block

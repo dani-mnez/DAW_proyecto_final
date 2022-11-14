@@ -36,4 +36,3 @@ Nuestra principal idea es crear una plataforma 360. Una plataforma que abarque d
     * style.css
 * `templates`: Plantillas php (parte estructural de php)
 * readme.md: Este archivo - punto de referencia del proyecto
-* .gitignore: Aquí pondremos los nombres de los archivos que no queremos que se incluyan en el control de versiones
