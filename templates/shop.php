@@ -1,10 +1,13 @@
 <?php include_once(__DIR__ . '/header.php'); ?>
             <div id="content">
-                <div id="shop_filters"></div>
-                <?php include_once(__DIR__ . '/side_menu.php'); ?>
+                <?php include_once(__DIR__ . '/cat_shop_menu.php'); ?>
                 <div id="products">
                     <?php
-                        $results = $db_access->execQuery('all_prods', null);
+                        $results = $db_access->exec(
+                            'find',
+                            'products',
+                            []
+                        );
 
                         if ($results) {
                             foreach ($results as $key => $value) {

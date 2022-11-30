@@ -7,15 +7,18 @@ Definimos las credenciales de la BBDD,
 creamos la clase con la que la gestionaremos
 y la guardamos en la sesión (para poder usarla entre páginas)
 */
-// TODO Crear un sistema de control de permisos para la BBDD en la que los diferentes usuarios registrados solo puedan acceder a sus datos / o hacer un bypass para no crear tantos usuarios - la verdad que en esto no tengo las cosas claras
 # TODO Gestionar las COOKIES
-# TODO Gestionar las cuentas de usuario múltiples
-const DB_HOST = 'dani-martinez.com';
-const DB_NAME = 'project';
-const DB_PORT = 3306;
+
+const DB_HOST = 'soldemarzo.c8k10vi.mongodb.net';
+const DB_NAME = 'project';  // La colección -> DB_COLLECTION debería llamarse
+const DB_PORT = 3306;  // De momento no se usa porque el código va embebido
 $DB_USER = 'soldemarzo';
-$DB_PASS = "soldemarzo2022!";
+$DB_PASS = "soldemarzo";
 
-$db_access = new DBAccess(DB_HOST, $DB_USER, $DB_PASS, DB_NAME, DB_PORT);
-
-$_SESSION['db_acc'] = serialize($db_access);
+$mongo_db = new MongoDBAccess(
+    DB_HOST,
+    $DB_USER,
+    $DB_PASS,
+    DB_NAME,
+    DB_PORT
+);

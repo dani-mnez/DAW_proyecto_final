@@ -1,25 +1,28 @@
 <?php
-// Incluímos el archivo para poder usar $sb_access (clase DBAccess)
-// Este include va antes del sessión_start para que pueda leer la clase que debe tener almacenada en la sesión
-include_once('../modules/classes.php');
-
-// Iniciamos la sesión
-session_start();
+// De momento no he encontrado forma mejor que la de crear una instancia de la calse que maneja la BDD mediante la inclusión de init_code.php
+// Intenté hacerlo pasando la clase mediante fetch POST, pero al no poder serializarse, daba error
+include_once '../modules/classes.php';
+include_once '../modules/init_code.php';
 
 // TODO Al iniciar sesión, en cualquier página, se debería redirigir de vuelta a la página en la que se estaba
     // Ej.: Si inicio sesión en la página de shop.php, me redirige a index.php
-
+    // OJO Eso se puede hacer con un fetch que al recibir respuesta elimine el cuadro de login y cambie el menú principal con el menú del usuario
 
 if (isset($_POST['submit'])) {
-    $db_access = unserialize($_SESSION['db_acc']);
-
-    $account = $db_access->execQuery('chk_created_user', [$_POST['mail']]);
-
-    print_r($account);
+    $account = $mongo_db->exec(
+        'find_one',
+        'users',
+        ['mail' => $_POST['mail']]
+    );
 
     if ($account) {
-        if ($account[0]['password'] == $_POST['pwd']) {
-            $_SESSION['user'] = serialize(new User($account[0]));
+        if ($account['password'] == $_POST['pwd']) {
+            $_SESSION['user'] = serialize(new User([
+               'mail' => $account['mail'],
+               'name' => $account['name'],
+               'type' => 'comp',
+               'phone' => $account['phone']
+        ]));
             header("Location: ../index.php");
             exit();
         } else {

@@ -4,7 +4,7 @@
         <li><a href="/DAW_proyecto_final/templates/dashboard.php">Configuración</a></li>
         <li><a href="">Mensajes</a></li>
         <li><a href="">Feedback</a></li>
-        <?php if(isset($_SESSION['user']) && unserialize($_SESSION['user'])->type == 'producer'): ?>
+        <?php if(isset($_COOKIES['user']) && $_COOKIES['user']->type == 'producer'): ?>
             <li><a href="">Panel de control</a></li>
         <?php endif; ?>
         <li><a href="">Ayuda</a></li>

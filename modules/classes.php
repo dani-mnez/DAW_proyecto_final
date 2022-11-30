@@ -1,92 +1,37 @@
 <?php
-// Clase con la que se gestionará toda la BBDD
-class DBAccess
-{
-    # Darle seguridad a la conexión:
-        # TODO Hashear los datos sensibles, como contraseñas y demás
+require_once(__DIR__ . '/../vendor/autoload.php'); // Include del plugin de mongo para PHP
 
+class MongoDBAccess
+{
     public function __construct(
         public string $server,
         public string $user,
         public string $password,
-        public string $dbName,
+        public string $databaseName,
         public string $dbPort
     )
-    {}
-
-    private function connect($user = null, $password = null)
     {
-        $conn = new mysqli(
-            $this->server,
-            $user ?? $this->user,
-            $password ?? $this->password,
-            $this->dbName,
-            $this->dbPort
+        $this->client = new MongoDB\Client(
+            "mongodb+srv://{$this->user}:{$this->password}@{$this->server}/?retryWrites=true&w=majority"
         );
-        $conn->set_charset('utf8');
-
-        return $conn;
     }
 
-    public function execQuery(string $prepStmt, $values)
+    public function exec($type, $collectionName, $searchParams)
     {
-        $con = $this->connect();
+        $collection = $this->client->selectCollection($this->databaseName, $collectionName);
 
-        $statement = $this->getStatement($prepStmt);
-
-        if ($values != null) {
-            $preparedStatement = $con->prepare($statement);  // Preparamos el statement para evitar inyecciones SQL
-            $preparedStatement->bind_param($this->genTypeString($values), ...$values);  // Asignamos los valores a los parámetros del statement
-            $preparedStatement->execute();  // Ejecutamos el statement
-            $result = $preparedStatement->get_result()->fetch_all(MYSQLI_ASSOC);  // Obtenemos el resultado de la consulta -> la consulta devolverá un diccionario por linea
-
-            $preparedStatement->close();  // Cerramos el statement
-        } else {
-            $result = $con->query($statement);
+        switch ($type) {
+            case 'find_one': $result = $collection->findOne($searchParams);  break;
+            case 'find':     $result = $collection->find($searchParams);     break;
+            case 'distinct': $result = $collection->distinct($searchParams); break;
+            case 'insert':   break;
+            default:         $result = null;                                 break;
         }
-        $con->close();  // Cerramos la conexión
 
         return $result;
     }
-
-    private function genTypeString(array $values)
-    {
-        $typeString = '';
-        foreach ($values as $value) {
-            switch (gettype($value)) {
-                case 'string':
-                    $typeString .= 's';
-                    break;
-                case 'integer':
-                    $typeString .= 'i';
-                    break;
-                case 'double':
-                    $typeString .= 'd';
-                    break;
-                case 'blob':
-                    $typeString .= 'b';
-                    break;
-                default:
-                    $typeString .= 's';
-                    break;
-            }
-        }
-
-        return $typeString;
-    }
-
-    private function getStatement(string $statement)
-    {
-        return match ($statement) {
-            'all_cat_prods' => 'SELECT DISTINCT `type` FROM `products` ORDER BY `qty` DESC',
-            'all_prods' => 'SELECT * FROM `products`',
-            'prod_detail' => 'SELECT * FROM `products` WHERE id=?',
-            'cart_prods' => 'SELECT * FROM `cart_info` WHERE user_id=?',
-            'chk_created_user' => 'SELECT mail, activated, password FROM users WHERE mail=? LIMIT 1', // El LIMIT es para que únicamente devuelva un resultado
-            'insert_new_user' => 'INSERT INTO temp_users (mail, password, name, profile_img_path, mail_verification_code) VALUES (?, ?, ?, ?, ?)'
-        };
-    }
 }
+
 
 class User
 {
@@ -109,8 +54,8 @@ class User
             $dirArray = explode(";", $direction);
 
             $this->location = [
-                "street_type" => $dirArray[0] ?? false,
-                "street" => $dirArray[1] ?? false,
+                "type" => $dirArray[0] ?? false,
+                "name" => $dirArray[1] ?? false,
                 "number" => $dirArray[2] ?? false,
                 "floor" => $dirArray[3] ?? false,
                 "postal_code" => $dirArray[4] ?? false,
@@ -120,37 +65,4 @@ class User
         }
     }
     // TODO Crear función MANDAR MAIL
-}
-
-// OJO En principio, A DÍA DE HOY, no hay necesidad de utilizar clases hijas de la User
-class Buyer extends User
-{
-    // OJO De momento no habría diferencia con la clase padre
-    // más adelante se irán viendo implementaciones diferenciadas
-    // private function __construct(
-    //     private string $name,
-    //     private string $mail
-    // )
-    // {
-    //     parent::__construct($name, $mail);
-    // }
-
-    public function gatherBuyerInfo()
-    {
-        // TODO Obtener info de: pedidos, comentarios,
-    }
-}
-
-
-class Producer extends User
-{
-    // OJO De momento no habría diferencia con la clase padre
-    // más adelante se irán viendo implementaciones diferenciadas
-    // private function __construct(
-    //     private string $name,
-    //     private string $mail
-    //     )
-    // {
-    //     parent::__construct($name, $mail);
-    // }
 }

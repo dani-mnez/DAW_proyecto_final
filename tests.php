@@ -7,21 +7,18 @@ use \MongoDB\Driver\ServerApi;
 
 $serverApi = new ServerApi(ServerApi::V1);
 $client = new MongoDB\Client(
-    'mongodb+srv://soldemarzo:soldemarzo@soldemarzo.c8k10vi.mongodb.net/?retryWrites=true&w=majority', [], ['serverApi' => $serverApi]);
-$collection = $client->soldemarzo->project;
+    'mongodb+srv://soldemarzo:soldemarzo@soldemarzo.c8k10vi.mongodb.net/?retryWrites=true&w=majority',
+    [],
+    ['serverApi' => $serverApi]
+);
+$collection = $client->project->users;
 
-// print_r($collection);
 $search = $collection->find();
 
-foreach ($search as $entry) {
-    echo $entry;
-    echo $entry['name'] . "\n";
+foreach ($search as $user) {
+    echo $user->name;
+    print_r((array)$user);
 }
-
-// print_r($search);
-// print_r($collection->find(
-//     array('name'=> 'Mercedes Tyler')
-// ));
 
 // OJO usar get_class_methods para ver los métodos de una clase u objeto
 

@@ -6,7 +6,7 @@ $suported_mimetypes = ['image/jpeg', 'image/gif', 'image/png', 'image/bmp', 'ima
 
 if (isset($_POST['reg_submit'])) {
     // ¿Existe el usuario en la BBDD?
-    $db_access = unserialize($_SESSION['db_acc']);
+    $db_access = $_SESSION['db_acc'];
     $account = $db_access->execQuery('chk_created_user', [$_POST['mail']]);
 
     if ($account) {

@@ -5,11 +5,11 @@
         <form action="/DAW_proyecto_final/modules/login_logic.php" method="post" id='log_form'>
             <ul>
                 <li>
-                    <input type="radio" name="user_type" id="log_buyer">
+                    <input type="radio" name="user_type" value="buyer" id="log_buyer" checked>
                     <label for="buyer">Quiero comprar</label>
                 </li>
                 <li>
-                    <input type="radio" name="user_type" id="log_producer">
+                    <input type="radio" name="user_type" value="producer" id="log_producer">
                     <label for="producer">Quiero vender</label>
                 </li>
             </ul>

@@ -7,19 +7,19 @@
     -->
     <div class="prod_img_wrapper">
         <input type="checkbox" name="" class="">
-        <img src="<?php echo '/DAW_proyecto_final/assets/db_data/products/' . $prod['product_img'] ?>" alt="">
+        <img src="<?php echo '/DAW_proyecto_final/assets/db_data/products/' . $prod['prod_img_name'] ?>" alt="">
     </div>
     <div class="cart_text_wrap">
-        <span class='name'><?php echo $prod['product_name'] ?></span>
+        <span class='name'><?php echo $prod['name'] ?></span>
         <!-- OJO Con la categoría se podrían agrupar los productos o algo parecido, para que sea más visual -->
         <!-- <span class="category"><?php //echo $prod['type'] ?></span> -->
-        <span class="subtype"><?php echo $prod['product_subtype'] ?></span>
-        <span class="producer">De <?php echo $prod['producer_name'] ?></span>
-        <span class="stock"><?php echo $prod['product_stock_qty'] > 0 ? 'En stock' : 'Agotado'; ?></span>
-        <span class="total_prod_price"><?php echo $prod['product_price'] * $prod['cart_prod_qty'] ?><span>€</span></span>
+        <span class="subtype"><?php echo $prod['subtype'] ?></span>
+        <span class="producer">De <?php echo $producerName ?></span>
+        <span class="stock"><?php echo $prod['qty'] > 0 ? 'En stock' : 'Agotado'; ?></span>
+        <span class="total_prod_price"><?php echo $totalPrice ?><span>€</span></span>
         <div class="prod_management">
             <select name="prod_qty">
-                <option selected disabled hidden value="">Cant.: <?php echo $prod['cart_prod_qty'] ?></option>
+                <option selected disabled hidden value="">Cant.: <?php echo $prod['qty'] ?></option>
                 <option value="del">0 (Eliminar)</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -37,5 +37,5 @@
             <a href="#">Ver otros productos como este</a>
         </div>
     </div>
-    <span class="price"><?php echo $prod['product_price'] ?>€</span>
+    <span class="price"><?php echo $price ?>€</span>
 </div>

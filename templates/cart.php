@@ -7,15 +7,31 @@
                         <span>Precio</span>
                         <?php
                             $user = unserialize($_SESSION['user'])->mail;
-                            $results = $db_access->execQuery('cart_prods', [$user]);
+                            $results = $mongo_db->exec(
+                                'find_one',
+                                'users',
+                                ['mail' => $user]
+                            )['cart_prods'];
 
                             if ($results) {
                                 $totalPrice = 0.0;
                                 $totalProds = 0;
 
                                 foreach ($results as $prod) {
-                                    $totalProds += $prod['cart_prod_qty'];
-                                    $totalPrice += $prod['product_price'] * $prod['cart_prod_qty'];
+                                    $prod = $mongo_db->exec(
+                                        'find_one',
+                                        'products',
+                                        []
+                                    );
+                                    $producerName = $mongo_db->exec(
+                                        'find_one',
+                                        'producers',
+                                        ['_id' => $prod['producer']]
+                                    )['name'];
+                                    $price = json_decode($prod['price']);
+                                    $totalPrice = $price * $prod['qty'];
+                                    $totalProds += $prod['qty'];
+                                    $totalPrice += $totalPrice;
                                     include('cart_item.php');
                                 }
                             }
