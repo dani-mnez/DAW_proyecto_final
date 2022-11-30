@@ -1,0 +1,63 @@
+{
+    "_id": {
+      "$oid": "63769b26f84de877cf8d743e"
+    },
+    "name": {
+        "name": "Juan",
+        "surname1": "Perez",
+        "surname2": "Sanz"
+    },
+    "mail": "juan@gmail.com",
+    "password": "1234",
+    "phone": {
+        "default": 911587896,
+        "alts": [
+        658791578,
+        655021120
+        ]
+    },
+    "address": [
+        {
+            "$oid": "6377db4a1b939cb530e244fa"
+        },
+        {
+            "$oid": "6377db4a1b939cb530e244fa"
+        }
+    ],
+    "activated": true,
+    "dates": {
+        "creation": "2022-10-22T00:00:00Z",
+        "cancellation": "",
+        "last_log": "2022-10-22T00:00:00Z",
+        "last_modify": "2022-10-22T00:00:00Z",
+        "first_buy": "2022-10-22T00:00:00Z",
+        "last_buy": "2022-10-22T00:00:00Z"
+    },
+    "list": {
+        "desired_prods": [
+            {
+                "$oid": "6377dc081b939cb530e244fd"
+            },
+            {
+                "$oid": "6377dc081b939cb530e244fd"
+            }
+        ],
+        "saved_prods": []
+    },
+    "cart_prods": {
+        "$oid": "63769b26f84de877cf8d743e"
+    },
+    "payment_method": 4,
+    "opinion": [
+        {
+            "$oid": "6377d6731b939cb530e244f3",
+            "valoration": 4,
+            "date_valoration": "2022-10-22T00:00:00Z",
+            "opinion_body": {
+                "tittle": "Menuda mierda",
+                "body": "Pues no veas que pedo me pille el sabado con esta vaina loca",
+                "count_likes": 4
+            }
+        }
+    ]
+}

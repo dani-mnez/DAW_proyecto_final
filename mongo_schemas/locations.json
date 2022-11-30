@@ -1,0 +1,20 @@
+{
+    "_id": {
+        "$oid": ""
+    },
+    "default_location": true,
+    "type": "Avenida",
+    "name": "Chorrillo",
+    "number": 47,
+    "bloque": "A",
+    "portal": "4",
+    "stair": "derecha",
+    "floor": "bajo",
+    "door": "izquiera",
+    "pc": 18100,
+    "town": "Armilla",
+    "city": "Granada",
+    "ac": "Andalusia",
+    "country": "España",
+    "additional_info": "PI Los Carpatos"
+}

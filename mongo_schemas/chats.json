@@ -1,0 +1,17 @@
+{
+    "_id": {
+        "$oid": "6377de4f1b939cb530e24504"
+    },
+    "user1": {
+        "$oid": "6377de4f1b939cb530e24504"
+    },
+    "user2": {
+        "$oid": "6377dec31b939cb530e24505"
+    },
+    "message": {
+        "date_msg": "2022-10-22T00:00:00Z",
+        "message_content": ""
+    },
+    "date_start": "2022-10-22T00:00:00Z",
+    "archived": false
+}

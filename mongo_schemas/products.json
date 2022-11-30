@@ -1,0 +1,74 @@
+{
+    "_id": {
+        "$oid": "6377dc081b939cb530e244fd"
+    },
+    "name": "Vino cabezón",
+    "description": {
+        "tittle": "Increible Vino",
+        "short_descp":"Longevo y exclusivo, un tinto navarro que rompe fronteras",
+        "large_descp":"Quizá no es el mejor vino, pero es barato y cumple su función en las fiestas provinciales"
+    },
+    "stock":[
+        {
+            "format": "Cuña",
+            "price": 3.95,
+            "qty": 6
+        },
+        {
+            "format": "Medio",
+            "price": 6.95,
+            "qty": 6
+        },
+        {
+            "format": "Entero",
+            "price": 11.95,
+            "qty": 6
+        }
+    ],
+    "producer": {
+        "$oid": "6377dec31b939cb530e24505"
+    },
+    "category": "vinos",
+    "subtcategory": {
+        "$oid": "6377dec31b939cb530e24505"
+    },
+    "nutr_info":{
+        "energ_value_kcal":2000,
+        "fats": {
+            "tot":70,
+            "sat_fats":20
+        },
+        "carbohydrates":{
+            "tot":260,
+            "suggar":90
+        },
+        "protein":50,
+        "salt":6
+    },
+    "allergens": [
+        "allergens1",
+        "allergens2",
+        "allergens3",
+        "allergens4"
+    ],
+    "den_origin":false,
+    "awards": [
+        {
+            "$oid": "6377dc081b939cb530e244fd"
+        },
+        {
+            "$oid": "6377dc081b939cb530e244fd"
+        }
+    ],
+    "img": {
+        "main_img": "main_vino.jpg",
+        "coll_img": [
+            "id1.jpg",
+            "id2.jpg",
+            "id3.jpg",
+            "id4.jpg"
+        ]
+    },
+    "promotion": 0,
+    "featured_product": false
+  }

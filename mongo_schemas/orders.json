@@ -1,0 +1,43 @@
+{
+    "_id": {
+        "$oid": ""
+        },
+    "user": {
+        "$oid": "6377de4f1b939cb530e24504"
+    },
+    "producer": {
+        "$oid": "6377dec31b939cb530e24505"
+    },
+    "cart": {
+        "$oid": "63769b26f84de877cf8d743e"
+    },
+    "shipping_address": {
+        "$oid": "6377db4a1b939cb530e244fa"
+    },
+    "shipping_company": 4,
+    "method_payment": 4,
+    "date_delivery": "2022-10-22T00:00:00Z",
+    "date_order": "2022-10-22T00:00:00Z",
+    "date_payment_user": "1999-12-31T23:00:00Z",
+    "date_payment_producer": "1999-12-31T23:00:00Z",
+    "date_receipt": "2022-10-22T00:00:00Z",
+    "notes":{
+        "user_notes": "loquesea",
+        "notes_delivery": "loquesea"
+    },
+    "receipt_path": "ruta de archivo",
+    "status_order": true,
+    "incidence": [
+        {
+        "id_product": 
+            {
+                "$oid": "6377db4a1b939cb530e244fa"
+            },
+        "type": 2,
+        "description": "",
+        "status_incidence": 1,
+        "status_comment": "",
+        "status_date": "2022-10-22T00:00:00Z"
+        }
+    ]
+}

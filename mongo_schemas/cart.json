@@ -1,0 +1,32 @@
+{
+    "_id": {
+        "$oid": ""
+    },
+    "user": {
+        "$oid": "6377dc081b939cb530e244fd"
+    },
+    "products": [
+        {
+            "product": {
+                "$oid": "6377dc081b939cb530e244fd"
+            },
+            "qty": 2,
+            "precio": 24.99
+        },
+        {
+            "product": {
+                "$oid": "6377dc081b939cb530e244fd"
+            },
+            "qty": 2,
+            "precio": 24.99
+        },
+        {
+            "product": {
+                "$oid": "6377dc081b939cb530e244fd"
+            },
+            "qty": 2,
+            "precio": 24.99
+        }
+    ],
+    "total_no_tax": 149.98
+}
