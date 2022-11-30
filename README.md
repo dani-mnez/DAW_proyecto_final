@@ -1,5 +1,5 @@
 # Sol de marzo
-![Logo](htdocs/DAW_proyecto_final/assets/img/Logo_2.svg)
+![Logo](./assets/img/logo.png)
 
 ## Integrantes:
 * Dani Martínez Pascual
@@ -26,13 +26,10 @@ Nuestra principal idea es crear una plataforma 360. Una plataforma que abarque d
         * `products`: Imágenes de los productos
         * `users`: Imágenes de perfil de los usuarios
     * `icons`: Iconos usados en la web (principalmente .svg)
-* `lib`: Librerías que se usen en `index`
-    * early_scripts.js
-    * late_scripts.js
-    * functions.js
-* `modules`: Archivos .php donde se encuentra la lógica
-* `styles`: Estilos css (`base_styles` archivo principal, `styles` pequeñas modificaciones de `base_styles`)
-    * base_styles.css
-    * style.css
+* `lib`: Archivos JS
+* `modules`: Archivos .php de lógica
+* `styles`: Estilos .sass organizados por componentes + style.sass (donde se combinan todos)
 * `templates`: Plantillas php (parte estructural de php)
-* readme.md: Este archivo - punto de referencia del proyecto
+* `readme.md`: Este archivo - punto de referencia del proyecto
+
+El resto de archivos son de configuración de VSCode y demás utilidades.
