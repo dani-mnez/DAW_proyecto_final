@@ -1,15 +1,15 @@
 {
     "_id": {
-        "$oid": "63769b26f84de877cf8d743e"
+        "$oid": "6377dec31b939cb530e24505"
     },
     "name": {
         "name": "Juan",
         "surname1": "Perez",
         "surname2": "Sanz"
     },
-    "mail": "juan@quesojuanito.com",
-    "password": "1234",
-    "company_name": "Queserías Juanito SL",
+    "mail": "info@quesospepe.com",
+    "password": "pepe1234",
+    "company_name": "Quesos Pepe SL",
     "phone": {
         "default": 911587896,
         "alts": [
@@ -17,48 +17,46 @@
         655021120
         ]
     },
-    "address": [
-        {
-            "$oid": "6377db4a1b939cb530e244fa"
-        },
-        {
-            "$oid": "6377db4a1b939cb530e244fa"
-        }
-    ],
+    "adress": {
+        "$oid": "638b39f3bc99514efbf60d95"
+    },
     "fiscal_id": "17469636Y",
     "contract": {
         "contract_number": 3214125436,
-        "date_contract": "1999-12-31T23:00:00Z",
-        "validity": "1999-12-31T23:00:00Z",
-        "category": "categoría profesional del productor",
-        "date_payment":  28,
-        "payment_method": 4,
-        "document_path": [
-            "ruta al archivo digital"
-        ]
+        "dates": {
+        "signature": {
+            "$date": "2022-10-22T00:00:00Z"
+        },
+        "validity": {
+            "$date": "2022-10-22T00:00:00Z"
+        }
+        },
+        "prof_cat": "categoría profesional del productor",
+        "day_payment":  28,
+        "pay_method": 4,
+        "doc_path": "ruta al archivo digital"
     },
     "activated": true,
     "dates": {
-        "creation": "2022-10-22T00:00:00Z",
-        "cancellation": "",
-        "last_log": "2022-10-22T00:00:00Z",
-        "last_modify": "2022-10-22T00:00:00Z",
-        "first_sale": "2022-10-22T00:00:00Z",
-        "last_sale": "2022-10-22T00:00:00Z",
-        "date_billing": "2022-10-22T00:00:00Z"
+        "creation": {
+        "$date": "2022-10-22T00:00:00Z"
+        },
+        "cancelation": {
+        "$date": "2022-10-22T00:00:00Z"
+        }
     },
     "products": [
-      {
+        {
         "$oid": "6377da0e1b939cb530e244f6"
-      },
-      {
+        },
+        {
         "$oid": "6377db7d1b939cb530e244fb"
-      },
-      {
+        },
+        {
         "$oid": "6377dc081b939cb530e244fd"
-      }
+        }
     ],
     "lopd": {
-        "date_lopd": "1999-12-31T23:00:00Z"
+        "$date": "2022-10-22T00:00:00Z"
     }
 }

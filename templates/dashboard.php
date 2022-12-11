@@ -1,18 +1,29 @@
-<?php
-// session_start();
+<?php include_once(__DIR__ . '/components/header.php'); ?>
+    <div id="content">
+        <?php include_once(__DIR__ . '/components/dash_menu.php'); ?>
 
-?>
+        <div id="dash_content">
+            <?php
 
+            $user_data = $mongo_db->exec(
+                'find_one',
+                'users',
+                ['mail'=> unserialize($_SESSION['user'])->mail]
+            );
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="./update_info.php">Modifica tu información</a>
-</body>
-</html>
+            if (unserialize($_SESSION['user'])->type == "buyer") {
+                require_once(__DIR__ . '/components/dash/res_profile.php');
+                require_once(__DIR__ . '/components/dash/res_lists.php');
+                require_once(__DIR__ . '/components/dash/res_hist.php');
+            } else {
+                require_once(__DIR__ . '/components/dash/res_graphs.php');
+                require_once(__DIR__ . '/components/dash/res_products.php');
+                require_once(__DIR__ . '/components/dash/res_incid.php');
+            }
+            ?>
+
+            <!-- FIX Lo de abajo es para borrar, se implementará en los componentes de arriba -->
+            <a href="./components/update_info.php">Modifica tu información</a>
+        </div>
+    </div>
+<?php include_once(__DIR__ . '/components/footer.php'); ?>

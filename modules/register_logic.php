@@ -6,8 +6,7 @@ $suported_mimetypes = ['image/jpeg', 'image/gif', 'image/png', 'image/bmp', 'ima
 
 if (isset($_POST['reg_submit'])) {
     // ¿Existe el usuario en la BBDD?
-    $db_access = $_SESSION['db_acc'];
-    $account = $db_access->execQuery('chk_created_user', [$_POST['mail']]);
+    $account = $mongo_db->execQuery('chk_created_user', [$_POST['mail']]);
 
     if ($account) {
         echo "Ya hay un usuario usando ese email";
@@ -93,7 +92,7 @@ if (isset($_POST['reg_submit'])) {
 
 
             // Se escribe la información sobre el nuevo usuario en la BBDD (en la tabla temp_users)
-            $db_access->execQuery('insert_new_user', [$_POST['mail'], $_POST['pwd'], $_POST['name'], $target_name], $random_confirm_code);
+            $mongo_db->execQuery('insert_new_user', [$_POST['mail'], $_POST['pwd'], $_POST['name'], $target_name], $random_confirm_code);
 
             //OJO Esto no sería necesario si no salimos de home porque estamos en un popup de registro (??)
             // header("Location: ./login.php");

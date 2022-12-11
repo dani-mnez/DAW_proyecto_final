@@ -1,0 +1,65 @@
+#footer
+    grid-area: footer
+    display: flex
+    flex-direction: column
+    width: 100%
+    font-family: 'Roboto', sans-serif
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 16px
+    color: white
+    background-color: black
+
+    #to_top
+        padding: 20px 0
+        width: 100%
+        height: fit-content
+        text-align: center
+        color: white
+        border-bottom: 1px solid white
+
+    #mid_footer
+        padding: 55px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        max-width: calc(1600px - 2 * 55px)
+        border-bottom: 1px solid white
+
+        #footer_logo
+            height: 72px
+
+        #footer_links
+            display: flex
+            justify-content: space-between
+            column-gap: 40px
+
+            a, p, li
+                color: white
+                font-size: 12px
+
+            .title
+                color: white
+                font-weight: 600
+
+            li
+                margin-top: 16px
+
+    #bottom_footer
+        max-width: 1600px
+        width: 100%
+        display: flex
+        justify-content: space-between
+        padding: 20px 55px
+
+        p
+            margin: 0
+            color: white
+            font-size: 12px
+
+        .credits
+            display: inline-flex
+            & *
+                color: inherit

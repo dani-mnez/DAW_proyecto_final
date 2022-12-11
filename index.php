@@ -1,5 +1,5 @@
-<?php require_once('templates/header.php'); ?>
+<?php require_once('templates/components/header.php'); ?>
             <div id="content">
-                <?php include_once('templates/content_landing.php'); ?>
+                <?php include_once('templates/components/content_landing.php'); ?>
             </div>
-<?php require_once('templates/footer.php'); ?>
+<?php require_once('templates/components/footer.php'); ?>

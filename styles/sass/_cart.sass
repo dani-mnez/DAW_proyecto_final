@@ -1,0 +1,50 @@
+.cart_body
+    #main_frame
+        grid-template-columns: auto 250px
+        grid-template-areas: "m_menu m_menu" "content resume" "footer footer"
+
+        #content
+            display: flex
+            gap: 0 10px
+
+            #cart_item_wrapper
+                width: 100%
+
+                #cart_items
+                    padding: 10px
+                    display: flex
+                    flex-direction: column
+                    row-gap: 10px
+                    background-color: white
+
+                    .cart_item
+                        display: flex
+                        columns: 1fr 1fr 1fr
+                        column-gap: 10px
+                        width: 100%
+
+                        .prod_img_wrapper
+                            img
+                                border-radius: $bord_rad
+                                width: 100px
+
+                            input
+
+                        .cart_text_wrap
+                            display: flex
+                            flex-direction: column
+
+                            p
+                                margin: 0
+
+                            .name
+                                font-weight: 600
+                                font-size: 1.1em
+
+                        .prod_management
+                            display: flex
+
+            #cart_resume
+                padding: 10px
+                height: fit-content
+                background-color: white

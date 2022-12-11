@@ -8,10 +8,23 @@
     "user2": {
         "$oid": "6377dec31b939cb530e24505"
     },
-    "message": {
-        "date_msg": "2022-10-22T00:00:00Z",
-        "message_content": ""
+    "messages": {
+        "user1_msgs": [
+            {
+                "date": {
+                    "$date": "2022-10-22T00:00:00Z"
+                },
+                "content": ""
+            }
+        ],
+        "user2_msgs": [
+            {
+                "date": {
+                    "$date": "2022-10-22T00:00:00Z"
+                },
+                "content": ""
+            }
+        ]
     },
-    "date_start": "2022-10-22T00:00:00Z",
     "archived": false
 }

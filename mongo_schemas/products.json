@@ -1,74 +1,89 @@
 {
-    "_id": {
-        "$oid": "6377dc081b939cb530e244fd"
+  "_id": {
+    "$oid": "6377d6731b939cb530e244f3"
+  },
+  "name": "Queso al azafrán",
+  "description": {
+    "title": "Muy sabroso",
+    "short": "El queso al azafrán es un tipo de queso curado con un sabor y aroma característicos de este especia.",
+    "long": "El queso al azafrán es un tipo de queso curado que se elabora con leche de vaca o cabra y se aromatiza con azafrán, una especia muy valorada en la cocina mediterránea. El azafrán se añade a la leche antes de cuajar el queso y se deja reposar durante varios días para que adquiera su sabor y aroma característicos. El queso al azafrán suele tener una corteza dura y una pasta suave y cremosa, y suele ser de color amarillo pálido debido a la presencia del azafrán. Su sabor es suave y ligeramente dulce, con un aroma delicado y distintivo de azafrán. Se puede consumir solo o en quesos fundidos o gratinados, y también se utiliza en platos como el paella o el arroz con bogavante."
+  },
+  "stock": [
+    {
+      "format": "Entero",
+      "price": 15,
+      "qty": 10,
+      "weight": 1200
     },
-    "name": "Vino cabezón",
-    "description": {
-        "tittle": "Increible Vino",
-        "short_descp":"Longevo y exclusivo, un tinto navarro que rompe fronteras",
-        "large_descp":"Quizá no es el mejor vino, pero es barato y cumple su función en las fiestas provinciales"
+    {
+      "format": "Medio",
+      "price": 7.5,
+      "qty": 32,
+      "weight": 600
     },
-    "stock":[
-        {
-            "format": "Cuña",
-            "price": 3.95,
-            "qty": 6
-        },
-        {
-            "format": "Medio",
-            "price": 6.95,
-            "qty": 6
-        },
-        {
-            "format": "Entero",
-            "price": 11.95,
-            "qty": 6
-        }
-    ],
-    "producer": {
-        "$oid": "6377dec31b939cb530e24505"
+    {
+      "format": "Cuarto",
+      "price": 3.75,
+      "qty": 104,
+      "weight": 300
     },
-    "category": "vinos",
-    "subtcategory": {
-        "$oid": "6377dec31b939cb530e24505"
+    {
+      "format": "Cuña",
+      "price": 1.50,
+      "qty": 78,
+      "weight": 150
+    }
+  ],
+  "producer": {
+    "$oid": "6377e0311b939cb530e24506"
+  },
+  "category": "Quesos",
+  "subcat": {
+    "$oid": "638b25a5a4a7bf98a5206aee"
+  },
+  "nut_info": {
+    "kcals": 453,
+    "fats": {
+      "total": 32,
+      "sat": 12
     },
-    "nutr_info":{
-        "energ_value_kcal":2000,
-        "fats": {
-            "tot":70,
-            "sat_fats":20
-        },
-        "carbohydrates":{
-            "tot":260,
-            "suggar":90
-        },
-        "protein":50,
-        "salt":6
+    "carbs": {
+      "total": 20,
+      "sugar": 3.2
     },
-    "allergens": [
-        "allergens1",
-        "allergens2",
-        "allergens3",
-        "allergens4"
-    ],
-    "den_origin":false,
-    "awards": [
-        {
-            "$oid": "6377dc081b939cb530e244fd"
-        },
-        {
-            "$oid": "6377dc081b939cb530e244fd"
-        }
-    ],
-    "img": {
-        "main_img": "main_vino.jpg",
-        "coll_img": [
-            "id1.jpg",
-            "id2.jpg",
-            "id3.jpg",
-            "id4.jpg"
-        ]
+    "prots": 44,
+    "salt": 1.1
+  },
+  "allergens": [
+    "Gluten",
+    "Lactosa"
+  ],
+  "do": [
+    {
+      "$oid": "638b2282a4a7bf98a5206ae7"
     },
-    "promotion": 0,
-    "featured_product": false
-  }
+    {
+      "$oid": "638b2464a4a7bf98a5206ae9"
+    }
+  ],
+  "awards": [
+    {
+      "$oid": "638b26a7a4a7bf98a5206aef"
+    },
+    {
+      "$oid": "638b2805a4a7bf98a5206af1"
+    }
+  ],
+  "imgs": {
+    "cover": "6377d6731b939cb530e244f3_1",
+    "detail": [
+      "noseque_detail1",
+      "noseque_detail2",
+      "noseque_detail3"
+    ]
+  },
+  "promotion": {
+    "$oid": "638b289da4a7bf98a5206af3"
+  },
+  "featured": true
+}

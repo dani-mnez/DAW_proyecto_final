@@ -1,43 +1,72 @@
 {
     "_id": {
-        "$oid": ""
-        },
-    "user": {
-        "$oid": "6377de4f1b939cb530e24504"
+      "$oid": "638b4fb4efef76fb5eaa299d"
     },
-    "producer": {
-        "$oid": "6377dec31b939cb530e24505"
+    "buyer": {
+      "$oid": "63769b26f84de877cf8d743e"
     },
-    "cart": {
-        "$oid": "63769b26f84de877cf8d743e"
-    },
+    "products": [
+      {
+          "_id": {
+              "$oid": "6377dc081b939cb530e244fd"
+          },
+          "qty": 22,
+          "producer_paid": true,
+          "incidence": {
+              "type": 2,
+              "type_description": "Producto con desperfectos",
+              "history": [
+                {
+                  "status": 1,
+                  "status_update_text": "Abierta la incidencia",
+                  "date": {
+                      "date": "2022-10-22T00:00:00Z"
+                  }
+                },
+                {
+                  "status": 0,
+                  "status_update_text": "Devuelto el dinero de 5 productos",
+                  "date": {
+                      "date": "2022-10-22T00:00:00Z"
+                  }
+                }
+              ]
+          }
+      },
+      {
+          "_id": {
+              "$oid": "6377da681b939cb530e244f7"
+          },
+          "qty": 3,
+          "producer_paid": true
+      }
+    ],
     "shipping_address": {
-        "$oid": "6377db4a1b939cb530e244fa"
+      "$oid": "638b3a00bc99514efbf60d98"
     },
     "shipping_company": 4,
-    "method_payment": 4,
-    "date_delivery": "2022-10-22T00:00:00Z",
-    "date_order": "2022-10-22T00:00:00Z",
-    "date_payment_user": "1999-12-31T23:00:00Z",
-    "date_payment_producer": "1999-12-31T23:00:00Z",
-    "date_receipt": "2022-10-22T00:00:00Z",
+    "payment_method": 4,
+    "dates": {
+      "delivery": {
+          "date": "2022-10-22T00:00:00Z"
+      },
+      "order": {
+          "date": "2022-10-22T00:00:00Z"
+      },
+      "payment_user": {
+          "date": "2022-10-22T00:00:00Z"
+      },
+      "payment_producer": {
+          "date": "2022-10-22T00:00:00Z"
+      },
+      "receipt": {
+          "date": "2022-10-22T00:00:00Z"
+      }
+    },
     "notes":{
-        "user_notes": "loquesea",
-        "notes_delivery": "loquesea"
+      "user_notes": "loquesea",
+      "notes_delivery": "loquesea"
     },
     "receipt_path": "ruta de archivo",
-    "status_order": true,
-    "incidence": [
-        {
-        "id_product": 
-            {
-                "$oid": "6377db4a1b939cb530e244fa"
-            },
-        "type": 2,
-        "description": "",
-        "status_incidence": 1,
-        "status_comment": "",
-        "status_date": "2022-10-22T00:00:00Z"
-        }
-    ]
-}
+    "order_status": 3
+  }

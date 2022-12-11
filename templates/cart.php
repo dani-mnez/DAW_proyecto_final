@@ -1,4 +1,4 @@
-<?php include_once(__DIR__ . '/header.php'); ?>
+<?php include_once(__DIR__ . '/components/header.php'); ?>
             <div id="content">
                 <div id="cart_item_wrapper">
                     <div id="cart_items">
@@ -11,28 +11,38 @@
                                 'find_one',
                                 'users',
                                 ['mail' => $user]
-                            )['cart_prods'];
+                            )->cart;
 
                             if ($results) {
                                 $totalPrice = 0.0;
                                 $totalProds = 0;
 
                                 foreach ($results as $prod) {
-                                    $prod = $mongo_db->exec(
+                                    $prod_size_buyed = $prod->size;
+                                    $prod_qty_buyed = $prod->qty;
+
+                                    $prod_info = $mongo_db->exec(
                                         'find_one',
                                         'products',
-                                        []
+                                        ['_id' => $prod->product]
                                     );
                                     $producerName = $mongo_db->exec(
                                         'find_one',
                                         'producers',
-                                        ['_id' => $prod['producer']]
-                                    )['name'];
-                                    $price = json_decode($prod['price']);
-                                    $totalPrice = $price * $prod['qty'];
-                                    $totalProds += $prod['qty'];
+                                        ['_id' => $prod_info->producer]
+                                    )->company_name;
+                                    $prodSubcat = $mongo_db->exec(
+                                        'find_one',
+                                        'subcats',
+                                        ['_id' => $prod_info->subcat]
+                                    )->name;
+
+                                    $price = $prod_info->stock[$prod_size_buyed]->price;
+                                    $totalPrice = $price * $prod_qty_buyed;
+
+                                    $totalProds += $prod_qty_buyed;
                                     $totalPrice += $totalPrice;
-                                    include('cart_item.php');
+                                    include('./components/cart_item.php');
                                 }
                             }
                         ?>
@@ -60,4 +70,4 @@
                     <button>Tramitar pedido</button>
                 </div>
             </div>
-<?php include_once(__DIR__ . '/footer.php'); ?>
+<?php include_once(__DIR__ . '/components/footer.php'); ?>

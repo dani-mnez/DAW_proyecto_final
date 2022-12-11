@@ -1,6 +1,4 @@
 <?php
-// De momento no he encontrado forma mejor que la de crear una instancia de la calse que maneja la BDD mediante la inclusión de init_code.php
-// Intenté hacerlo pasando la clase mediante fetch POST, pero al no poder serializarse, daba error
 include_once '../modules/classes.php';
 include_once '../modules/init_code.php';
 
@@ -9,19 +7,22 @@ include_once '../modules/init_code.php';
     // OJO Eso se puede hacer con un fetch que al recibir respuesta elimine el cuadro de login y cambie el menú principal con el menú del usuario
 
 if (isset($_POST['submit'])) {
+    $producer = $_POST['user_type'] == 'producer';
     $account = $mongo_db->exec(
         'find_one',
-        'users',
+        ($producer) ? 'producers' : 'users',
         ['mail' => $_POST['mail']]
     );
 
     if ($account) {
         if ($account['password'] == $_POST['pwd']) {
             $_SESSION['user'] = serialize(new User([
-               'mail' => $account['mail'],
-               'name' => $account['name'],
-               'type' => 'comp',
-               'phone' => $account['phone']
+                'id' => (string) $account->_id,
+                'mail' => $account->mail,
+                'name' => $account->name->name,
+                'type' => $_POST['user_type'],
+                'phone' => $account->phone->default,
+                'prof_img' => $account->profile_img
         ]));
             header("Location: ../index.php");
             exit();

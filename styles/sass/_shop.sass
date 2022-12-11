@@ -1,0 +1,96 @@
+.shop_body
+    #main_frame
+
+        #content
+            display: flex
+            flex-direction: column
+            gap: 10px
+
+            #shop_header
+                h1
+                    font-size: 72px
+                    font-weight: 700
+                    margin: 0
+
+                p
+                    margin: 0
+
+            #cat_shop_menu
+                width: 100%
+                height: fit-content
+                display: flex
+                justify-content: space-between
+                gap: 20px
+
+                a
+                    width: 100%
+                    text-align: center
+                    border: 1px solid black
+                    border-radius: 10px
+                    line-height: 90px
+                    font-weight: 700
+                    font-size: 1.2em
+                    color: white
+                    background-position: center center
+                    background-size: cover
+
+                    &:first-of-type
+                        background-color: black
+
+            #products
+                $x_gap: 30px
+                display: flex
+                flex-wrap: wrap
+                gap: 60px $x_gap
+
+                .product
+                    $img_ratio: 1.5
+                    cursor: pointer
+                    display: flex
+                    flex-direction: column
+                    flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
+
+                    .product_img_wrapper
+                        // height: calc(((100% - $x_gap * ($prods_cols - 1)) / $prods_cols) * $img_ratio)
+                        height: 245px
+                        display: flex
+                        border-radius: 10px
+                        border: 1px solid black
+
+                        img
+                            width: 100%
+                            object-fit: cover
+
+                        // FIX Creo que el problema de que se vaya todo a la puta es del posicionamiento de los buttons, que son RELATIVE
+                        .buttons
+                            position: relative
+                            display: flex
+                            flex-direction: column
+                            width: fit-content
+                            justify-content: space-between
+                            padding: 5px 0
+                            left: -35px
+
+                            .like_btn, .add_cart_btn
+                                display: inline-block
+                                background-color: white
+                                border-radius: 20px
+                                line-height: 0
+                                width: fit-content
+
+                                img
+                                    width: 20px
+                                    margin: 5px
+
+                    p
+                        margin: 0
+                        display: inline-block
+
+                    .name
+                        font-size: 1.1em
+                        font-weight: 600
+
+                    .category
+                        padding: 3px 5px
+                        background-color: #d6ae62 //OJO Se puede hacer que con cada subgategoría se tenga un color identificativo --> Ej.: los embutidos todos rojizos, pero dependiendo del tipo de embutido, un rojo diferente
+                        border-radius: $bord_rad
