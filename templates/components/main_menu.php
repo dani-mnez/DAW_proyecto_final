@@ -5,7 +5,7 @@
         </a>
         <ul>
             <li><a href="/DAW_proyecto_final/templates/shop.php">Tienda</a></li>
-            <li><a href="">Nosotros</a></li>
+            <li><a href="/DAW_proyecto_final/templates/nosotros.php">Nosotros</a></li>
             <li><a href="">Los productores</a></li>
         </ul>
 
