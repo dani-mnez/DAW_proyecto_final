@@ -1,20 +1,34 @@
-<?php include_once(__DIR__ . '/header.php'); ?>
+<?php include_once(__DIR__ . '/components/header.php'); ?>
             <div id="content">
-                <?php include_once(__DIR__ . '/cat_shop_menu.php'); ?>
+                <div id="shop_header">
+                    <h1>Todos los productos</h1>
+                    <p>Descubre una gran variedad de delicias gastronómicas</p>
+                </div>
+                <?php include_once(__DIR__ . '/components/cat_shop_menu.php'); ?>
                 <div id="products">
                     <?php
-                        $results = $db_access->exec(
+                        $products = $mongo_db->exec(
                             'find',
                             'products',
                             []
                         );
 
-                        if ($results) {
-                            foreach ($results as $key => $value) {
-                                include(__DIR__ . '/product.php');
+                        if ($products) {
+                            foreach ($products as $prod) {
+                                $producer_name = $mongo_db->exec(
+                                    'find_one',
+                                    'producers',
+                                    ['_id' => $prod->producer]
+                                )->company_name;
+                                $subcat = $mongo_db->exec(
+                                    'find_one',
+                                    'subcats',
+                                    ['_id' => $prod->subcat]
+                                )->name;
+                                include(__DIR__ . '/components/shop_product_card.php');
                             }
                         }
                     ?>
                 </div>
             </div>
-<?php include_once(__DIR__ . '/footer.php'); ?>
+<?php include_once(__DIR__ . '/components/footer.php'); ?>

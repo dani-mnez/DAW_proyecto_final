@@ -1,0 +1,240 @@
+.dash_body
+    #content
+        display: flex
+        gap: 30px
+
+        #dash_menu
+            height: fit-content
+            width: 100%
+            padding: 30px
+            border: 1px solid black
+            border-radius: 15px
+            flex: 1 0 200px
+
+            ul
+                display: flex
+                margin: 20px 0
+                flex-direction: column
+                gap: 20px
+                align-items: center
+
+            li:nth-last-child(n+3)
+                height: 35px
+                width: 100%
+                border: 1px solid black
+                border-radius: 150px
+
+                &:hover
+                    background-color: $color2
+
+                a
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    height: 100%
+                    width: 100%
+                    padding: 15px
+                    font-weight: 600
+
+        #dash_content
+            width: 100%
+
+            #res_prof
+                #res_contact, #res_directions
+                    margin-left: 60px
+
+                #res_contact
+                    #contact_data
+                        display: flex
+                        gap: 30px
+
+                        #img_wrapper
+                            height: fit-content
+                            width: fit-content
+                            overflow: hidden
+                            border: 1px solid black
+                            border-radius: 10px
+                            display: flex
+                            flex-direction: column
+
+                            img
+                                width: 160px
+
+                            #img_button
+                                cursor: pointer
+                                display: flex
+                                gap: 2px
+                                justify-content: center
+                                align-items: center
+                                background-color: black
+                                padding: 5px 0 4px 0
+
+                                span
+                                    font-size: 12px
+                                    color: white
+
+                                img
+                                    width: 14px
+
+                        table
+                            flex: 0 1 auto
+
+                #res_directions
+                    display: flex
+                    flex-direction: column
+
+                    #directions_wrapper
+                        display: flex
+                        gap: 20px
+
+                        .dir_card
+                            font-size: 12px
+                            border: 1px solid black
+                            border-radius: 10px
+                            padding: 10px
+
+                            p
+                                margin: 0
+
+                            span
+                                font-weight: 600
+
+                        .def_loc
+                            border: 2px solid $c_link
+
+                    #new_dir
+                        display: flex
+                        flex-direction: column
+                        font-size: 12px
+                        border: 1px dashed black
+                        border-radius: 10px
+                        justify-content: center
+                        align-items: center
+                        padding: 10px
+
+                        img
+                            // height: 20px
+                            width: 20px
+
+
+            #res_lists
+                #lists_wrapper
+                    display: flex
+                    gap: 20px
+
+                    .list_card
+                        padding: 10px
+                        width: fit-content
+
+                        border: 1px solid black
+                        border-radius: 10px
+
+                        .list_card_info
+                            .list_img_wrapper
+                                height: 196px
+                                width: 196px
+                                border: 1px solid black
+                                border-radius: 10px
+                                overflow: hidden
+                                display: flex
+                                // display: grid
+                                // grid-template-columns: repeat(2, 1fr)
+                                // grid-template-rows: repeat(2, 1fr)
+                                // grid-template-areas: "a b" "c d"
+                                justify-content: center
+                                align-items: center
+
+                                &:has(p)
+                                    background-color: $c_grey_bkg
+
+                                img
+                                    width: 100%
+
+                                    // TODO Hacer que se cambie el layout según la cantidad de elementos que haya // No se si hacerlo con grid o conflex -> investigar
+
+                                    // OJO Quizá se pueda hacer con estilos desde php
+
+                                p
+                                    text-align: center
+                                    margin: 10px
+
+                            p
+                                margin: 0
+
+                        .list_card_cta
+                            display: flex
+
+
+            #res_hist
+                #order_hist_wrapper
+                    display: flex
+                    flex-direction: column
+
+                    .order_card
+                        border: 1px solid black
+                        border-radius: 10px
+                        overflow: hidden
+                        margin-bottom: 40px
+
+                        p
+                            margin: 0
+
+                        .order_info
+                            background-color: $c_grey_bkg
+                            width: 100%
+                            display: flex
+                            justify-content: flex-start
+                            gap: 20px
+                            padding: 10px
+                            border-bottom: 1px solid black
+
+                            .item_order_info
+                                display: flex
+                                flex-direction: column
+
+                                & p:not(:first-child)
+                                    color: $c_link
+
+                                &:last-child
+                                    margin-left: auto
+
+                                    .cta_order_info
+                                        display: flex
+                                        justify-content: space-between
+
+                                        a
+                                            color: $c_link
+
+                        .order_item
+                            padding: 20px 80px
+                            display: flex
+                            gap: 20px
+                            width: 100%
+
+                            &:not(:last-of-type)
+                                border-bottom: 1px solid black
+
+                            .prod_img
+                                height: 100px
+                                border: 1px solid black
+                                border-radius: 10px
+
+                            .prod_text
+                                margin: 0
+                                display: flex
+                                flex-direction: column
+                                gap: 5px
+
+                            .prod_cta
+                                display: flex
+                                gap: 10px
+
+                                button
+
+                            .prod_rate_cta
+                                margin-left: auto
+
+                                button
+                                    margin-top: 10px
+
+

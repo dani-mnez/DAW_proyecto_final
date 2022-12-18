@@ -24,6 +24,7 @@ class MongoDBAccess
             case 'find_one': $result = $collection->findOne($searchParams);  break;
             case 'find':     $result = $collection->find($searchParams);     break;
             case 'distinct': $result = $collection->distinct($searchParams); break;
+            case 'count':    $result = $collection->count();                 break;
             case 'insert':   break;
             default:         $result = null;                                 break;
         }
@@ -37,11 +38,12 @@ class User
 {
     public function __construct(array $dataAsocArray)
     {
+        $this->id = $dataAsocArray['id'];
         $this->mail = $dataAsocArray['mail'];
         $this->name = $dataAsocArray['name'];
         $this->type = $dataAsocArray['type'];
         $this->phone = $dataAsocArray['phone'] ?? false;
-        $this->img_path = $dataAsocArray['img_path'] ?? false;
+        $this->prof_img = $dataAsocArray['prof_img'];
 
         if ($dataAsocArray['location']) {
             $this->setDirection($dataAsocArray['location']);

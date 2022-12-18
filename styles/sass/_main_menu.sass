@@ -1,0 +1,125 @@
+#main_menu
+    position: sticky
+    top: 0
+    width: 100%
+    grid-area: m_menu
+    border-bottom: 1px solid black
+    background-color: white
+    display: flex
+    justify-content: center
+
+    #m_menu_content
+        height: 65px
+        display: flex
+        flex-basis: 1600px
+        justify-content: space-between
+        gap: 20px
+        align-items: center
+
+        #logo_menu
+            margin-left: $main_menu_side_padding
+            img
+                height: 32px
+
+        &>ul
+            font-size: 14px
+            display: flex
+            justify-content: space-between
+            column-gap: 10px
+
+            li
+                margin: 5px
+
+        a
+            color: black
+
+        #main_search
+            border: 1px solid black
+            border-radius: 7px
+            overflow: hidden
+            display: flex
+            max-width: 500px
+            height: 35px
+
+            & *
+                border: none
+
+            select
+                text-align: center
+                padding-right: 5px
+                border-right: 1px solid black
+
+            select, input[type=submit]
+                background-color: $c_grey_bkg
+                cursor: pointer
+
+            option
+                cursor: pointer
+
+            input[type=submit]
+                border-left: 1px solid black
+
+        #user_control
+            margin-right: $main_menu_side_padding
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: fit-content
+            column-gap: 10px
+
+            #access_btn
+                border: 1px solid black
+                border-radius: 7px
+                padding: 10px
+                font-family: "Mona Sans"
+                font-weight: 600
+                background-color: white
+                cursor: pointer
+
+            &>*
+                margin: 0
+
+            p
+                color: $c_main
+
+            a
+                display: inline-block
+                height: 24px
+
+                img
+                    height: 100%
+
+            #prof_wrap
+                display: flex
+
+                .profile_pic
+                    height: 32px
+                    border-radius: 5px
+                    border: 1px solid black
+                    z-index: 999
+
+                #profile_pic_menu
+                    display: none
+                    width: fit-content
+                    height: fit-content
+                    background-color: white
+                    position: absolute
+                    font-size: 0.8em
+                    padding: 15px 0
+                    border-radius: $bord_rad
+                    transform: translateX(calc(-50% + 18px))
+                    z-index: 1
+
+                    ul
+                        display: flex
+                        flex-direction: column
+                        justify-content: space-between
+                        row-gap: 7px
+
+                        li
+                            text-align: center
+
+                            a
+                                display: inline-block
+                                height: fit-content
+                                width: 100%

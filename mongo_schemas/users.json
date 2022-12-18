@@ -26,14 +26,14 @@
     ],
     "activated": true,
     "dates": {
-        "creation": "2022-10-22T00:00:00Z",
-        "cancellation": "",
-        "last_log": "2022-10-22T00:00:00Z",
-        "last_modify": "2022-10-22T00:00:00Z",
-        "first_buy": "2022-10-22T00:00:00Z",
-        "last_buy": "2022-10-22T00:00:00Z"
+        "creation": {
+            "$date": "2022-10-22T00:00:00Z"
+        },
+        "cancellation": {
+            "$date": "2022-10-22T00:00:00Z"
+        }
     },
-    "list": {
+    "lists": {
         "desired_prods": [
             {
                 "$oid": "6377dc081b939cb530e244fd"
@@ -44,20 +44,44 @@
         ],
         "saved_prods": []
     },
-    "cart_prods": {
-        "$oid": "63769b26f84de877cf8d743e"
-    },
-    "payment_method": 4,
-    "opinion": [
+    "cart": [
         {
-            "$oid": "6377d6731b939cb530e244f3",
-            "valoration": 4,
-            "date_valoration": "2022-10-22T00:00:00Z",
-            "opinion_body": {
-                "tittle": "Menuda mierda",
-                "body": "Pues no veas que pedo me pille el sabado con esta vaina loca",
-                "count_likes": 4
-            }
+            "product": {
+                "$oid": "6377db4a1b939cb530e244fa"
+            },
+            "qty": 4
+        },
+        {
+            "product": {
+                "$oid": "6377dbc61b939cb530e244fc"
+            },
+            "qty": 7
+        },
+        {
+            "product": {
+                "$oid": "6377db7d1b939cb530e244fb"
+            },
+            "qty": 2
+        }
+    ],
+    "orders": [
+        {
+            "$oid": "6377db4a1b939cb530e244fa"
+        },
+        {
+            "$oid": "6377db4a1b939cb530e244fa"
+        }
+    ],
+    "payment_method": 4,
+    "opinions": [
+        {
+            "$oid": "6377db4a1b939cb530e244fa"
+        },
+        {
+            "$oid": "6377db4a1b939cb530e244fa"
+        },
+        {
+            "$oid": "6377db4a1b939cb530e244fa"
         }
     ]
 }

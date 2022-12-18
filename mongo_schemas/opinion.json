@@ -1,0 +1,17 @@
+{
+    "_id": {
+      "$oid": "63769b26f84de877cf8d743e"
+    },
+    "from": {
+      "$oid": "63769b26f84de877cf8d743e"
+    },
+    "to": {
+      "$oid": "63769b26f84de877cf8d743e"
+    },
+    "rate": 4,
+    "body": {
+        "title": "Título",
+        "body": "Opinión detallada del producto",
+        "likes": 7
+    }
+}

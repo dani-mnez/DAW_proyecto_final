@@ -1,0 +1,8 @@
+{
+    "_id": {
+        "$oid": "6377de4f1b939cb530e24504"
+    },
+    "name": "Nombre de la D.O.",
+    "place": "Lugar",
+    "img_path": "img/DOs/Nombre de la D.O..jpg"
+}

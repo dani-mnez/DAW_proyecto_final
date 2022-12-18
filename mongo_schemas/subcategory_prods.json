@@ -2,11 +2,7 @@
     "_id": {
         "$oid": ""
     },
-    "name_subcategory": "Peleones",
-    "description_subcategory": "Un vino peleón es un vino normalmente joven, que se presenta desequilibrado en nariz y en boca. No tiene matices, huele ácido o muy fuerte. En cuanto al sabor, resulta demasiado alcohólico o agresivo. Se trata de un vino “sucio”.",
-    "img_subcategory": [
-        "v_pel1.jpg",
-        "v_pel2.jpg",
-        "v_pel3.jpg"
-    ]
+    "name": "Peleones",
+    "description": "Un vino peleón es un vino normalmente joven, que se presenta desequilibrado en nariz y en boca. No tiene matices, huele ácido o muy fuerte. En cuanto al sabor, resulta demasiado alcohólico o agresivo. Se trata de un vino “sucio”.",
+    "img": "v_pel"
 }

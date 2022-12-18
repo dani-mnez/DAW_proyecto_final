@@ -1,0 +1,369 @@
+------ Denominaciones de origen españolas ------
+De https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/Default.aspx
+
+--- Quesos
+AFUEGA´L PITU;Principado de Asturias
+ARZÚA-ULLOA;Galicia
+CABRALES;Principado de Asturias
+CEBREIRO;Galicia
+GAMONEDO;Principado de Asturias
+IDIAZABAL;Supra-autonómica
+MAHÓN-MENORCA;Islas Baleares
+PICÓN-BEJES-TRESVISO;Cantabria
+QUESO CASTELLANO;Castilla y León
+QUESO DE ACEHÚCHE;Extremadura
+QUESO CAMERANO;La Rioja
+QUESO CASÍN;Principado de Asturias
+QUESO DE L´ALT URGELL Y LA CERDANYA;Cataluña
+QUESO DE LA SERENA;Extremadura
+QUESO DE MURCIA;Región de Murcia
+QUESO DE MURCIA AL VINO;Región de Murcia
+QUESO DE VALDEÓN;Castilla y León
+QUESO FLOR DE GUÍA;Canarias
+QUESO IBORES;Extremadura
+QUESO LOS BEYOS;Supra-autonómica
+QUESO MAJORERO;Canarias
+QUESO MANCHEGO;Castilla-La Mancha
+QUESO NATA DE Cantabria;Cantabria
+QUESO PALMERO;Canarias
+QUESO TETILLA;Galicia
+QUESO ZAMORANO;Castilla y León
+QUESUCOS DE LIÉBANA;Cantabria
+RONCAL;Comunidad foral de Navarra
+SAN SIMÓN DA COSTA;Galicia
+TORTA DEL CASAR;Extremadura
+
+--- Vinos
+ABADÍA RETUERTA;Castilla y León
+ABONA;Canarias
+ALELLA;Cataluña
+ALICANTE;Comunidad valenciana
+ALMANSA;Castilla-La Mancha
+CHACOLÍ DE ÁLAVA;País vasco
+ARLANZA;Castilla y León
+ARRIBES;Castilla y León
+AYLÉS;Aragón
+BIERZO;Castilla y León
+BINISSALEM;Islas Baleares
+CHACOLÍ DE BIZKAIA;País vasco
+BOLANDIN;Comunidad foral de Navarra
+BULLAS;Región de Murcia
+CALATAYUD;Aragón
+CAMPO DE BORJA;Aragón
+CAMPO DE LA GUARDIA;Castilla-La Mancha
+CANGAS;Principado de Asturias
+CARIÑENA;Aragón
+CASA DEL BLANCO;Castilla-La Mancha
+Cataluña;Cataluña
+CAVA;Supra-autonómica
+CEBREROS;Castilla y León
+CHOZAS CARRASCAL;Comunidad valenciana
+CIGALES;Castilla y León
+CONCA DE BARBERÁ;Cataluña
+CONDADO DE HUELVA;Andalucía
+COSTERS DEL SEGRE;Cataluña
+DEHESA DEL CARRIZAL;Castilla-La Mancha
+DEHESA PEÑALBA;Castilla y León
+DOMINIO DE VALDEPUSA;Castilla-La Mancha
+EL HIERRO;Canarias
+EL TERRERAZO;Comunidad valenciana
+EL VICARIO;Castilla-La Mancha
+EMPORDÁ;Cataluña
+FINCA ÉLEZ;Castilla-La Mancha
+CHACOLI DE GETARIA;País vasco
+GRAN CANARIA;Canarias
+GRANADA;Andalucía
+GUIJOSO;Castilla-La Mancha
+ISLAS Canarias;Canarias
+JEREZ-XÉRÈS-SHERRY;Andalucía
+JUMILLA;Supra-autonómica
+LA JARABA;Castilla-La Mancha
+LA GOMERA;Canarias
+LA MANCHA;Castilla-La Mancha
+LA PALMA;Canarias
+LANZAROTE;Canarias
+LEBRIJA;Andalucía
+LOS CERRILLOS;Castilla-La Mancha
+LOS BALAGUESES;Comunidad valenciana
+MÁLAGA;Andalucía
+MANCHUELA;Castilla-La Mancha
+MANZANILLA SANLÚCAR DE BARRAMEDA;Andalucía
+MÉNTRIDA;Castilla-La Mancha
+MONDÉJAR;Castilla-La Mancha
+MONTERREI;Galicia
+MONTILLA-MORILES;Andalucía
+MONTSANT;Cataluña
+NAVARRA;Comunidad foral de Navarra
+PAGO CALZADILLA;Castilla-La Mancha
+PAGO DE ARÍNZANO;Comunidad foral de Navarra
+PAGO DE OTAZU;Comunidad foral de Navarra
+PAGO FLORENTINO;Castilla-La Mancha
+PENEDÉS;Cataluña
+PLA DE BAGES;Cataluña
+PLA I LLEVANT;Islas Baleares
+PRADO DE IRACHE;Comunidad foral de Navarra
+PRIORAT;Cataluña
+RIAS BAIXAS;Galicia
+RIBEIRA SACRA;Galicia
+RIBEIRO;Galicia
+RIBERA DEL DUERO;Castilla y León
+RIBERA DEL GUADIANA;Extremadura
+RIBERA DEL JÚCAR;Castilla-La Mancha
+RIOJA;Supra-autonómica
+RUEDA;Castilla y León
+SIERRA DE SALAMANCA;Castilla y León
+SIERRAS DE MÁLAGA;Andalucía
+SOMONTANO;Aragón
+TACORONTE-ACENTEJO;Canarias
+TARRAGONA;Cataluña
+TERRA ALTA;Cataluña
+LEÓN;Castilla y León
+TIERRA DEL VINO DE ZAMORA;Castilla y León
+TORO;Castilla y León
+UCLÉS;Castilla-La Mancha
+URUEÑA;Castilla y León
+UTIEL-REQUENA;Comunidad valenciana
+VALDEORRAS;Galicia
+VALDEPEÑAS;Castilla-La Mancha
+VALENCIA;Comunidad valenciana
+VALLE DE GÜIMAR;Canarias
+VALLE DE LA OROTAVA;Canarias
+VALLEGARCIA;Castilla-La Mancha
+VALLES DE BENAVENTE;Castilla y León
+VALTIENDAS;Castilla y León
+VERA DE ESTENAS;Comunidad valenciana
+VINOS DE MADRID;MADRID
+YCODEN-DAUTE-ISORA;Canarias
+YECLA;Región de Murcia
+
+-- Vinos IGP (no es D.O.)
+3 RIBERAS;Comunidad foral de Navarra
+ALTIPLANO DE SIERRA NEVADA;Andalucía
+BAILÉN;Andalucía
+BAJO Aragón;Aragón
+BARBANZA E IRIA;Galicia
+BETANZOS;Galicia
+CÁDIZ;Andalucía
+CAMPO DE CARTAGENA;Región de Murcia
+CASTELLÓ;Comunidad valenciana
+CASTILLA;Castilla-La Mancha
+Castilla y León;Castilla y León
+CÓRDOBA;Andalucía
+COSTA DE Cantabria;Cantabria
+CUMBRES DE GUADALFEO;Andalucía
+DESIERTO DE ALMERÍA;Andalucía
+Extremadura;Extremadura
+FORMENTERA;Islas Baleares
+IBIZA;Islas Baleares
+ILLES BALEARS;Islas Baleares
+ISLA DE MENORCA;Islas Baleares
+LADERAS DEL GENIL;Andalucía
+LAUJAR-ALPUJARRA;Andalucía
+LIÉBANA;Cantabria
+LOS PALACIOS;Andalucía
+MALLORCA;Islas Baleares
+MURCIA;Región de Murcia
+NORTE DE ALMERÍA;Andalucía
+RIBEIRAS DO MORRAZO;Galicia
+RIBERA DEL ANDARAX;Andalucía
+RIBERA DEL GÁLLEGO-CINCO VILLAS;Aragón
+RIBERA DEL JILOCA;Aragón
+RIBERA DEL QUEILES;Supra-autonómica
+SERRA DE TRAMUNTANA-COSTA NORD;Islas Baleares
+SIERRA NORTE DE SEVILLA;Andalucía
+SIERRA SUR DE JAÉN;Andalucía
+SIERRAS DE LAS ESTANCIAS Y LOS FILABRES;Andalucía
+TORREPEROGIL;Andalucía
+VALDEJALÓN;Aragón
+VALLE DEL CINCA;Aragón
+VALLE DEL MIÑO-OURENSE;Galicia
+VALLES DE SADACIA;La Rioja
+VILLAVICIOSA DE CÓRDOBA;Andalucía
+
+-- Vinos aromatizados
+VINO NARANJA DEL CONDADO DE HUELVA;Andalucía
+
+
+--- Productos cárnicos (cocidos, en salazón, ahumados, etc)
+BOTILLO DEL BIERZO;Castilla y León
+CECINA DE LEÓN;Castilla y León
+CHORIZO DE CANTIMPALOS;	Castilla y León
+CHORIZO RIOJANO;La Rioja
+CHOSCO DE TINEO;Principado de Asturias
+DEHESA DE Extremadura;Extremadura
+GUIJUELO;Supra-autonómica
+JABUGO;Supra-autonómica
+JAMÓN SERÓN;Andalucía
+JAMÓN DE TERUEL/PALETA DE TERUEL;Aragón
+JAMÓN DE TREVÉLEZ;Andalucía
+LACÓN GALLEGO;Galicia
+LOS PEDROCHES;Andalucía
+MORCILLA DE BURGOS;Castilla y León
+SALCHICHÓN DE VIC;Cataluña
+SOBRASADA DE MALLORCA;Islas Baleares
+
+
+--- Otros productos de origen animal (huevos, miel, lácteos, etc) - Vamos, MIEL
+MIEL DE LA ALCARRIA;Castilla-La Mancha
+MIEL DE CAMPOO-LOS VALLES;Cantabria
+MIEL DE Galicia;Galicia
+MIEL DE GRANADA;Andalucía
+MIEL DE LIEBANA;Cantabria
+MIEL DE TENERIFE;Canarias
+MIEL VILLUERCAS-IBORES;Extremadura
+
+
+--- Aceites y grasas (mantequilla, margarina, aceite, etc)
+ACEITE CAMPO DE CALATRAVA;Castilla-La Mancha
+ACEITE CAMPO DE MONTIEL;Castilla-La Mancha
+ACEITE DE BAIX EBRE-MONTSIÀ;Cataluña
+ACEITE DE IBIZA;Islas Baleares
+ACEITE DE JAÉN;Andalucía
+ACEITE DE LA ALCARRIA;Castilla-La Mancha
+ACEITE DE LA COMUNITAT VALENCIANA;Comunidad valenciana
+ACEITE DE La Rioja;La Rioja
+ACEITE DE L'EMPORDÀ;Cataluña
+ACEITE DE LUCENA;Andalucía
+ACEITE DE MALLORCA;Islas Baleares
+ACEITE DE MONTERRUBIO;Extremadura
+ACEITE DE NAVARRA;Comunidad foral de Navarra
+ACEITE DE TERRA ALTA;Cataluña
+ACEITE DEL BAJO Aragón;Aragón
+ACEITE SIERRA DEL MONCAYO;Aragón
+ANTEQUERA;Andalucía
+BAENA;Andalucía
+ESTEPA;Andalucía
+GATA-HURDES;Extremadura
+LES GARRIGUES;Cataluña
+MANTEQUILLA DE L´ALT URGELL Y LA CERDANYA;Cataluña
+MANTEQUILLA DE SORIA;Castilla y León
+MONTES DE GRANADA;Andalucía
+MONTES DE TOLEDO;Castilla-La Mancha
+MONTORO-ADAMUZ;Andalucía
+PONIENTE DE GRANADA;Andalucía
+PRIEGO DE CÓRDOBA;Andalucía
+SIERRA DE CÁDIZ;Andalucía
+SIERRA MÁGINA;Andalucía
+SIERRA DE CAZORLA;Andalucía
+SIERRA DE SEGURA;Andalucía
+SIURANA;Cataluña
+
+
+--- Otros productos del anexo 1 del tratados (especias, etc)
+AZAFRÁN DE LA MANCHA;Castilla-La Mancha
+CHUFA DE VALENCIA;Comunidad valenciana
+PIMENTÓN DE LA VERA;Extremadura
+PIMENTÓN DE MALLORCA;Islas Baleares
+PIMENTÓN DE MURCIA;Región de Murcia
+SIDRA DE ASTURIAS;Principado de Asturias
+VINAGRE DE JEREZ;Andalucía
+VINAGRE DE MONTILLA-MORILES;Andalucía
+VINAGRE DEL CONDADO DE HUELVA;Andalucía
+
+
+--- Productos de panadería, pastelería, repostería y galletería
+ALFAJOR DE MEDINA SIDONIA;Andalucía
+ENSAIMADA DE MALLORCA;Islas Baleares
+JIJONA;Comunidad valenciana
+MANTECADAS DE ASTORGA;Castilla y León
+MANTECADOS DE ESTEPA;Andalucía
+MAZAPÁN DE TOLEDO;Castilla-La Mancha
+MOLLETE DE ANTEQUERA;Andalucía
+PA DE PAGÈS CATALÀ;Cataluña
+PAN DE ALFACAR;Andalucía
+PAN DE CEA;Galicia
+PAN DE CRUZ DE CIUDAD REAL;Castilla-La Mancha
+PAN GALLEGO;Galicia
+POLVORONES DE ESTEPA;Andalucía
+SOBAO PASIEGO;Cantabria
+TARTA DE SANTIAGO;Galicia
+TURRÓN DE AGRAMUNT;Cataluña
+TURRÓN DE ALICANTE;VALENCIANA
+
+
+--- Bebidas espirituosas
+AGUARDIENTE DE HIERBAS DE Galicia;Galicia
+AGUARDIENTE DE SIDRA DE ASTURIAS;Principado de Asturias
+ANÍS PALOMA MONFORTE DEL CID;Comunidad valenciana
+APERITIVO CAFÉ DE ALCOY;Comunidad valenciana
+BRANDY DE JEREZ;Andalucía
+BRANDY DEL PENEDÉS;Cataluña
+CANTUESO ALICANTINO;Comunidad valenciana
+CHINCHÓN;MADRID
+GIN DE MAHÓN;Islas Baleares
+HERBERO DE LA SIERRA DE MARIOLA;Comunidad valenciana
+HIERBAS IBICENCAS;Islas Baleares
+HIERBAS DE MALLORCA;Islas Baleares
+LICOR CAFÉ DE Galicia;Galicia
+LICOR DE HIERBAS DE Galicia;Galicia
+ORUJO DE Galicia;Galicia
+PACHARÁN NAVARRO;Comunidad foral de Navarra
+PALO DE MALLORCA;Islas Baleares
+RATAFÍA CATALANA;Cataluña
+RONMIEL DE Canarias;Canarias
+
+
+--- Frutas, hortalizas y cereales frescos o transformados
+ACEITUNA ALOREÑA DE MÁLAGA;Andalucía
+ACEITUNA DE MALLORCA;Islas Baleares
+AJO MORADO DE LAS PEDROÑERAS;Castilla-La Mancha
+ALCACHOFA DE BENICARLÓ;Comunidad valenciana
+ALCACHOFA DE TUDELA;Comunidad foral de Navarra
+ALMENDRA DE MALLORCA;Islas Baleares
+ALUBIA DE LA BAÑEZA-LEÓN;Castilla y León
+ALUBIA DE ANGUIANO;La Rioja
+ARROZ DE VALENCIA;Comunidad valenciana
+ARROZ DEL DELTA DEL EBRO;Cataluña
+AVELLANA DE REUS;Cataluña
+BERENJENA DE ALMAGRO;Castilla-La Mancha
+CALASPARRA;Supra-autonómica
+CALÇOT DE VALLS;Cataluña
+CASTAÑA DE Galicia;Galicia
+CEBOLLA FUENTES DE EBRO;Aragón
+CEREZA DEL JERTE;Extremadura
+CEREZAS DE LA MONTAÑA DE ALICANTE;Comunidad valenciana
+CHIRIMOYA DE LA COSTA TROPICAL DE GRANADA-MÁLAGA;Andalucía
+CÍTRICOS VALENCIANOS;Comunidad valenciana
+CLEMENTINAS DE LAS TIERRAS DEL EBRO;Cataluña
+COLIFLOR DE CALAHORRA;La Rioja
+ESPÁRRAGO DE HUÉTOR-TÁJAR;Andalucía
+ESPÁRRAGO DE NAVARRA;Supra-autonómica
+FABA DE LOURENZÁ;Galicia
+FABA ASTURIANA;Principado de Asturias
+FESOLS DE SANTA PAU;Cataluña
+GARBANZO DE FUENTESAUCO;Castilla y León
+GARBANZO DE ESCACENA;Andalucía
+GOFIO CANARIO;Canarias
+GRANADA MOLLAR DE ELCHE/GRANADA DE ELCHE;Comunidad valenciana
+GRELOS DE Galicia;Galicia
+JUDÍAS DE EL BARCO DE ÁVILA;Castilla y León
+KAKI RIBERA DEL XÚQUER;Comunidad valenciana
+LENTEJA DE LA ARMUÑA;Castilla y León
+LENTEJA DE TIERRA DE CAMPOS;Castilla y León
+MANZANA DE GIRONA;Cataluña
+MANZANA REINETA DEL BIERZO;Castilla y León
+MELOCOTÓN DE CALANDA;Aragón
+MELÓN DE LA MANCHA;Castilla-La Mancha
+MELÓN DE TORRE PACHECO-MURCIA;Región de Murcia
+MONGETA DEL GANXET;Cataluña
+NÍSPEROS CALLOSA D´EN SARRIÁ;Comunidad valenciana
+PAPAS ANTIGUAS DE Canarias;Canarias
+PASAS DE MÁLAGA;Andalucía
+PATATA DE Galicia;Galicia
+PATATA DE PRADES;Cataluña
+PEMENTO DO COUTO;Galicia
+PEMENTO DA ARNOIA;Galicia
+PEMENTO DE HERBÓN;Galicia
+PEMENTO DE MOUGAN;Galicia
+PEMENTO DE OÍMBRA;Galicia
+PERA DE JUMILLA;Región de Murcia
+PERA DE LLEIDA;Cataluña
+PERAS RINCÓN DE SOTO;La Rioja
+PIMIENTO ASADO DEL BIERZO;Castilla y León
+PIMIENTO DE FRESNO-BENAVENTE;Castilla y León
+PIMIENTO DE GERNIKA;País vasco
+PIMIENTO DEL PIQUILLO DE LODOSA;Comunidad foral de Navarra
+PIMIENTO RIOJANO;La Rioja
+PLÁTANO DE Canarias;Canarias
+TOMATE LA CAÑADA;Andalucía
+UVA DE MESA EMBOLSADA DEL VINALOPÓ;Comunidad valenciana

@@ -1,0 +1,66 @@
+// TODO Quitar la barra de scroll y meter un indicador con un after de html, z-index muy alto y position absolute para evitar los desplazamientos de contenido con la barra
+    // OJO Igual se puede hacer un styling de la propia barra pero eso creo que no funcionaba en todos los navegadores
+
+// || Fuentes
+// Para cuerpo de texto
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+// Para titulares
+@font-face
+    font-family: 'Mona Sans'
+    src: url('../../assets/fonts/Mona-Sans.woff2') format('woff2 supports variations'), url('../../assets/fonts/Mona-Sans.woff2') format('woff2-variations')
+    font-weight: 200 900
+    font-stretch: 75% 125%
+
+text, p, a, span
+    color: black
+
+a
+    cursor: pointer
+    width: auto
+    line-height: auto
+    display: block
+
+
+// || General
+*
+    box-sizing: border-box
+
+html
+    font-family: 'Mona Sans'
+    scroll-behavior: smooth
+    background-color: $c_bkg
+    display: flex
+    flex-direction: column
+    align-items: center
+
+body
+    margin: 0
+    width: 100%
+
+#main_frame
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 25px
+    width: 100%
+    height: 100%
+
+
+// || Menus
+ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+nav
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active
+        text-decoration: none
+
+#content
+    max-width: 1600px
+    width: 100%
+    padding: 0 75px

@@ -3,7 +3,7 @@ include_once(__DIR__ . '../modules/classes.php');
 session_start();
 
 if (isset($_POST['dir_login_submit']) || isset($_POST['dir_contact_submit']) || isset($_POST['dir_update_submit'])) {
-    $db_access = $_SESSION['db_acc'];
+    $mongo_db = $_SESSION['db_acc'];
 }
 if (isset($_POST['dir_login_submit'])) {
     echo $query;
