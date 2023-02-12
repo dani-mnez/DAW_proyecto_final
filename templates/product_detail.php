@@ -35,10 +35,10 @@
             </div>
             <div id="product_desc">
                 <div id="text_data">
-                    <a href="<?php echo $producer->_id ?>" class="producer_name">Ir a la página de: <?php echo $producer->company_name ?></a>
+                    <a href="/DAW_proyecto_final/templates/producer_shop.php?producer_id=<?php echo $prod->producer ?>" class="producer_name">Ir a la página de: <?php echo $producer->company_name ?></a>
                     <span class="product_name"><?php echo $prod->name ?></span>
                     <div class="price">
-                        <?php if($disc):?>
+                        <?php if(isset($disc)):?>
                             <?php if($promo->amount > 1):?>
                                 <span class='discount'><?php echo "-$disc" ?></span>
                                 <span><?php echo $prod->stock[0]->price - $disc . '€' ?></span>
@@ -163,15 +163,17 @@
             $mean_rate = 0;
             $rate_distribution = [0, 0, 0, 0, 0];
 
-            foreach ($opinion as $op) {
-                $mean_rate += $op->rate;
+            if ($total_rates > 0) {
+                foreach ($opinion as $op) {
+                    $mean_rate += $op->rate;
 
-                $rate_distribution[$op->rate-1] += 1/$total_rates;
+                    $rate_distribution[$op->rate-1] += 1/$total_rates;
+                }
+
+                $mean_rate /= $total_rates;
             }
-
-
-            $mean_rate /= $total_rates;
             ?>
+            <!-- FIX Si no hay opiniones del producto, poner algún texto o similar -->
             <h2>Opiniones</h2>
             <div id="opinion_wrapper">
                 <?php require('../templates/components/prod_detail/opinion_menu.php')?>

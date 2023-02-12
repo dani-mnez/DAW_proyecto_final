@@ -5,46 +5,167 @@
 
         #content
             display: flex
-            gap: 0 10px
+            flex-direction: column
 
-            #cart_item_wrapper
-                width: 100%
+            #main_cart
+                display: grid
+                column-gap: 220px
+                padding-bottom: 60px
+                border-bottom: 1px solid black
+                grid-template-areas: "uncheckall ." "prods cta"
+                grid-template-columns: auto 330px
 
-                #cart_items
-                    padding: 10px
-                    display: flex
-                    flex-direction: column
-                    row-gap: 10px
-                    background-color: white
+                #deselect_all
+                    grid-area: uncheckall
 
-                    .cart_item
+                #cart_item_wrapper
+                    grid-area: prods
+                    width: 100%
+
+                    #cart_items
+                        padding: 10px
                         display: flex
-                        columns: 1fr 1fr 1fr
-                        column-gap: 10px
-                        width: 100%
+                        flex-direction: column
+                        row-gap: 10px
+                        background-color: white
 
-                        .prod_img_wrapper
-                            img
-                                border-radius: $bord_rad
-                                width: 100px
-
-                            input
-
-                        .cart_text_wrap
+                        .cart_item
                             display: flex
-                            flex-direction: column
+                            columns: 1fr 1fr 1fr
+                            column-gap: 20px
+                            width: 100%
+                            margin-top: 15px
+                            padding-bottom: 15px
+                            border-bottom: 1px solid black
+
+                            .prod_img_wrapper
+                                display: flex
+                                gap: 20px
+                                align-items: center
+
+                                img
+                                    border-radius: $bord_rad
+                                    width: 170px
+                                    border: 1px solid black
+
+                                input
+                                    width: 22px
+                                    height: 22px
+
+                            .cart_text_wrap
+                                display: flex
+                                flex-direction: column
+                                justify-content: space-between
+
+                                p
+                                    margin: 0
+
+                                .name
+                                    font-weight: 600
+                                    font-size: 1.1em
+
+                            .prod_management
+                                display: flex
+                                gap: 30px
+                                align-items: center
+
+                                select
+                                    height: 45px
+                                    border: 1px solid black
+                                    border-radius: 5px
+
+                                a
+                                    color: $c_link
+                                    text-decoration: none
+
+                            .price
+                                margin-left: auto
+                                font-weight: bold
+
+                        .subtotal_text
+                            display: flex
+                            justify-content: flex-end
+
+                            span
+                                &:last-of-type
+                                    font-weight: bold
+                                    margin-left: 5px
+
+                #cart_resume
+                    grid-area: cta
+
+                    #cta_box
+                        padding: 24px
+                        height: fit-content
+                        background-color: white
+                        width: 330px
+                        border: 1px solid black
+                        border-radius: 15px
+                        margin-bottom: 30px
+
+                        .subtotal_text
+                            display: flex
+                            justify-content: center
+                            margin-bottom: 26px
+
+                            span
+                                &:last-of-type
+                                    font-weight: bold
+                                    margin-left: 5px
+
+                        button
+                            display: grid
+                            align-items: center
+                            justify-content: space-around
+                            width: 100%
+                            height: 50px
+                            background-color: $color2
+                            border: 1px solid black
+                            border-radius: 200px
+                            grid-template-areas: ". text icon"
+                            cursor: pointer
+
+                            span
+                                grid-area: text
+                                align-self: center
+
+                            img
+                                grid-area: icon
+                                width: 24px
+
+                    #related_prods
+                        p
+                            margin: 0
+
+            #my_prods
+                margin-bottom: 60px
+                #lists
+                    width: 80%
+                    margin: auto
+
+                    .tabs
+                        width: 100%
+                        display: flex
+                        margin-bottom: 50px
+
+                        .later, .recent
+                            width: 100%
+                            cursor: pointer
 
                             p
-                                margin: 0
+                                margin: 0 0 10px
+                                text-align: center
 
-                            .name
-                                font-weight: 600
-                                font-size: 1.1em
+                        .later
+                            border-bottom: 1px solid black
 
-                        .prod_management
-                            display: flex
+                        .recent
+                            border-bottom: 1px solid #bbbbbb
 
-            #cart_resume
-                padding: 10px
-                height: fit-content
-                background-color: white
+                            p
+                                color: #bbbbbb
+
+                #list_prod_wrapper
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 60px $x_gap

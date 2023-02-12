@@ -64,3 +64,125 @@ nav
     max-width: 1600px
     width: 100%
     padding: 0 75px
+
+
+// || Tiendas
+// Contenedor de las tarjetas de producto
+.prod_wrapper
+    display: flex
+    flex-wrap: wrap
+    gap: 60px $x_gap
+
+// Tarjeta de producto
+.product
+    $img_ratio: 1.5
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
+    gap: 7px
+    height: fit-content
+
+    .product_img_wrapper
+        // height: calc(((100% - $x_gap * ($prods_cols - 1)) / $prods_cols) * $img_ratio)
+        height: 200px
+        display: flex
+        border-radius: 10px
+        border: 1px solid black
+        overflow: hidden
+
+        img
+            width: 100%
+            object-fit: cover
+
+        // FIX Creo que el problema de que se vaya todo a la puta es del posicionamiento de los buttons, que son RELATIVE
+        .buttons
+            position: relative
+            display: flex
+            flex-direction: column
+            width: fit-content
+            justify-content: space-between
+            padding: 5px 0
+            right: 5px
+            float: right
+            height: 100%
+
+            .like_btn, .add_cart_btn
+                display: inline-block
+                background-color: white
+                border-radius: 20px
+                line-height: 0
+                width: fit-content
+                border: 1px solid black
+
+                img
+                    width: 20px
+                    margin: 5px
+
+    p
+        margin: 0
+        display: inline-block
+
+    .producer_name > a
+        color: $c_link
+        display: inline
+
+    .product_name, .price
+        font-size: 1.2em
+        font-weight: 600
+
+    .subcat
+        padding: 3px 5px
+        background-color: #d6ae62 //OJO Se puede hacer que con cada subgategoría se tenga un color identificativo --> Ej.: los embutidos todos rojizos, pero dependiendo del tipo de embutido, un rojo diferente
+        border-radius: $bord_rad
+        width: fit-content
+
+// Tarjeta de producto dentro de lista
+.list_product
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
+    gap: 7px
+
+    img
+        border-radius: 15px
+        border: 1px solid black
+        width: 100%
+
+    p
+        margin: 0
+        font-size: 14px
+
+    .product_name, .price
+        font-weight: bold
+        font-size: 20px
+
+    .producer_name
+        a
+            display: inline-block
+
+    .list_item_cta
+        display: grid
+        grid-template-areas: "btn btn" "del show"
+        justify-items: center
+
+        button
+            grid-area: btn
+            width: 100%
+            padding: 16px
+            background-color: white
+            border-radius: 5px
+            border: 1px solid black
+            margin-bottom: 10px
+            font-size: 16px
+
+        a
+            text-decoration: none
+            color: $c_link
+
+            &:first-of-type
+                grid-area: del
+
+            &:last-of-type
+                grid-area: show

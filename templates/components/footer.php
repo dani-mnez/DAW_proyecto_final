@@ -6,15 +6,9 @@
                         <ul>
                             <li class='title'>PRODUCTOS</li>
                             <?php
-                                $results = $mongo_db->exec(
-                                    'distinct',
-                                    'products',
-                                    'category'
-                                );
-
-                                if ($results) {
-                                    foreach ($results as $row) {
-                                        echo "<li><a>{$row}</a></li>";
+                                if ($prod_cat_qty) {
+                                    foreach ($prod_cat_qty as $row) {
+                                        echo "<li><a href='/DAW_proyecto_final/templates/cat_shop.php?cat_id=$row->_id'>{$row->name}</a></li>";
                                     }
                                 }
                             ?>

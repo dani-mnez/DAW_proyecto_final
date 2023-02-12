@@ -1,27 +1,16 @@
-<p>Compra por: Categoría</p>
 <nav id="cat_shop_menu" aria-label="Menú lateral">
-    <a>Todos</a>
-    <?php
-        $results = $mongo_db->exec(
-            'distinct',
-            'products',
-            'category'
-        );
-
-        if ($results):
-            foreach ($results as $row):
-    ?>
-        <a style="background-image: <?php echo "url('../assets/db_data/cats/$row.jpg')"; ?>;" ><?php echo $row; ?></a>
-    <?php
-    endforeach;
-    endif;
-    ?>
+    <p id="cat_shop_menu_title">Compra por: Categoría</p>
+    <div id="cat_shop_menu_buttons">
+        <a>Todos</a>
+        <?php
+            if ($prod_cat_qty):
+                foreach ($prod_cat_qty as $row):
+        ?>
+            <a href="/DAW_proyecto_final/templates/cat_shop.php?cat_id=<?php echo $row->_id; ?>" style="background-image: <?php echo "url('../assets/db_data/cats/$row->name.jpg')"; ?>;" ><?php echo $row->name; ?></a>
+        <?php
+        endforeach;
+        endif;
+        ?>
+    </div>
 </nav>
-<?php
-$totalProds = $mongo_db->exec(
-    'count',
-    'products',
-    []
-);
-?>
-<p><?php echo $totalProds ?> productos</p>
+<p><?php echo count($products->toArray()) ?> productos</p>

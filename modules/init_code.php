@@ -22,3 +22,55 @@ $mongo_db = new MongoDBAccess(
     DB_NAME,
     DB_PORT
 );
+
+
+if (!isset($prod_cat_qty)) {
+    $pipeline =
+    [
+        [
+            '$group' => [
+                '_id' => '$category',
+                'products' => [ '$sum' => 1]
+            ]
+        ]
+    ];
+
+    $prod_cat_qty = $mongo_db->client->project->products->aggregate($pipeline)->toArray();
+
+    usort($prod_cat_qty, function ($a, $b) { return $b['products'] - $a['products']; });
+    foreach ($prod_cat_qty as $cat) {
+        $cat['name'] = $mongo_db->exec(
+            'find_one',
+            'cats',
+            ['_id' => $cat->_id]
+        )->name;
+    }
+
+    /* OJO Otro modo de hacerlo sería pasarlo a un array con esta estructura:
+    [
+        "categoria" => N,
+        "categoria" => N,
+        "categoria" => N,
+        ...
+    ]
+    */
+}
+
+if (!isset($products)) {
+    $products = $mongo_db->exec(
+        'find',
+        'products',
+        []
+    );
+}
+
+// TODO Se puede meter aquí mucha mas info que no haga falta rellamarse
+
+
+if (isset($_SESSION['user'])) {
+    $user_data = $mongo_db->exec(
+        'find_one',
+        'users',
+        ['_id' => new MongoDB\BSON\ObjectId(unserialize($_SESSION['user'])->id)]
+    );
+}

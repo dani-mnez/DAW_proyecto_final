@@ -12,15 +12,9 @@
         <div id="main_search">
             <select>
                 <?php
-                $results = $mongo_db->exec(
-                    'distinct',
-                    'products',
-                    'category'
-                );
-
-                if ($results) {
-                    foreach ($results as $idx => $row) {
-                        echo "<option value='$row'>$row</option>";
+                if ($prod_cat_qty) {
+                    foreach ($prod_cat_qty as $row) {
+                        echo "<option value='$row->name'>$row->name</option>";
                     }
                 }
                 ?>
@@ -30,17 +24,18 @@
         </div>
 
         <div id="user_control">
-            <?php if(isset($_SESSION['user'])): ?>
+            <?php if(isset($user_data)): ?>
                 <a href="/DAW_proyecto_final/templates/cart.php">
                     <img id="carrito" src="/DAW_proyecto_final/assets/icons/cart.svg" alt="Carrito">
+                    <?php if (count($user_data->cart) > 0): ?>
+                        <div class="cart_prod_count">
+                            <p><?php echo count($user_data->cart); ?></p>
+                        </div>
+                    <?php endif; ?>
                 </a>
                 <div id="prof_wrap">
                     <?php
-                    if (unserialize($_SESSION['user'])->prof_img) {
-                        $prof_pic = '/DAW_proyecto_final/assets/db_data/users/'.unserialize($_SESSION['user'])->id.'.jpg';
-                    } else {
-                        $prof_pic = '/DAW_proyecto_final/assets/img/default_profile_img.png';
-                    }
+                    $prof_pic = ($user_data->profile_img) ? '/DAW_proyecto_final/assets/db_data/users/'.$user_data->_id.'.jpg' : '/DAW_proyecto_final/assets/img/default_profile_img.png';
                     ?>
                     <img class='profile_pic' src="<?php echo $prof_pic ?>" alt="Imagen de perfil">
                     <?php include_once(__DIR__ . './menu/profile_pic_menu.php'); ?>

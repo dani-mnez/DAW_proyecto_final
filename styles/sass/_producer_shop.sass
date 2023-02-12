@@ -1,0 +1,131 @@
+.producer_shop_body
+    #main_frame
+        #content
+            display: flex
+            flex-direction: column
+            gap: 40px
+
+            #producer_header
+                width: 100%
+                height: 300px
+                overflow: hidden
+                border-radius: $bord_rad
+                border: 1px solid black
+
+                img
+                    width: 100%
+
+            #producer_nav
+                width: 100%
+                border: 1px solid black
+                border-radius: $bord_rad
+
+                #main_producer_menu
+                    padding: 14px 10px
+                    border-bottom: 1px solid black
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+
+                    #producer_info
+                        display: flex
+                        gap: 10px
+                        align-items: center
+
+                        #prod_prof_img
+                            width: 32px
+                            height: 32px
+                            overflow: hidden
+                            border: 1px solid black
+                            border-radius: 5px
+
+                            img
+                                height: 100%
+
+                        p
+                            margin: 0
+                            height: fit-content
+
+                    #product_categories
+                        display: flex
+                        align-items: center
+                        gap: 20px
+
+                        .cat_button
+                            display: flex
+                            align-items: center
+                            gap: 5px
+                            padding: 6px
+                            border: 1px solid black
+                            border-radius: 5px
+                            cursor: pointer
+
+                            .cat_img
+                                height: 24px //No se por que el div crece más que la imagen si no le pongo esto
+
+                                img
+                                    width: 24px
+
+                            p
+                                margin: 0
+
+                    #producer_search
+                        width: 200px
+                        height: 26px
+                        border-radius: 5px
+                        border: 1px solid black
+                        display: flex
+                        padding: 3px
+                        overflow: hidden
+
+                        #prod_search_box
+                            margin: 0
+                            border: none
+                            height: 100%
+                            width: 100%
+
+                        #prod_search_btn
+                            height: 24px
+
+                #second_producer_menu
+                    padding: 14px 10px
+                    display: flex
+                    justify-content: center
+
+            #producer_shop_products
+                h2
+                    margin-top: 0
+
+                #featured_products
+                    margin-bottom: 60px
+                    padding-bottom: 40px
+                    border-bottom: 1px solid black
+
+                    .products
+                        display: flex
+                        flex-wrap: wrap
+                        gap: 60px $x_gap
+
+                #products
+                    .prod_cat
+                        width: 100%
+                        margin-bottom: 60px
+                        padding-bottom: 40px
+                        border-bottom: 1px solid black
+
+                        .cat_title
+                            margin: 0 0 20px 0
+                            font-size: 34px
+
+                #share_btns
+                    display: flex
+                    gap: 20px
+                    justify-content: center
+                    margin-bottom: 30px
+
+                    a
+                        border-radius: 200px
+                        border: 1px solid black
+                        display: inline-block
+                        overflow: hidden
+                        line-height: 0px

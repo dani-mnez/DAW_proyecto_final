@@ -1,4 +1,6 @@
 <div class="list_card">
+    <!-- TODO Al clicar en la imagen, debe redirigir a la página del producto -->
+    <!-- TODO Crear funcionalidad de los botones MOVER A LA CESTA, ELIMINAR y VER PRODUCTOS SIMILARES -->
     <div class="list_card_info">
         <div class="list_img_wrapper">
             <?php
@@ -32,7 +34,7 @@
     </div>
 
     <div class="list_card_cta">
-        <a href="" class="mod_list">Modificar</a>
+        <a href="<?php echo "/DAW_proyecto_final/templates/dashboard.php?page=lists&list=$list_key"?>" class="mod_list">Modificar</a>
         <?php if(!$is_std): ?>
             <a href="" class="del_list">Eliminar</a>
         <?php endif;?>

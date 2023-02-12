@@ -6,17 +6,17 @@
             ...
     -->
     <div class="prod_img_wrapper">
-        <input type="checkbox" name="" class="">
+        <input type="checkbox" name="" class="" <?php echo ($prod->selected) ? 'checked' : ''; ?> >
         <img src="<?php echo '/DAW_proyecto_final/assets/db_data/products/' . $prod_info->imgs->cover ?>.jpg" alt="">
     </div>
     <div class="cart_text_wrap">
         <span class='name'><?php echo $prod_info->name ?></span>
         <!-- OJO Con la categoría se podrían agrupar los productos o algo parecido, para que sea más visual -->
         <!-- <span class="category"><?php //echo $prod_info['type'] ?></span> -->
-        <span class="subtype"><?php echo $prodSubcat ?></span>
-        <span class="producer">De <?php echo $producerName ?></span>
+        <!-- <span class="subtype"><?php //echo $prodSubcat ?></span> -->
+        <span class="producer">Vendido por: <?php echo $producerName ?></span>
         <span class="stock"><?php echo $prod_info->stock[$prod_size_buyed]->qty > 0 ? 'En stock' : 'Agotado'; ?></span>
-        <span class="total_prod_price"><?php echo $totalPrice ?><span>€</span></span>
+        <!-- <span class="total_prod_price"><?php //echo $totalPrice ?><span>€</span></span> -->
         <div class="prod_management">
             <select name="prod_qty">
                 <option selected disabled hidden value="">Cant.: <?php echo $prod_qty_buyed ?></option>

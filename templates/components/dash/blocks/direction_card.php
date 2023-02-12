@@ -12,9 +12,11 @@
     ?></p>
     <a href="">Añadir instrucciones de entrega</a>
 
-    <a href="">Modificar</a>
-    <a href="">Eliminar</a>
-    <?php if(!$user_dir->default_location): ?>
-        <a href="">Marcar como predeterminado</a>
-    <?php endif; ?>
+    <div class="direction_card_cta">
+        <a href="">Modificar</a>
+        <a href="">Eliminar</a>
+        <?php if(!$user_dir->default_location): ?>
+            <a href="">Marcar como predeterminado</a>
+        <?php endif; ?>
+    </div>
 </div>
