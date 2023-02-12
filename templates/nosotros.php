@@ -2,7 +2,7 @@
     <div id="content">
         <div id="aboutus_header">
             <h1>¿Quiénes somos?</h1>
-            <p>Conoce al equipo que ha desenbarcado en este proyecto</p>
+            <p>Conoce al gran equipo que ha desenbarcado en este proyecto</p>
         </div>
         <div id="team">
             <h2></h2>
