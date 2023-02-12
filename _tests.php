@@ -24,3 +24,4 @@ foreach ($search as $user) {
 
 // Lo de abajo ha creado una colección nueva dentro de la base de datos project
 // $client->project->createCollection('fromPHP');
+?>
