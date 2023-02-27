@@ -15,10 +15,10 @@
                         </ul>
                         <ul>
                             <li class='title'>AYUDA</li>
-                            <li><a href="">Atención al cliente</a></li>
-                            <li><a href="">Mi cuenta</a></li>
-                            <li><a href="">Estado del pedido</a></li>
-                            <li><a href="">Reclamaciones</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/messages.php">Atención al cliente</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/profile.php">Mi cuenta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/orders.php">Estado del pedido</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/incidences.php">Reclamaciones</a></li>
                         </ul>
                         <ul>
                             <li class='title'>PRODUCTORES</li>
