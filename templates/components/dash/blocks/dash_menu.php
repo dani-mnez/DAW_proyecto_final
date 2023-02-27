@@ -18,7 +18,7 @@ $producer = unserialize($_SESSION['user'])->type == 'producer';
 
             <li class="<?php if ($_GET['page'] == 'messages') echo "selected_dash_section"?>"><a href="/DAW_proyecto_final/templates/dashboard.php?page=messages">
                 Mensajes
-                <span><?php echo 13; ?></span> //¿Por qué un 13?
+                <span><?php echo 13; ?></span> 
             </a></li>
 
             <?php if ($producer): ?>

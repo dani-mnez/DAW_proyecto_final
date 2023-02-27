@@ -1,4 +1,4 @@
 
     <div id="content">
-      <h2>help</h2>
+      <h2>Ayuda</h2>
     </div>
