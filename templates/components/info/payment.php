@@ -1,0 +1,10 @@
+<?php include_once(__DIR__ . '/../header.php'); ?>
+    <div id="content">
+        <h1>Política de Pagos</h1>
+        <p>Cut the cheese cut the cheese airedale. Camembert de normandie croque monsieur brie danish fontina queso cottage cheese stilton mascarpone. Mascarpone gouda feta cheesecake stilton cheese on toast fondue squirty cheese. Brie bavarian bergkase mascarpone melted cheese cheese strings port-salut macaroni cheese red leicester. Cheddar macaroni cheese.</p>
+        <p>Port-salut roquefort say cheese. Port-salut cheeseburger smelly cheese cheese on toast cheesecake parmesan feta paneer. Mozzarella camembert de normandie cauliflower cheese monterey jack bavarian bergkase jarlsberg edam chalk and cheese. Jarlsberg dolcelatte ricotta taleggio.</p>
+        <p>Danish fontina gouda airedale. Cut the cheese parmesan fondue lancashire cheese and wine fondue red leicester gouda. Cheese and biscuits melted cheese camembert de normandie cow boursin melted cheese blue castello cheeseburger. Melted cheese everyone loves.</p>
+        <p>Lancashire danish fontina everyone loves. Pecorino say cheese cheese slices jarlsberg fromage dolcelatte cheese strings croque monsieur. Parmesan manchego caerphilly cheese and wine cheese strings pepper jack cheese strings cheese triangles. Stilton fromage frais smelly cheese cheese on toast lancashire.</p>
+        <p>Emmental fromage paneer. Cheese and wine paneer stilton cheesy feet danish fontina mozzarella cheese triangles camembert de normandie. Red leicester cream cheese fromage frais macaroni cheese st. agur blue cheese the big cheese cow hard cheese. Rubber cheese rubber cheese cheesy feet lancashire blue castello parmesan who moved my cheese blue castello. Cheese and wine cheese and wine everyone loves cheesecake.</p>
+    </div>
+<?php include_once(__DIR__ . '/../footer.php'); ?>

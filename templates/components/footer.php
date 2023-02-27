@@ -15,10 +15,10 @@
                         </ul>
                         <ul>
                             <li class='title'>AYUDA</li>
-                            <li><a href="/DAW_proyecto_final/templates/XXX">Atención al cliente</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/XXX">Mi cuenta</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/XXX">Estado del pedido</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/XXX">Reclamaciones</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=messages">Atención al cliente</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=profile">Mi cuenta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=orders">Estado del pedido</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=feedback">Reclamaciones</a></li>
                         </ul>
                         <ul>
                             <li class='title'>PRODUCTORES</li>
@@ -28,10 +28,10 @@
                         </ul>
                         <ul>
                             <li class='title'>INFORMACIÓN</li>
-                            <li><a href="">Envíos y devoluciones</a></li>
-                            <li><a href="">Pagos</a></li>
-                            <li><a href="">Condiciones de venta</a></li>
-                            <li><a href="">Información legal</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/shipping.php">Envíos y devoluciones</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/payment.php">Pagos</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/t&cs.php">Condiciones de venta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/legal.php">Información legal</a></li>
                         </ul>
                         <ul>
                             <li class='title'>NOSOTROS</li>
