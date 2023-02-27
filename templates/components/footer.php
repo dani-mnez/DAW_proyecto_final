@@ -15,10 +15,10 @@
                         </ul>
                         <ul>
                             <li class='title'>AYUDA</li>
-                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/messages.php">Atención al cliente</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/profile.php">Mi cuenta</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/orders.php">Estado del pedido</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/components/dash/pages/incidences.php">Reclamaciones</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/XXX">Atención al cliente</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/XXX">Mi cuenta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/XXX">Estado del pedido</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/XXX">Reclamaciones</a></li>
                         </ul>
                         <ul>
                             <li class='title'>PRODUCTORES</li>
@@ -35,7 +35,7 @@
                         </ul>
                         <ul>
                             <li class='title'>NOSOTROS</li>
-                            <li><a href="">El equipo</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/nosotros.php">El equipo</a></li>
                             <li><a href="">Nuestra misión</a></li>
                             <li><a href="">Información rural</a></li>
                             <li><a href="">Información D.O.</a></li>
