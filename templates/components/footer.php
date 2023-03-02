@@ -23,23 +23,23 @@
                         <ul>
                             <li class='title'>PRODUCTORES</li>
                             <li><a href="">Empieza a vender</a></li>
-                            <li><a href="">Condiciones del servicio</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/productort&cs.php">Condiciones del servicio</a></li>
                             <li><a href="">Atención a productores</a></li>
                         </ul>
                         <ul>
                             <li class='title'>INFORMACIÓN</li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/shipping.php">Envíos y devoluciones</a></li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/payment.php">Pagos</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/components/info/t&cs.php">Condiciones de venta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/buyert&cs.php">Condiciones de venta</a></li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/legal.php">Información legal</a></li>
                         </ul>
                         <ul>
                             <li class='title'>NOSOTROS</li>
                             <li><a href="/DAW_proyecto_final/templates/nosotros.php">El equipo</a></li>
-                            <li><a href="">Nuestra misión</a></li>
-                            <li><a href="">Información rural</a></li>
-                            <li><a href="">Información D.O.</a></li>
-                            <li><a href="">Mapa de productores</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/ourmission.php">Nuestra misión</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/rural.php">Información rural</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/infodo.php">Información D.O.</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/map.php">Mapa de productores</a></li>
                         </ul>
                         <ul>
                             <li class='title'>CONTACTO</li>
