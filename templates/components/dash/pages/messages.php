@@ -2,10 +2,11 @@
 $user_chats = $mongo_db->exec(
     'find',
     'chats',
-    ['$or' =>
+    [
+        '$or' =>
         [
-            ['user1'=>  new MongoDB\BSON\ObjectId(($user)->id)],
-            ['user2'=>  new MongoDB\BSON\ObjectId(($user)->id)]
+            ['user1' =>  new MongoDB\BSON\ObjectId(($user)->id)],
+            ['user2' =>  new MongoDB\BSON\ObjectId(($user)->id)]
         ]
     ]
 )->toArray();
@@ -23,52 +24,41 @@ $user_chats = $mongo_db->exec(
         </div>
         <div id="conv_list">
             <?php
-            foreach ($user_chats as $chat) {
-                // Que rol tiene nuestro usuario (user1, user2...)
-                $user_role = ($chat->user1 == $user->id) ? 'user1' : 'user2';
+            if (count($user_chats) == 0) {
+                echo "<p id='no_chats'>Aún no has iniciado ninguna conversación.</br>Pulsa el botón'<img src='/DAW_proyecto_final/assets/icons/new_chat.svg' alt='Nueva conversación'>' para iniciar una nueva conversación.</p>";
+            } else {
+                $archived_chats = 0;
+                foreach ($user_chats as $chat) {
+                    // Que rol tiene nuestro usuario (user1, user2...)
+                    $user_role = ($chat->user1 == $user->id) ? 'user1' : 'user2';
 
-                // Info del otro usuario (imagen, nombre...)
-                $other_user_id = ($user_role == 'user1') ? $chat->user2 : $chat->user1;
-                $other_user_type = false;
-                $other_user = $mongo_db->exec(
-                    'find_one',
-                    'users',
-                    ['_id' => $other_user_id]
-                );
-                $other_user_type = 'user';
+                    // Dependiendo de esto, gestionamos los datos de una u otra forma
+                    if ($chat->archived[$user_role] == false) {
+                        $otherUserInfo = getChatUserData($chat);
 
-                if ($other_user == null) {
-                    $other_user = $mongo_db->exec(
-                        'find_one',
-                        'producers',
-                        ['_id' => $other_user_id]
-                    );
-                    $other_user_type = 'producer';
+                        // Obtener imagen de perfil del otro usuario
+                        $other_user_profile_img = ($otherUserInfo['obj']->profile_img) ? "/DAW_proyecto_final/assets/db_data/users/{$otherUserInfo['obj']->_id}.jpg" : '/DAW_proyecto_final/assets/img/default_profile_img.png';
+
+                        // Obtener nombre del otro usuario
+                        $other_user_name = ($otherUserInfo['type'] == 'user') ? "{$otherUserInfo['obj']->name->name} {$otherUserInfo['obj']->name->surname1}" : $otherUserInfo['obj']->company_name;
+
+                        $last_msg = $chat->messages[count($chat->messages) - 1];
+
+                        require(__DIR__ . '/../blocks/message_card.php');
+                    } else {
+                        $archived_chats++;
+                    }
                 }
 
-                $other_user_profile_img = ($other_user->_id) ? "/DAW_proyecto_final/assets/db_data/users/$other_user->_id.jpg" : '/DAW_proyecto_final/assets/img/default_profile_img.png';
-
-                $other_user_name = ($other_user_type == 'user') ? "{$other_user->name->name} {$other_user->name->surname1}" : $other_user->company_name;
-
-                //Juntamos los mensajes y los ordenamos por fecha
-                $ordered_msgs = array(...$chat->messages);
-                foreach ($ordered_msgs as $msg) {
-                    // iterator_to_array($msg); //OJO No se si esto es necesario
-                    $msg->date = $msg->date->toDateTime();
+                if ($archived_chats > 0) {
+                    echo "<p class='no_chats'>Ver chats archivados ($archived_chats)</p>";
                 }
-
-                function orderByDate($a, $b)
-                {
-                    return $a->date->getTimestamp() - $b->date->getTimestamp();
-                }
-
-                usort($ordered_msgs, 'orderByDate');
-
-                // Dependiendo de esto, gestionamos los datos de una u otra forma
-
-                require(__DIR__ . '/../blocks/message_card.php');
             }
             ?>
         </div>
+    </div>
+    <div id="msgsDivider"></div>
+    <div id="conversation">
+        <p>Selecciona una conversación</p>
     </div>
 </div>

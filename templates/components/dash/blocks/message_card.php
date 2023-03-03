@@ -1,11 +1,8 @@
-<div class="message_card">
-    <button class="archive_msg">Archivar</button>
+<div class="message_card" onclick="load_conversation('<?php echo $chat->_id ?>')" >
+    <button class="archive_msg"><img src="/DAW_proyecto_final/assets/icons/x.svg" alt="Archiva conversación"></button>
     <div class="user_img">
         <img src="<?php echo $other_user_profile_img; ?>" alt="Imagen de perfil de usuario">
     </div>
-    <?php
-    $last_msg = $ordered_msgs[count($ordered_msgs)-1];
-    ?>
     <div class="msg_info">
         <p class="name"><?php echo $other_user_name; ?></p>
         <p class="last_msg"><?php
@@ -14,6 +11,6 @@
         ?></p>
     </div>
     <div class="msg_last_date">
-        <p class="last_date"><?php echo $last_msg->date->format("d-m-y"); ?></p>
+        <p class="last_date"><?php echo "{$last_msg->date->toDatetime()->format('d M y')}<br/>{$last_msg->date->toDatetime()->format('H:i')}"; ?></p>
     </div>
 </div>

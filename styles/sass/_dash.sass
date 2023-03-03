@@ -34,7 +34,6 @@
                     padding-top: 40px
                     border-top: 1px solid black
 
-
 // Menú de navegación lateral
 #dash_menu
     height: fit-content
@@ -72,7 +71,6 @@
             padding: 15px
             font-weight: 600
 
-
 // --------------------------------------- PERFIL
 // Datos de contacto del perfil de usuario
 #contact_data
@@ -109,7 +107,6 @@
 
     table
         flex: 0 1 auto
-
 
 // Tarjeta de dirección
 #directions_wrapper
@@ -156,7 +153,6 @@
 .def_loc
     border: 2px solid $c_link
 
-
 // --------------------------------------- LISTAS
 // Listado de listas (en general)
 #lists_wrapper
@@ -201,7 +197,6 @@
     .list_card_cta
         display: flex
 
-
 // Listado de listas (página separada)
 #list_prods
     display: flex
@@ -211,7 +206,6 @@
     display: flex
     flex-wrap: wrap
     gap: 60px $x_gap
-
 
 // --------------------------------------- HISTORIAL DE PEDIDOS
 #order_hist_wrapper
@@ -283,14 +277,24 @@
                 margin-left: auto
 
                 button
-                margin-top: 10px
-
+                    margin-top: 10px
 
 // --------------------------------------- MENSAJES
+#messages_wrapper
+    display: flex
+    gap: 20px
+    height: 100%
+
+#msgsDivider
+    width: 1px
+    height: 100%
+    background-color: black
+
 #messages_menu
     display: flex
     flex-direction: column
-    width: 400px
+    width: 320px
+    gap: 20px
 
 // Menú de navegación lateral de mensajes
 #top_bar
@@ -305,7 +309,7 @@
     #msgs_search
         width: 160px
         height: 26px
-        border-radius: 5px
+        border-radius: $bord_rad_small
         border: 1px solid black
         display: flex
         padding: 3px
@@ -323,22 +327,30 @@
     img
         height: 20px
 
-
-// Listado de mensajes
+// Listado de conversaciones
 .message_card
     display: flex
     gap: 10px
-    align-items: center
 
     button
-        height: fit-content
+        border: 1px solid black
+        background-color: red
+        margin: 0
+        padding: 2px
+        display: flex
+        border-radius: $bord_rad_small
+        align-self: center
+
+        img
+            height: 12px
+            width: 12px
 
     p
         margin: 0
 
     .user_img
         height: 48px
-        border-radius: 5px
+        border-radius: $bord_rad_small
         border: 1px solid black
 
         img
@@ -349,7 +361,9 @@
         display: flex
         flex-direction: column
         justify-content: space-between
-        width: auto
+        flex: 1 1 auto
+        margin-top: 7px
+        overflow: auto
 
         .name
             font-weight: bold
@@ -360,8 +374,125 @@
             white-space: nowrap
             text-overflow: ellipsis
 
-
     .msg_last_date
         align-self: flex-start
         font-size: 12px
         white-space: nowrap
+        margin-top: 7px
+        flex: 0 0 auto
+        text-align: right
+
+// Conversación
+#chat_topbar
+    display: flex
+    justify-content: space-between
+
+    h2
+        font-size: 2em
+        margin: 0
+        font-weight: 500
+
+#actions
+    font-size: 0.625em
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    a
+        color: $c_link
+        text-decoration: none
+
+#conversation
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+#chat_write
+    display: flex
+    gap: 10px
+    height: 35px
+    widows: 100%
+
+    #msgBox
+        width: 100%
+        height: 100%
+        border-radius: $bord_rad_small
+        border: 1px solid black
+        padding: 2px 6px
+
+    #sendMsg
+        width: 35px
+        height: 100%
+        background-color: $color2
+        display: flex
+        align-items: center
+        justify-content: center
+        border: 1px solid black
+        border-radius: $bord_rad_small
+
+        img
+            height: 22px
+#chat_msgs
+    display: flex
+    height: 600px
+    overflow-y: scroll
+    display: flex
+    flex-direction: column-reverse
+
+    .reverseScroll
+        gap: 10px
+        display: flex
+        flex-direction: column
+
+.chatDate
+    text-align: center
+    margin-top: 10px
+    margin-bottom: 5pxs
+    font-size: 0.75em
+
+.message_item
+    display: flex
+    gap: 15px
+
+    img
+        width: 30px
+        height: 30px
+        border-radius: $bord_rad_small
+        border: 1px solid black
+
+.hour
+    font-size: 0.625em
+    margin: 0
+
+.other_user
+    .message
+        background-color: $c_grey_bkg
+
+    &.spaced
+        .message
+            margin-left: 45px
+
+
+.me
+    flex-direction: row-reverse
+
+    .message
+        background-color: $c_link
+
+        p
+            color: #fff
+
+    &.spaced
+        .message
+            margin-right: 45px
+
+.message
+    padding: 10px
+    border-radius: $bord_rad_small
+    background-color: gray
+    width: 35%
+
+    p
+        margin: 0
+        font-size: 0.875em
