@@ -22,15 +22,15 @@
                         </ul>
                         <ul>
                             <li class='title'>PRODUCTORES</li>
-                            <li><a href="">Empieza a vender</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/components/info/productort&cs.php">Condiciones del servicio</a></li>
-                            <li><a href="">Atención a productores</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/startselling.php">Empieza a vender</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/producertandcs.php">Condiciones del servicio</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/producercare.php">Atención a productores</a></li>
                         </ul>
                         <ul>
                             <li class='title'>INFORMACIÓN</li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/shipping.php">Envíos y devoluciones</a></li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/payment.php">Pagos</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/components/info/buyert&cs.php">Condiciones de venta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/buyertandcs.php">Condiciones de venta</a></li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/legal.php">Información legal</a></li>
                         </ul>
                         <ul>
