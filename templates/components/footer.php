@@ -30,7 +30,7 @@
                             <li class='title'>INFORMACIÓN</li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/shipping.php">Envíos y devoluciones</a></li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/payment.php">Pagos</a></li>
-                            <li><a href="/DAW_proyecto_final/templates/components/info/buyertandcs.php">Condiciones de venta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/buyertandcs.php">Condiciones de compra</a></li>
                             <li><a href="/DAW_proyecto_final/templates/components/info/legal.php">Información legal</a></li>
                         </ul>
                         <ul>
