@@ -59,8 +59,8 @@ function bodyClassGen($fileName)
 }
 
 
-function destoyCookie($cookieName)
+function destroyCookie($cookieName)
 {
     setcookie($cookieName, '', time() - 3600, '/');
-    destoyCookie($cookieName);
+    destroyCookie($cookieName);
 }
