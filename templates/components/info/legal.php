@@ -1,10 +1,8 @@
 <?php include_once(__DIR__ . '/../header.php'); ?>
     <div id="content">
-        <h1>Información Legal</h1>
-        <p>Cheesy feet cheese on toast cheese and biscuits. When the cheese comes out everybody&apos;s happy cow fromage camembert de normandie pecorino cream cheese croque monsieur melted cheese. Queso stinking bishop parmesan port-salut cheeseburger brie cheese triangles croque monsieur. St. agur blue cheese pecorino cottage cheese edam edam airedale cheddar caerphilly. Cheesy feet.</p>
-        <p>Cheese slices ricotta bavarian bergkase. Say cheese when the cheese comes out everybody&apos;s happy parmesan cheese and biscuits goat say cheese cheesecake cottage cheese. Babybel cheeseburger bocconcini taleggio lancashire who moved my cheese feta red leicester. Halloumi cheesy grin st. agur blue cheese.</p>
-        <p>Port-salut cheese and biscuits mascarpone. Halloumi fondue croque monsieur bocconcini cow halloumi stilton squirty cheese. Taleggio cut the cheese paneer cheese and wine cut the cheese emmental swiss roquefort. Queso brie.</p>
-        <p>Brie everyone loves feta. When the cheese comes out everybody&apos;s happy danish fontina cottage cheese hard cheese cottage cheese bavarian bergkase cheese triangles babybel. Lancashire swiss caerphilly macaroni cheese port-salut red leicester ricotta cauliflower cheese. Cheddar ricotta rubber cheese smelly cheese smelly cheese.</p>
-        <p>Paneer paneer cauliflower cheese. Jarlsberg edam halloumi cheeseburger cheesecake edam brie taleggio. Taleggio roquefort who moved my cheese cheese slices goat cheese and wine fromage frais gouda. Queso when the cheese comes out everybody&apos;s happy fromage dolcelatte feta melted cheese say cheese fondue. Lancashire blue castello gouda.</p>
+        <h1>Informaci&oacute;n legal</h1>
+        <p>El titular de la aplicaci&oacute;n web Sol de Marzo (en adelante, Sol de Marzo), es Sol de Marzo, S.L., con NIF A12345678 y domicilio en Madrid, Calle de Gabriel Usera 54, Oficina 1. 28026, e inscrita en el Registro Mercantil de Madrid, Tomo 884067, Folio 25, Inscripci&oacute;n 1 Hoja 703503 (en adelante, Sol de Marzo).</p>
+        <p>Sol de Marzo pone Sol de Marzo a disposici&oacute;n de cualquier usuario que, en cumplimiento de las condiciones de la licencia de uso de la web, con la principal finalidad de navegar por las Tiendas y el cat&aacute;logo de productos de los Vendedores de la comunidad de Sol de Marzo, as&iacute; como comprar sus productos.</p>
+        <p>Sol de Marzo facilita como principal medio de contacto y para la atenci&oacute;n de dudas, consultas, sugerencias o quejas: el n&uacute;mero de tel&eacute;fono 91 234 56 78 (L-V laborables en Madrid, de 10:00 a 14:00) <a href="https://d.docs.live.net/DAW_proyecto_final/templates/dashboard.php?page=messages">y secci&oacute;n de mensajes</a></p>
     </div>
 <?php include_once(__DIR__ . '/../footer.php'); ?>
