@@ -1,10 +1,37 @@
 <?php include_once(__DIR__ . '/../header.php'); ?>
     <div id="content">
         <h1>Empiece a vender</h1>
-        <p>Cut the cheese cut the cheese airedale. Camembert de normandie croque monsieur brie danish fontina queso cottage cheese stilton mascarpone. Mascarpone gouda feta cheesecake stilton cheese on toast fondue squirty cheese. Brie bavarian bergkase mascarpone melted cheese cheese strings port-salut macaroni cheese red leicester. Cheddar macaroni cheese.</p>
-        <p>Port-salut roquefort say cheese. Port-salut cheeseburger smelly cheese cheese on toast cheesecake parmesan feta paneer. Mozzarella camembert de normandie cauliflower cheese monterey jack bavarian bergkase jarlsberg edam chalk and cheese. Jarlsberg dolcelatte ricotta taleggio.</p>
-        <p>Danish fontina gouda airedale. Cut the cheese parmesan fondue lancashire cheese and wine fondue red leicester gouda. Cheese and biscuits melted cheese camembert de normandie cow boursin melted cheese blue castello cheeseburger. Melted cheese everyone loves.</p>
-        <p>Lancashire danish fontina everyone loves. Pecorino say cheese cheese slices jarlsberg fromage dolcelatte cheese strings croque monsieur. Parmesan manchego caerphilly cheese and wine cheese strings pepper jack cheese strings cheese triangles. Stilton fromage frais smelly cheese cheese on toast lancashire.</p>
-        <p>Emmental fromage paneer. Cheese and wine paneer stilton cheesy feet danish fontina mozzarella cheese triangles camembert de normandie. Red leicester cream cheese fromage frais macaroni cheese st. agur blue cheese the big cheese cow hard cheese. Rubber cheese rubber cheese cheesy feet lancashire blue castello parmesan who moved my cheese blue castello. Cheese and wine cheese and wine everyone loves cheesecake.</p>
+        <p>Para ayudarte a sacar el mejor partido a nuestra plataforma, necesitamos la información de este formulario.</p>
+        <fieldset id="producer_registration">
+            <legend>Rellena el formulario y te contactaremos para completar el alta:</legend>
+            <form action="./modules/producer_register_logic.php" enctype='multipart/form-data' method="post" id='reg_form'>
+                <label for="profile_img">Sube una foto de perfil:</label>
+                <br/>
+                <input type="file" name="profile_img" id="reg_profile_img">
+                <br/>
+                <label for="name">Nombre:</label>
+                <input require type="text" name="name" id="reg_text">
+                <br/>
+                <label for="mail">Email:</label>
+                <input require type="email" name="mail" id="reg_mail">
+                <br/>
+                <label for="pwd">Contraseña:</label>
+                <input require type="password" name="pwd" id="reg_pwd">
+                <br/>
+                <label for="pwd_chck">Repite la contraseña:</label>
+                <input require type="password" name="pwd_chck" id="reg_pwd_chk">
+                <br/>
+                <label for="company_name">Nombre de la compañía:</label>
+                <input require type="text" name="company_name" id="reg_company_name">
+                <br/>
+                <label for="telephone">Teléfono de contacto:</label>
+                <input require type="integer" name="telephone" id="reg_telephone">
+                <br/>
+                <label for="xxx">XXXX:</label>
+                <input require type="integer" name="xxx" id="reg_xxx">
+                <br/>
+                <input type="submit" name="reg_submit" value="Confirma petición de registro">
+            </form>
+        </fieldset>
     </div>
 <?php include_once(__DIR__ . '/../footer.php'); ?>
