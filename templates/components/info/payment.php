@@ -6,7 +6,7 @@
             <li>Pago con Tarjeta</li>
             <li>Pago con Paypal</li>
             <li>Pago con Bizum</li>
-            <li>Pago contra-reembolso</li>
+            <li>Pago por Transferencia bancaria</li>
         </ul>
         <h2><a name="tarjetas">1) Pago con Tarjeta</a></h2>
         <p><img src="/DAW_PROYECTO_FINAL/assets/img/tarjetas.png" alt="Pagos con tarjeta"></p>
@@ -21,8 +21,9 @@
         <p><img src="/DAW_PROYECTO_FINAL/assets/img/bizum.png" alt="Pagos con Bizum"></p>
         <p>Si lo prefieres, tambi&eacute;n puedes realizar el pago a trav&eacute;s de Bizum.&nbsp;</p>
         <p><strong>IMPORTANTE:&nbsp;</strong>Con esta modalidad de pago, tu pedido queda pendiente de confirmaci&oacute;n y te mandaremos un email con los datos para completar el pago. Una vez confirmado el pago, el pedido ya se completa &iexcl;Y nos ponemos manos en la masa para entreg&aacute;rtelo!</p>
-        <h2><a name="contrareembolso">3) Pago contra-reembolso</a></h2>
+        <h2><a name="transferencia">3) Pago por Transferencia bancaria</a></h2>
         <p><img src="/DAW_PROYECTO_FINAL/assets/img/contrareembolso.png" alt="Pagos contra-reembolso"></p>
-        <p>Esta modalidad de pago solo se dar&aacute; en algunos de nuestros productores que realizan su propio env&iacute;o y recibir&aacute;n el pago en el momento de la entrega.</p>
+        <p>O si lo prefieres, tambi&eacute;n puedes realizar el pago a trav&eacute;s de una transferencia bancaria.&nbsp;</p>
+        <p><strong>IMPORTANTE:&nbsp;</strong>Con esta modalidad de pago, tu pedido queda pendiente de confirmaci&oacute;n y te mandaremos un email con los datos para completar el pago. Una vez confirmado el pago, el pedido ya se completa &iexcl;Y nos ponemos manos en la masa para entreg&aacute;rtelo!</p>
     </div>
 <?php include_once(__DIR__ . '/../footer.php'); ?>
