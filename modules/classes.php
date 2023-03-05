@@ -25,7 +25,8 @@ class MongoDBAccess
             case 'find':     $result = $collection->find($searchParams);     break;
             case 'distinct': $result = $collection->distinct($searchParams); break;
             case 'count':    $result = $collection->count();                 break;
-            case 'insert':   break;
+            case 'insert':                                                   break;
+        case 'delete'                                                        break;
             default:         $result = null;                                 break;
         }
 
@@ -67,4 +68,9 @@ class User
         }
     }
     // TODO Crear función MANDAR MAIL
+
+    public function addToCart()
+    {
+        
+    }
 }

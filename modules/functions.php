@@ -64,3 +64,35 @@ function destroyCookie($cookieName)
     setcookie($cookieName, '', time() - 3600, '/');
     destroyCookie($cookieName);
 }
+
+function update_cart() {
+
+}
+
+function save_cart() {
+
+}
+
+function update_item() {
+
+}
+
+function delete_item($user, $productID) {
+
+}
+
+function save_item_for_later($user, $productID) {
+
+}
+
+function look_for_similar_item() {
+
+}
+
+function recover_saved_item() {
+    
+}
+
+function delete_saved_item() {
+
+}
