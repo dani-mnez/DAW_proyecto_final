@@ -21,12 +21,12 @@ class MongoDBAccess
         $collection = $this->client->selectCollection($this->databaseName, $collectionName);
 
         switch ($type) {
-            case 'find_one': $result = $collection->findOne($searchParams);  break;
-            case 'find':     $result = $collection->find($searchParams);     break;
-            case 'distinct': $result = $collection->distinct($searchParams); break;
-            case 'count':    $result = $collection->count();                 break;
-            case 'insert':   break;
-            default:         $result = null;                                 break;
+            case 'find_one':   $result = $collection->findOne($searchParams);      break;
+            case 'find':       $result = $collection->find($searchParams);         break;
+            case 'distinct':   $result = $collection->distinct($searchParams);     break;
+            case 'count':      $result = $collection->count();                     break;
+            case 'update_one': $result = $collection->updateOne(...$searchParams); break;
+            default:           $result = null;                                     break;
         }
 
         return $result;
