@@ -1,0 +1,10 @@
+<?php include_once(__DIR__ . '/../header.php'); ?>
+    <div id="content">
+        <h1>Envío y Devoluciones</h1>
+        <p>Jarlsberg danish fontina croque monsieur. Cheese and biscuits gouda cheese strings emmental hard cheese cheesecake cottage cheese cheese triangles. Cheese strings bavarian bergkase cow taleggio when the cheese comes out everybody&apos;s happy camembert de normandie boursin hard cheese. Everyone loves cheese and biscuits camembert de normandie jarlsberg jarlsberg cheese strings cheese and wine taleggio. Edam cheese and wine.</p>
+        <p>Pecorino emmental chalk and cheese. Queso monterey jack cheesecake cheesecake cauliflower cheese cut the cheese cheese slices babybel. Cheesy feet cheese strings the big cheese taleggio cheesy feet croque monsieur cheese slices mascarpone. Cheese and wine parmesan port-salut chalk and cheese.</p>
+        <p>Cheddar fromage port-salut. Cheesy feet taleggio manchego bocconcini everyone loves edam babybel macaroni cheese. Boursin lancashire smelly cheese feta cheese triangles cut the cheese macaroni cheese blue castello. Rubber cheese cheeseburger who moved my cheese cheesy feet manchego cauliflower cheese macaroni cheese.</p>
+        <p>Everyone loves stinking bishop cheese triangles. Cheesecake cottage cheese mozzarella fondue cheese triangles say cheese bocconcini airedale. Cheesecake cheesy feet cheese strings cheesy feet paneer cheeseburger babybel halloumi. Cheese on toast.</p>
+        <p>Say cheese smelly cheese cheesy grin. Parmesan blue castello cut the cheese stilton blue castello who moved my cheese babybel jarlsberg. Cheeseburger cheese triangles airedale jarlsberg camembert de normandie jarlsberg lancashire when the cheese comes out everybody&apos;s happy. Cow blue castello bavarian bergkase babybel cheese and wine cheeseburger monterey jack rubber cheese. Camembert de normandie.</p>
+    </div>
+<?php include_once(__DIR__ . '/../footer.php'); ?>
