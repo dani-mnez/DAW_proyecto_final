@@ -3,7 +3,7 @@
         A saber:
             Actualizar la cesta
             Actualizar el precio total
-            ...
+            ... 
     -->
     <div class="prod_img_wrapper">
         <input type="checkbox" name="" class="" <?php echo ($prod->selected) ? 'checked' : ''; ?> >
@@ -32,9 +32,9 @@
                 <option value="9">9</option>
                 <option value="cust">10+</option>
             </select>
-            <a href="#">Eliminar</a>
-            <a href="#">Guardar para más tarde</a>
-            <a href="#">Ver otros productos como este</a>
+            <button onclick="delete_item($user, $prod_info->_id)">Eliminar producto</button>
+            <button onclick="save_item_for_later($user, $prod_info->_id)">Guardar para más tarde</button>
+            <button onclick="look_for_similar_item($prod_info->category)">Ver otros productos como este</button>
         </div>
     </div>
     <span class="price"><?php echo $price ?>€</span>

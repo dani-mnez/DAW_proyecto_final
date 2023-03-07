@@ -15,31 +15,31 @@
                         </ul>
                         <ul>
                             <li class='title'>AYUDA</li>
-                            <li><a href="">Atención al cliente</a></li>
-                            <li><a href="">Mi cuenta</a></li>
-                            <li><a href="">Estado del pedido</a></li>
-                            <li><a href="">Reclamaciones</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=messages">Atención al cliente</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=profile">Mi cuenta</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=orders">Estado del pedido</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/dashboard.php?page=feedback">Reclamaciones</a></li>
                         </ul>
                         <ul>
                             <li class='title'>PRODUCTORES</li>
-                            <li><a href="">Empieza a vender</a></li>
-                            <li><a href="">Condiciones del servicio</a></li>
-                            <li><a href="">Atención a productores</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/startselling.php">Empieza a vender</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/producertandcs.php">Condiciones del servicio</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/producercare.php">Atención a productores</a></li>
                         </ul>
                         <ul>
                             <li class='title'>INFORMACIÓN</li>
-                            <li><a href="">Envíos y devoluciones</a></li>
-                            <li><a href="">Pagos</a></li>
-                            <li><a href="">Condiciones de venta</a></li>
-                            <li><a href="">Información legal</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/shipping.php">Envíos y devoluciones</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/payment.php">Pagos</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/buyertandcs.php">Condiciones de compra</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/legal.php">Información legal</a></li>
                         </ul>
                         <ul>
                             <li class='title'>NOSOTROS</li>
-                            <li><a href="">El equipo</a></li>
-                            <li><a href="">Nuestra misión</a></li>
-                            <li><a href="">Información rural</a></li>
-                            <li><a href="">Información D.O.</a></li>
-                            <li><a href="">Mapa de productores</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/nosotros.php">El equipo</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/ourmission.php">Nuestra misión</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/rural.php">Información rural</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/infodo.php">Información D.O.</a></li>
+                            <li><a href="/DAW_proyecto_final/templates/components/info/map.php">Mapa de productores</a></li>
                         </ul>
                         <ul>
                             <li class='title'>CONTACTO</li>

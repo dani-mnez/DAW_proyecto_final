@@ -1,0 +1,24 @@
+{
+    "_id": {
+        "$oid": "6403941cbd715e650aad2782"
+      },
+    "field_name": "payment_method",
+    "options": [
+        {
+            "id": 1,
+            "literal": "Tarjeta de crédito"
+        },
+        {
+            "id": 2,
+            "literal": "PayPal"
+        },
+        {
+            "id": 3,
+            "literal": "Bizum"
+        },
+        {
+            "id": 4,
+            "literal": "Contra-reembolso"
+        }
+    ] 
+}

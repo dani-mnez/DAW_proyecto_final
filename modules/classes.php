@@ -67,4 +67,6 @@ class User
         }
     }
     // TODO Crear función MANDAR MAIL
+
+    
 }

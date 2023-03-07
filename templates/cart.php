@@ -1,5 +1,5 @@
 <?php include_once(__DIR__ . '/components/header.php'); ?>
-            <div id="content">
+            <div id="content"> 
                 <h1>Cesta</h1>
                 <div id="main_cart">
                     <a href="#" id="deselect_all">Anula la selección de todos los productos</a>
@@ -40,10 +40,10 @@
                                         )->name;
 
                                         $price = $prod_info->stock[$prod_size_buyed]->price;
-                                        $totalPrice = $price * $prod_qty_buyed;
+                                        $totalPriceItem = $price * $prod_qty_buyed;
 
                                         $totalProds += $prod_qty_buyed;
-                                        $totalPrice += $totalPrice;
+                                        $totalPrice += $totalPriceItem;
                                         include('./components/cart_item.php');
                                     }
                                 }
@@ -86,6 +86,11 @@
                             <div class="recent">
                                 <p>Comprados anteriormente</p>
                             </div>
+                            <!-- Añadiría en esta sección los que se ha guardado como favoritos
+                            <div class="listed">
+                                <p>Tus favoritos</p>
+                            </div>
+                            -->
                         </div>
                         <div id="list_prod_wrapper">
                             <?php
