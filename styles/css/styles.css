@@ -74,7 +74,6 @@ nav a:active {
   flex-direction: column;
   flex-basis: calc((100% - 90px) / 4);
   gap: 7px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -94,7 +93,6 @@ nav a:active {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   justify-content: space-between;
@@ -108,7 +106,6 @@ nav a:active {
   background-color: white;
   border-radius: 20px;
   line-height: 0;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border: 1px solid black;
@@ -133,7 +130,6 @@ nav a:active {
   padding: 3px 5px;
   background-color: #d6ae62;
   border-radius: 15px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -191,7 +187,6 @@ nav a:active {
   background-color: white;
   border: 1px solid black;
   border-radius: 15px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
@@ -294,7 +289,6 @@ nav a:active {
 }
 
 #main_menu {
-  position: -webkit-sticky;
   position: sticky;
   top: 20px;
   width: calc(100% - 80px);
@@ -366,7 +360,6 @@ nav a:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   -moz-column-gap: 10px;
@@ -424,10 +417,8 @@ nav a:active {
   border-radius: 10px 0 10px 10px;
   border: 1px solid black;
   display: none;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   background-color: white;
@@ -474,7 +465,6 @@ nav a:active {
 }
 #main_menu #m_menu_content #user_control #prof_wrap #profile_pic_menu ul li a {
   display: inline-block;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -496,7 +486,6 @@ nav a:active {
 #footer #to_top {
   padding: 20px 0;
   width: 100%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   text-align: center;
@@ -583,7 +572,6 @@ nav a:active {
 .shop_body #main_frame #content #cat_shop_menu #cat_shop_menu_buttons {
   padding: 20px 0 30px;
   width: 100%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -638,7 +626,6 @@ nav a:active {
   gap: 5px;
   border: 1px solid black;
   border-radius: 200px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 5px;
@@ -733,7 +720,6 @@ nav a:active {
 }
 .producer_shop_body #main_frame #content #producer_nav #main_producer_menu #producer_info p {
   margin: 0;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -919,7 +905,6 @@ nav a:active {
 }
 .cart_body #main_frame #content #main_cart #cart_resume #cta_box {
   padding: 24px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   background-color: white;
@@ -1030,7 +1015,6 @@ nav a:active {
 }
 
 #dash_menu {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -1073,10 +1057,8 @@ nav a:active {
   gap: 30px;
 }
 #contact_data #img_wrapper {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   overflow: hidden;
@@ -1162,7 +1144,6 @@ nav a:active {
 
 .list_card {
   padding: 10px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border: 1px solid black;
@@ -1271,12 +1252,28 @@ nav a:active {
 }
 #order_hist_wrapper .order_card .order_item .prod_rate_cta {
   margin-left: auto;
+}
+#order_hist_wrapper .order_card .order_item .prod_rate_cta button {
   margin-top: 10px;
 }
+
+#messages_wrapper {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+#msgsDivider {
+  width: 1px;
+  height: 100%;
+  background-color: black;
+}
+
 #messages_menu {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 320px;
+  gap: 20px;
 }
 
 #top_bar {
@@ -1313,12 +1310,19 @@ nav a:active {
 .message_card {
   display: flex;
   gap: 10px;
-  align-items: center;
 }
 .message_card button {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  border: 1px solid black;
+  background-color: red;
+  margin: 0;
+  padding: 2px;
+  display: flex;
+  border-radius: 5px;
+  align-self: center;
+}
+.message_card button img {
+  height: 12px;
+  width: 12px;
 }
 .message_card p {
   margin: 0;
@@ -1336,7 +1340,9 @@ nav a:active {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: auto;
+  flex: 1 1 auto;
+  margin-top: 7px;
+  overflow: auto;
 }
 .message_card .msg_info .name {
   font-weight: bold;
@@ -1351,6 +1357,131 @@ nav a:active {
   align-self: flex-start;
   font-size: 12px;
   white-space: nowrap;
+  margin-top: 7px;
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+#chat_topbar {
+  display: flex;
+  justify-content: space-between;
+}
+#chat_topbar h2 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: 500;
+}
+
+#actions {
+  font-size: 0.625em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#actions a {
+  color: #0076d6;
+  text-decoration: none;
+}
+
+#conversation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#chat_write {
+  display: flex;
+  gap: 10px;
+  height: 35px;
+  widows: 100%;
+}
+#chat_write #msgBox {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 2px 6px;
+}
+#chat_write #sendMsg {
+  width: 35px;
+  height: 100%;
+  background-color: #D2E83A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#chat_write #sendMsg img {
+  height: 22px;
+}
+
+#chat_msgs {
+  display: flex;
+  height: 600px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+#chat_msgs .reverseScroll {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatDate {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5pxs;
+  font-size: 0.75em;
+}
+
+.message_item {
+  display: flex;
+  gap: 15px;
+}
+.message_item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.hour {
+  font-size: 0.625em;
+  margin: 0;
+}
+
+.other_user .message {
+  background-color: #f7f7f7;
+}
+.other_user.spaced .message {
+  margin-left: 45px;
+}
+
+.me {
+  flex-direction: row-reverse;
+}
+.me .message {
+  background-color: #0076d6;
+}
+.me .message p {
+  color: #fff;
+}
+.me.spaced .message {
+  margin-right: 45px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: gray;
+  width: 35%;
+}
+.message p {
+  margin: 0;
+  font-size: 0.875em;
 }
 
 .prod_det_body #product_info {
@@ -1454,7 +1585,6 @@ nav a:active {
   margin: 0;
 }
 .prod_det_body #ratings #opinion_wrapper #opinion_menu #opinion_stats {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -1500,7 +1630,6 @@ nav a:active {
   border: 1px solid black;
 }
 .prod_det_body #ratings #opinion_wrapper #opinion_list .prod_opinion .user_info p {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   font-size: 18pt;
@@ -1541,26 +1670,9 @@ nav a:active {
 }
 .prod_det_body #ratings #opinion_wrapper #opinion_list .opinion_cta a {
   text-decoration: none;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .prod_det_body #ratings #opinion_wrapper #opinion_list .opinion_cta button {
   padding: 20px;
 }/*# sourceMappingURL=styles.css.map */
-
-.member
-{
-  position: relative;
-}
-.membername
-{
-  position:absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: var(--band);
-  color: var(--band-letter);
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 30px 15px;
-}

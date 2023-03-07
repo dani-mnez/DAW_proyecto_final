@@ -1,6 +1,6 @@
 <?php
-include_once '../modules/classes.php';
-include_once '../modules/init_code.php';
+include_once 'classes.php';
+include_once 'init_code.php';
 
 // TODO Al iniciar sesión, en cualquier página, se debería redirigir de vuelta a la página en la que se estaba
     // Ej.: Si inicio sesión en la página de shop.php, me redirige a index.php
