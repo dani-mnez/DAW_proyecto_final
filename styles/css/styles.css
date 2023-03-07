@@ -194,7 +194,7 @@ nav a:active {
   flex-direction: column;
   padding: 30px;
   align-items: flex-end;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
