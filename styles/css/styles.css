@@ -43,6 +43,10 @@ body {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -1038,6 +1042,8 @@ nav a:active {
   width: 100%;
   border: 1px solid black;
   border-radius: 150px;
+  display: flex;
+  position: relative;
 }
 #dash_menu li:nth-last-child(n+3):hover {
   background-color: #D2E83A;
@@ -1048,8 +1054,20 @@ nav a:active {
   justify-content: center;
   height: 100%;
   width: 100%;
-  padding: 15px;
   font-weight: 600;
+}
+
+#dash_msg_count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  padding: 2px 5px 0 5px;
+  border-radius: 50px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }
 
 #contact_data {
