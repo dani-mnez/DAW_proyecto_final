@@ -1,7 +1,7 @@
 <?php
 
 // Obtener datos del usuario de una conversación
-function getChatUserData($chat, )
+function getChatUserData($chat)
 {
     global $user_role, $mongo_db;
     // Obtener documento del otro usuario

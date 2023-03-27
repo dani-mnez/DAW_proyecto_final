@@ -11,29 +11,45 @@
         <table>
             <tr>
                 <td>Nombre:</td>
-                <td><?php echo "{$user_data->name->name} {$user_data->name->surname1} {$user_data->name->surname2}" ?></td>
-                <td><button>Editar</button></td>
+                <td data-field="name"><?php echo "{$user_data->name->name} {$user_data->name->surname1} {$user_data->name->surname2}" ?></td>
+                <td class="profile_edit_btns">
+                    <button>Editar</button>
+                    <button class="hidden">Aceptar</button>
+                    <button class="hidden">Cancelar</button>
+                </td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><?php echo $user_data->mail ?></td>
-                <td><button>Editar</button></td>
+                <td data-field="mail"><?php echo $user_data->mail ?></td>
+                <td class="profile_edit_btns">
+                    <button>Editar</button>
+                    <button class="hidden">Aceptar</button>
+                    <button class="hidden">Cancelar</button>
+                </td>
             </tr>
             <tr>
                 <td>Teléfono:</td>
-                <td><?php echo $user_data->phone->default ?></td>
-                <td><button>Editar</button></td>
+                <td data-field="phone"><?php echo $user_data->phone->default ?></td>
+                <td class="profile_edit_btns">
+                    <button>Editar</button>
+                    <button class="hidden">Aceptar</button>
+                    <button class="hidden">Cancelar</button>
+                </td>
             </tr>
             <tr>
                 <td>Contraseña:</td>
-                <td>********</td>
-                <td><button>Editar</button></td>
+                <td data-field="pwd">********</td>
+                <td class="profile_edit_btns">
+                    <button>Editar</button>
+                    <button class="hidden">Aceptar</button>
+                    <button class="hidden">Cancelar</button>
+                </td>
             </tr>
         </table>
     </div>
 </div>
 
-<?php if ($user->type == "producer"):?>
+<?php if ($user->type == "producer") : ?>
 
     <div id="direction">
         <h2>Tu dirección</h2>
@@ -42,13 +58,13 @@
             $user_dir = $mongo_db->exec(
                 'find_one',
                 'addresses',
-                ['_id'=> $user_data->address[0]]
+                ['_id' => $user_data->address[0]]
             );
             unset($user_dir['_id']);
             unset($user_dir['default_location']);
 
-            foreach ($user_dir as $add_field => $value):
-                $nombre_campo = match($add_field) {
+            foreach ($user_dir as $add_field => $value) :
+                $nombre_campo = match ($add_field) {
                     "type" => "Tipo de vía:",
                     "name" => "Nombre largo de vía:",
                     "number" => "Número de vía:",
@@ -66,11 +82,11 @@
                     default => null
                 };
             ?>
-            <tr>
-                <td><?php echo $nombre_campo; ?></td>
-                <td><?php echo $value; ?></td>
-                <td><button>Editar</button></td>
-            </tr>
+                <tr>
+                    <td><?php echo $nombre_campo; ?></td>
+                    <td><?php echo $value; ?></td>
+                    <td><button>Editar</button></td>
+                </tr>
             <?php endforeach; ?>
         </table>
     </div>
@@ -82,13 +98,13 @@
             $fiscal_info = $mongo_db->exec(
                 'find_one',
                 'addresses',
-                ['_id'=> $user_data->address[0]]
+                ['_id' => $user_data->address[0]]
             );
             unset($user_dir['_id']);
             unset($user_dir['default_location']);
 
-            foreach ($user_dir as $add_field => $value):
-                $nombre_campo = match($add_field) {
+            foreach ($user_dir as $add_field => $value) :
+                $nombre_campo = match ($add_field) {
                     "type" => "Tipo de vía:",
                     "name" => "Nombre largo de vía:",
                     "number" => "Número de vía:",
@@ -106,16 +122,16 @@
                     default => null
                 };
             ?>
-            <tr>
-                <td><?php echo $nombre_campo; ?></td>
-                <td><?php echo $value; ?></td>
-                <td><button>Editar</button></td>
-            </tr>
+                <tr>
+                    <td><?php echo $nombre_campo; ?></td>
+                    <td><?php echo $value; ?></td>
+                    <td><button>Editar</button></td>
+                </tr>
             <?php endforeach; ?>
         </table>
     </div>
 
-<?php else: ?>
+<?php else : ?>
 
     <div id="res_directions">
         <h2>Tus direcciones</h2>
@@ -125,7 +141,7 @@
                 $user_dir = $mongo_db->exec(
                     'find_one',
                     'addresses',
-                    ['_id'=> $address]
+                    ['_id' => $address]
                 );
 
                 require(__DIR__ . '/../blocks/direction_card.php');

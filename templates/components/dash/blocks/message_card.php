@@ -1,4 +1,4 @@
-<div class="message_card" onclick="load_conversation('<?php echo $chat->_id ?>')" >
+<div class="message_card" data-conv-id="<?php echo $chat->_id ?>" onclick="load_conversation('<?php echo $chat->_id ?>')" >
     <button class="archive_msg"><img src="/DAW_proyecto_final/assets/icons/x.svg" alt="Archiva conversación"></button>
     <div class="user_img">
         <img src="<?php echo $other_user_profile_img; ?>" alt="Imagen de perfil de usuario">

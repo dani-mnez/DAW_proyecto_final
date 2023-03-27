@@ -2,7 +2,11 @@
     <label for="profile_img">Sube una foto de perfil:</label>
     <input type="file" name="profile_img" id="reg_profile_img">
     <label for="name">Nombre:</label>
-    <input require type="text" name="name" id="reg_text">
+    <input require type="text" name="surname1" id="reg_name">
+    <label for="surname1">Primer apellido:</label>
+    <input require type="text" name="surname2" id="reg_sur1">
+    <label for="surname2">Segundo apellido:</label>
+    <input require type="text" name="name" id="reg_sur2">
     <label for="mail">Email:</label>
     <input require type="email" name="mail" id="reg_mail">
     <label for="pwd">Contraseña:</label>

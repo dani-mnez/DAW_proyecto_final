@@ -88,12 +88,13 @@ $other_user_id = ($user_role == 'user1') ? $chat->user2 : $chat->user1;
                 require(__DIR__ . '/../blocks/message_item.php');
             }
         }
-
-        // TODO Si hay varios mensajes de un mismo usuario seguidos, no volver a poner la imagen de perfil del usuario
         ?>
     </div>
 </div>
 <div id="chat_write">
-    <input type="text" name="msgContent" id="msgBox" placeholder="Escribe un mensaje...">
-    <button id="sendMsg"><img src="/DAW_proyecto_final/assets/icons/send.svg" alt="Enviar mensaje"></button>
+    <input type="text" name="msgContent" id="msgBox" placeholder="Escribe un mensaje..." onkeypress='send_on_enter(<?php $user = substr($user_role, -1); echo "event, $user, \"{$chat->_id}\"" ?>)'>
+    <button id="sendMsg" onclick='send_message(<?php
+        echo "$user, \"{$chat->_id}\""; ?>), load_conversation(<?php echo "\"{$chat->_id}\"" ?>), update_conversation_card(<?php echo "\"{$chat->_id}\"" ?>)'>
+        <img src="/DAW_proyecto_final/assets/icons/send.svg" alt="Enviar mensaje">
+    </button>
 </div>
