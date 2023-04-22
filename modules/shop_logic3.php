@@ -21,40 +21,26 @@ if (isset($data->action)) {
             
             $prod_in_cart = false;
             $index_prod = false;
-            $prod_in_cart_id = false;
 
             foreach($carrito_usuario as $idx_prod => $prod){
                 $id_prod = (string) $prod->product;
                 if($id_prod == $data->id){
                     $prod_in_cart = true;
                     $index_prod = $idx_prod;
-                    $prod_in_cart_id = $prod->product;
+                    $prod->qty++;
                     break;
                 }
             }
 
-             if ($prod_in_cart) {
-                $qty = $carrito_usuario[$index_prod]->qty; 
-
+            if ($prod_in_cart) {
                 $user_data = $mongo_db->exec(
                     'update_one',
                     'users',
-                    [
-                        ['_id' => new MongoDB\BSON\ObjectID(unserialize($_SESSION['user'])->id)],
-                        ['$set' => [
-                            'cart.$[identifier].qty' => $qty + 1
-                            ]
-                        ],
-                        ['arrayFilters' => [
-                                [
-                                    'identifier.product' => [
-                                            '$eq' => $prod_in_cart_id
-                                        ]
-                                ]
-                            ]
+                        [
+                            ['_id' => new MongoDB\BSON\ObjectId(unserialize($_SESSION['user'])->id)],
+                            ['$set' => [ "cart" => [$carrito_usuario]]]
                         ]
-                    ]
-                );
+                    );
             } else {
                 $data_to_push = [
                     "cart" => [
@@ -76,6 +62,6 @@ if (isset($data->action)) {
             }
         break;
         default:
-            echo 'Algo ha fallado';
+            echo 'Algo ha follado';
     }
 }

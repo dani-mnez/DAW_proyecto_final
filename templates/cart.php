@@ -62,7 +62,7 @@
                     <span><?php echo $totalPrice ?> €</span>
                 </div>
                 <button>
-                    <span>Tramitar pedido</span>
+                <a href="/DAW_proyecto_final/templates/checkout.php"><span>Tramitar pedido</span></a>
                     <img src="/DAW_proyecto_final/assets/icons/arrow_fwd.svg" alt="Flecha hacia delante">
                 </button>
             </div>

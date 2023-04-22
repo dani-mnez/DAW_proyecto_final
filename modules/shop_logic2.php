@@ -21,40 +21,50 @@ if (isset($data->action)) {
             
             $prod_in_cart = false;
             $index_prod = false;
-            $prod_in_cart_id = false;
+            $final_cart = [];
 
             foreach($carrito_usuario as $idx_prod => $prod){
                 $id_prod = (string) $prod->product;
                 if($id_prod == $data->id){
                     $prod_in_cart = true;
                     $index_prod = $idx_prod;
-                    $prod_in_cart_id = $prod->product;
-                    break;
+                    $prod->qty++;
+                    array_push($final_cart, $prod);
+                } else {
+                    array_push($final_cart, $prod);
                 }
             }
 
-             if ($prod_in_cart) {
-                $qty = $carrito_usuario[$index_prod]->qty; 
+            if ($prod_in_cart) { 
 
                 $user_data = $mongo_db->exec(
                     'update_one',
                     'users',
-                    [
-                        ['_id' => new MongoDB\BSON\ObjectID(unserialize($_SESSION['user'])->id)],
-                        ['$set' => [
-                            'cart.$[identifier].qty' => $qty + 1
-                            ]
-                        ],
-                        ['arrayFilters' => [
-                                [
-                                    'identifier.product' => [
-                                            '$eq' => $prod_in_cart_id
-                                        ]
-                                ]
-                            ]
-                        ]
-                    ]
-                );
+                        [
+                            ['_id' => new MongoDB\BSON\ObjectId(unserialize($_SESSION['user'])->id)],
+                            ['$set' => $final_cart]
+                        ]      
+                    );
+                    
+                // Ejemplo de phind
+                // Conectarse a la base de datos
+                $client = new MongoDB\Client("mongodb://localhost:27017");
+                $collection = $client->mydb->users;
+
+                // Definir el filtro y el operador de actualización
+                $filter = array('_id' => new MongoDB\BSON\ObjectID('123456789012345678901234'));
+                $update = array('$set' => array('cart.$[identifier].qty' => 10));
+                $options = array('arrayFilters' => array(array('identifier.product' => '66666')));
+
+                // Actualizar el documento en la colección
+                $result = $collection->updateOne($filter, $update, $options);
+
+                // Comprobar si la actualización se ha realizado correctamente
+                if ($result->getModifiedCount() > 0) {
+                    echo "Documento actualizado correctamente";
+                } else {
+                    echo "No se ha encontrado el documento o no se ha modificado ningún campo";
+                }
             } else {
                 $data_to_push = [
                     "cart" => [
@@ -76,6 +86,6 @@ if (isset($data->action)) {
             }
         break;
         default:
-            echo 'Algo ha fallado';
+            echo 'Algo ha follado';
     }
 }
