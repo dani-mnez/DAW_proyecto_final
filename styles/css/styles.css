@@ -1693,4 +1693,204 @@ nav a:active {
 }
 .prod_det_body #ratings #opinion_wrapper #opinion_list .opinion_cta button {
   padding: 20px;
+}
+
+#content {
+  max-width: 1600px;
+  width: 100%;
+  padding: 0 75px;
+}
+
+#checkout_content {
+  display: flex;
+}
+
+#col_left {
+  width: 67%;
+  z-index: -1;
+}
+
+#col_right {
+  width: 33%;
+  text-align: center;
+  z-index: -1;
+}
+
+#pay_wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.payment_method {
+  width: calc(25% - 10px);
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 10px;
+}
+.payment_method:hover {
+  pointer: cursor;
+}
+.payment_method img {
+  position: relative;
+  width: 20%;
+  height: auto;
+}
+.payment_method #img_bizum {
+  height: 44px;
+}
+.payment_method p {
+  display: flex;
+  margin: 0px;
+}
+.payment_method span {
+  font-weight: 600;
+  text-align: center;
+}
+
+#resume_wrapper {
+  grid-area: prods;
+  width: 100%;
+}
+#resume_wrapper #cart_items {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  background-color: white;
+}
+#resume_wrapper #cart_items .cart_item {
+  display: flex;
+  -moz-columns: 1fr 1fr 1fr;
+       columns: 1fr 1fr 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  width: 100%;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+#resume_wrapper #cart_items .cart_item .prod_img_wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+#resume_wrapper #cart_items .cart_item .prod_img_wrapper img {
+  border-radius: 15px;
+  width: 170px;
+  border: 1px solid black;
+}
+#resume_wrapper #cart_items .cart_item .prod_img_wrapper input {
+  width: 22px;
+  height: 22px;
+}
+#resume_wrapper #cart_items .cart_item .cart_text_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#resume_wrapper #cart_items .cart_item .cart_text_wrap p {
+  margin: 0;
+}
+#resume_wrapper #cart_items .cart_item .cart_text_wrap .name {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+#resume_wrapper #cart_items .cart_item .prod_management {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+#resume_wrapper #cart_items .cart_item .prod_management select {
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#resume_wrapper #cart_items .cart_item .prod_management a {
+  color: #0076d6;
+  text-decoration: none;
+}
+#resume_wrapper #cart_items .cart_item .price {
+  margin-left: auto;
+  font-weight: bold;
+}
+#resume_wrapper #cart_items .subtotal_text {
+  display: flex;
+  justify-content: flex-end;
+}
+#resume_wrapper #cart_items .subtotal_text span:last-of-type {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.payment_method_selected {
+  border: 2px solid blue;
+}
+
+.prod_checkout {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  overflow: hidden;
+  margin: 10px;
+}
+.prod_checkout img {
+  border-radius: 15px;
+  width: 170px;
+  border: 1px solid black;
+}
+.prod_checkout .prod_checkout_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.prod_checkout .prod_checkout_info .cart_text_wrap {
+  padding: 10px;
+}
+
+#content_right {
+  left: 10px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.section_content_right {
+  padding: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.section_content_right h3 {
+  height: 0px;
+}
+
+.section_content_right_tot {
+  display: flex;
+  justify-content: space-between;
+  height: 15px;
+}
+
+.num_prices {
+  display: block;
+  -webkit-margin-before: 1.33em;
+          margin-block-start: 1.33em;
+  -webkit-margin-after: 1.33em;
+          margin-block-end: 1.33em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.section_content_right_text {
+  padding: 15px;
+  margin: 15px;
 }/*# sourceMappingURL=styles.css.map */

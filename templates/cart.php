@@ -61,11 +61,13 @@
                     <span>Subtotal (<?php echo $totalProds ?> productos):</span>
                     <span><?php echo $totalPrice ?> €</span>
                 </div>
-                <button>
-                <a href="/DAW_proyecto_final/templates/checkout.php"><span>Tramitar pedido</span></a>
-                    <img src="/DAW_proyecto_final/assets/icons/arrow_fwd.svg" alt="Flecha hacia delante">
-                </button>
-            </div>
+                    <a href="./checkout.php">
+                        <button id="checkout_btn">
+                            <span>Tramitar pedido</span>
+                            <img src="/DAW_proyecto_final/assets/icons/arrow_fwd.svg" alt="Flecha hacia delante">
+                        </button>
+                    </a>
+                </div>
             <div id="related_prods">
                 <p>Productos relacionados</p>
             </div>

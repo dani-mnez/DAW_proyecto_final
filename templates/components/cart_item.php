@@ -1,4 +1,4 @@
-<div class="cart_item">
+<div class="cart_item" data-prod-id="<?php echo $prod_info->_id ?>">
     <!-- TODO hay que implemenmtar las funcionalidades del checkbox
         A saber:
             Actualizar la cesta
@@ -6,7 +6,7 @@
             ... 
     -->
     <div class="prod_img_wrapper">
-        <input type="checkbox" name="" class="" <?php echo ($prod->selected) ? 'checked' : ''; ?> >
+        <input type="checkbox" id="" name="prod_checked" class="prod_checkbox" <?php echo ($prod->selected) ? 'checked' : ''; ?> >
         <img src="<?php echo '/DAW_proyecto_final/assets/db_data/products/' . $prod_info->imgs->cover ?>.jpg" alt="">
     </div>
     <div class="cart_text_wrap">

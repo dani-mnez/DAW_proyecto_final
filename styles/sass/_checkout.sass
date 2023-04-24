@@ -1,0 +1,189 @@
+// Estilo para la seccion de métodos de pago
+
+#content
+    max-width: 1600px
+    width: 100%
+    padding: 0 75px
+
+#checkout_content
+    display: flex
+
+#col_left
+    width: calc(67%)
+    z-index: -1
+
+#col_right
+    width: calc(33%)
+    text-align: center
+    z-index: -1
+
+#pay_wrapper 
+    display: flex
+    justify-content: center
+    gap: 10px
+
+
+.payment_method
+    width: calc(25% - 10px)
+    height: auto
+    border: 1px solid black
+    border-radius: 10px
+    padding: 10px
+    display: flex
+    align-items: center
+    font-size: 12px
+    gap: 10px
+
+    &:hover
+        pointer: cursor
+
+    img
+        position: relative
+        width: calc(20%)
+        height: auto
+
+    #img_bizum
+        height:44px
+    
+    p
+        display: flex
+        margin: 0px
+
+    span
+        font-weight: 600
+        text-align: center
+
+#resume_wrapper
+                    grid-area: prods
+                    width: 100%
+
+                    #cart_items
+                        padding: 10px
+                        display: flex
+                        flex-direction: column
+                        row-gap: 10px
+                        background-color: white
+
+                        .cart_item
+                            display: flex
+                            columns: 1fr 1fr 1fr
+                            column-gap: 20px
+                            width: 100%
+                            margin-top: 15px
+                            padding-bottom: 15px
+                            border-bottom: 1px solid black
+
+                            .prod_img_wrapper
+                                display: flex
+                                gap: 20px
+                                align-items: center
+
+                                img
+                                    border-radius: $bord_rad_big
+                                    width: 170px
+                                    border: 1px solid black
+
+                                input
+                                    width: 22px
+                                    height: 22px
+
+                            .cart_text_wrap
+                                display: flex
+                                flex-direction: column
+                                justify-content: space-between
+
+                                p
+                                    margin: 0
+
+                                .name
+                                    font-weight: 600
+                                    font-size: 1.1em
+
+                            .prod_management
+                                display: flex
+                                gap: 30px
+                                align-items: center
+
+                                select
+                                    height: 45px
+                                    border: 1px solid black
+                                    border-radius: $bord_rad_small
+
+                                a
+                                    color: $c_link
+                                    text-decoration: none
+
+                            .price
+                                margin-left: auto
+                                font-weight: bold
+
+                        .subtotal_text
+                            display: flex
+                            justify-content: flex-end
+
+                            span
+                                &:last-of-type
+                                    font-weight: bold
+                                    margin-left: 5px
+
+.payment_method_selected
+    border: 2px solid blue
+
+
+// Estilos para productos comprados
+
+.prod_checkout
+    display: flex
+    flex-direction: column
+    border: 1px solid black
+    border-radius: 10px
+    padding: 10px
+    overflow: hidden
+    margin: 10px
+
+    img
+        border-radius: $bord_rad_big
+        width: 170px
+        border: 1px solid black
+
+    .prod_checkout_info
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+
+        .cart_text_wrap
+            padding: 10px
+
+// Estilos panel derecho tramitar pedido
+
+#content_right
+    left: 10px
+    position: relative
+    border: 1px solid black
+    border-radius: 10px
+        
+.section_content_right
+    padding: 10px
+    border-top: 1px solid black
+    border-bottom: 1px solid black
+
+    h3
+        height: 0px
+
+.section_content_right_tot
+        display: flex
+        justify-content: space-between
+        height: 15px
+
+.num_prices
+    display: block
+    margin-block-start: 1.33em
+    margin-block-end: 1.33em
+    margin-inline-start: 0px
+    margin-inline-end: 0px
+    font-weight: bold
+
+.section_content_right_text
+    padding: 15px
+    margin: 15px
+
