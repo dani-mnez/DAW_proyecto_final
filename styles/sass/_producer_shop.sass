@@ -1,8 +1,6 @@
 .producer_shop_body
     #main_frame
         #content
-            display: flex
-            flex-direction: column
             gap: 40px
 
             #producer_header
@@ -10,14 +8,14 @@
                 height: 300px
                 overflow: hidden
                 border-radius: $bord_rad_big
-                border: 1px solid black
+                @include std_border
 
                 img
                     width: 100%
 
             #producer_nav
                 width: 100%
-                border: 1px solid black
+                @include std_border
                 border-radius: $bord_rad_big
 
                 #main_producer_menu
@@ -36,7 +34,7 @@
                             width: 32px
                             height: 32px
                             overflow: hidden
-                            border: 1px solid black
+                            @include std_border
                             border-radius: $bord_rad_small
 
                             img
@@ -56,7 +54,7 @@
                             align-items: center
                             gap: 5px
                             padding: 6px
-                            border: 1px solid black
+                            @include std_border
                             border-radius: $bord_rad_small
                             cursor: pointer
 
@@ -73,7 +71,7 @@
                         width: 200px
                         height: 26px
                         border-radius: $bord_rad_small
-                        border: 1px solid black
+                        @include std_border
                         display: flex
                         padding: 3px
                         overflow: hidden
@@ -125,7 +123,7 @@
 
                     a
                         border-radius: 200px
-                        border: 1px solid black
+                        @include std_border
                         display: inline-block
                         overflow: hidden
                         line-height: 0px
