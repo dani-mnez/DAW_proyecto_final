@@ -138,6 +138,9 @@ function bodyClassGen($fileName)
         case 'product_detail':
             $bodyClass = 'prod_det' . $bodyClass;
             break;
+        case 'checkout':
+            $bodyClass = 'checkout' . $bodyClass;
+            break;
         case 'dashboard':
             $bodyClass = 'dash' . $bodyClass;
             break;

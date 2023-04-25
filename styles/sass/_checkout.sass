@@ -1,3 +1,8 @@
+.checkout_body
+    a
+        color: $c_link
+        text-decoration: none
+
 // Estilo para la seccion de métodos de pago
 #content
     max-width: 1600px
@@ -118,7 +123,7 @@
     padding: 20px 25px
     overflow: hidden
 
-    img
+    .prod_img_wrapper
         border-radius: $bord_rad_big
         width: 170px
         border: 1px solid black
@@ -218,6 +223,18 @@
 #pay_methods, #res_opts
     margin-top: 60px
 
-a
-    color: $c_link
-    text-decoration: none
+.prod_qty_wrapper
+    height: 45px
+    @include std_border
+    border-radius: $bord_rad_small
+    display: flex
+    align-items: center
+    padding: 0 10px
+    width: fit-content
+
+    &:hover
+        cursor: pointer
+
+    img
+        height: 20px
+        margin-left: 10px
