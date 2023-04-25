@@ -4,6 +4,7 @@
         <a href="/DAW_proyecto_final/templates/product_detail.php?id=<?php echo $prod_info->_id ?>">
             <img src="<?php echo '/DAW_proyecto_final/assets/db_data/products/' . $prod_info->imgs->cover ?>.jpg" alt="">
         </a>
+
     </div>
     <div class="cart_text_wrap">
         <span class='name'><?php echo $prod_info->name ?></span>

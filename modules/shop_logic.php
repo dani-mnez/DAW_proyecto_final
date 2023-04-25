@@ -12,27 +12,70 @@ if (isset($data->action)) {
             // TODO Hacer para que se elimine de la lista de favoritos si ya existe el producto
             break;
         case 'add_cart':
-            $data_to_push = [
-                "cart" => [
-                    'product' => new MongoDB\BSON\ObjectId($data->id),
-                    'qty' => $data->qty,
-                    'size' => $data->size,
-                    'selected' => true
-                ]
-            ];
-            // OJO Si el producto NO existe aún
-            $mongo_db->exec(
-                'update_one',
-                'users',
-                [
-                    ['_id' => new MongoDB\BSON\ObjectId(unserialize($_SESSION['user'])->id)],
-                    ['$push' => $data_to_push]
-                ]
-            );
 
-            // TODO Hacer para que si el producto ya existe, se actualice la cantidad
-            break;
+            $carrito_usuario = $mongo_db->exec(
+                'find_one',
+                'users',
+                ['_id' => new MongoDB\BSON\ObjectId(unserialize($_SESSION['user'])->id)]
+            )->cart;
+            
+            $prod_in_cart = false;
+            $index_prod = false;
+            $prod_in_cart_id = false;
+
+            foreach($carrito_usuario as $idx_prod => $prod){
+                $id_prod = (string) $prod->product;
+                if($id_prod == $data->id){
+                    $prod_in_cart = true;
+                    $index_prod = $idx_prod;
+                    $prod_in_cart_id = $prod->product;
+                    break;
+                }
+            }
+
+             if ($prod_in_cart) {
+                $qty = $carrito_usuario[$index_prod]->qty; 
+
+                $user_data = $mongo_db->exec(
+                    'update_one',
+                    'users',
+                    [
+                        ['_id' => new MongoDB\BSON\ObjectID(unserialize($_SESSION['user'])->id)],
+                        ['$set' => [
+                            'cart.$[identifier].qty' => $qty + 1
+                            ]
+                        ],
+                        ['arrayFilters' => [
+                                [
+                                    'identifier.product' => [
+                                            '$eq' => $prod_in_cart_id
+                                        ]
+                                ]
+                            ]
+                        ]
+                    ]
+                );
+            } else {
+                $data_to_push = [
+                    "cart" => [
+                        'product' => new MongoDB\BSON\ObjectId($data->id),
+                        'qty' => $data->qty,
+                        'size' => $data->size,
+                        'selected' => true
+                    ]
+                ];
+            
+                $mongo_db->exec(
+                    'update_one',
+                    'users',
+                    [
+                        ['_id' => new MongoDB\BSON\ObjectId(unserialize($_SESSION['user'])->id)],
+                        ['$push' => $data_to_push]
+                    ]
+                );
+            }
+        break;
         default:
-            echo 'algo ha fallado';
+            echo 'Algo ha fallado';
     }
 }

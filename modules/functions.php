@@ -101,6 +101,9 @@ function getTitle($fileName)
         case 'cart':
             $baseTitle .= ' | Carrito';
             break;
+        case 'checkout':
+            $baseTitle .= ' | Tramitar pedido';
+            break;
         case 'product_detail':
             $baseTitle .= ' | Producto';
             break; // OJO Estaría bien poner el nombre del producto en vez de "Producto"

@@ -1,0 +1,223 @@
+// Estilo para la seccion de métodos de pago
+#content
+    max-width: 1600px
+    width: 100%
+    padding: 0 75px
+
+#checkout_content
+    display: flex
+    gap: 145px
+
+#checkout_header
+    h1
+        font-size: 4.5em
+        font-weight: 700
+        margin: 0
+
+#col_left
+    width: 100%
+    z-index: -1
+
+#col_right
+    text-align: center
+    z-index: -1
+    border: 1px solid black
+    border-radius: 20px
+    height: fit-content
+    margin-top: 30px
+    width: 330px
+
+#pay_wrapper
+    display: flex
+    justify-content: center
+    gap: 25px
+    justify-content: space-between
+    margin-right: 60px
+
+.payment_method
+    width: calc(25% - 30px)
+    height: 70px
+    border: 1px solid black
+    border-radius: $bord_rad_small
+    padding: 10px 20px
+    display: flex
+    align-items: center
+    font-size: 12px
+    gap: 10px
+    justify-content: center
+
+    &:hover
+        pointer: cursor
+
+    img
+        width: 100%
+
+    p
+        margin: 0px
+        font-size: 1em
+        font-weight: 600
+        text-align: left
+
+#resume_wrapper
+    display: flex
+    flex-direction: column
+    width: 100%
+    gap: 15px
+
+#resume_wrapper_total
+    display: flex
+    border: 1px solid black
+    border-radius: $bord_rad_small
+    align-items: center
+    padding: 20px
+    gap: 50px
+
+    p
+        margin: 0px
+
+        &:first-of-type
+            font-weight: 600
+            font-size: 1.25em
+
+    div
+        widows: -webkit-fill-available
+
+.legal_text
+    a
+        display: inline
+
+.checkout_btn
+    display: grid
+    align-items: center
+    justify-content: space-around
+    width: 290px
+    height: 50px
+    background-color: $color2
+    border: 1px solid black
+    border-radius: 200px
+    grid-template-areas: ". text icon"
+    cursor: pointer
+
+    span
+        grid-area: text
+        align-self: center
+
+    img
+        grid-area: icon
+        width: 24px
+
+.payment_method_selected
+    border: 2px solid blue
+
+// Estilos para productos comprados
+.prod_checkout
+    display: flex
+    flex-direction: column
+    border: 1px solid black
+    border-radius: $bord_rad_small
+    padding: 20px 25px
+    overflow: hidden
+
+    img
+        border-radius: $bord_rad_big
+        width: 170px
+        border: 1px solid black
+
+    .prod_checkout_header
+        display: flex
+        align-items: baseline
+        margin-bottom: 20px
+
+        span
+            &:first-child
+                font-weight: 600
+                font-size: 1.25em
+                color: green
+                margin-right: 30px
+
+    .prod_checkout_info
+        display: flex
+        gap: 20px
+
+        .cart_text_wrap
+            display: flex
+            flex-direction: column
+            gap: 10px
+
+            .producer
+                width: max-content
+
+            .name, .price
+                font-weight: 600
+                font-size: 1em
+
+        .shipping
+            display: flex
+            flex-direction: column
+            gap: 5px
+            margin-left: 80px
+
+            &>span
+                font-weight: 600
+
+            div
+                display: flex
+                flex-direction: column
+                margin-left: 20px
+
+// Estilos panel derecho tramitar pedido
+.section_content_right
+    padding: 20px
+    border-bottom: 1px solid black
+
+.section_content_right_tot
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    p
+        margin: 0px
+
+.section_content_right_text
+    padding: 20px
+    background-color: lightgrey
+    border-radius: 0 0 20px 20px
+
+    p
+        margin: 0
+
+#res_desglose
+    display: flex
+    flex-direction: column
+    gap: 5px
+
+    h3
+        margin: 0 0 10px 0
+        text-align: start
+
+#res_totals
+    .section_content_right_tot
+        margin-bottom: 10px
+
+    h3
+        margin: 0
+        text-align: start
+
+
+#addresses, #pay_methods, #res_opts
+    border-top: 2px solid black
+    padding: 30px 0 0 30px
+
+    h2
+        font-size: 2.5em
+        margin: 0 0 20px 0
+
+#addresses
+    margin-top: 30px
+
+#pay_methods, #res_opts
+    margin-top: 60px
+
+a
+    color: $c_link
+    text-decoration: none

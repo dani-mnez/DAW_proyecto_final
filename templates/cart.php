@@ -1,6 +1,6 @@
 <?php include_once(__DIR__ . '/components/header.php'); ?>
 <div id="content">
-    <h1>Cesta</h1>
+    <h1 id="page_title">Cesta</h1>
     <div id="main_cart">
         <span id="select_all">Selecciona todos los productos</span>
         <div id="cart_item_wrapper">
@@ -64,10 +64,12 @@
                     <span>Subtotal (<?php echo $totalProds ?> productos):</span>
                     <span><?php echo $totalPrice ?> €</span>
                 </div>
-                <button>
-                    <span>Tramitar pedido</span>
-                    <img src="/DAW_proyecto_final/assets/icons/arrow_fwd.svg" alt="Flecha hacia delante">
-                </button>
+                <a href="./checkout.php">
+                    <button id="checkout_btn">
+                        <span>Tramitar pedido</span>
+                        <img src="/DAW_proyecto_final/assets/icons/arrow_fwd.svg" alt="Flecha hacia delante">
+                    </button>
+                </a>
             </div>
             <!-- <div id="related_prods">
                 <p>Productos relacionados</p>
