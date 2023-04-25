@@ -1,45 +1,41 @@
 .dash_body
-    #content
-        display: flex
-        flex-direction: column
+    #dash_page_title
+        width: 100%
 
-        #dash_page_title
+    .dash_info
+        display: flex
+        gap: 30px
+
+        padding-top: 40px
+        border-top: 1px solid black
+
+        #dash_content
             width: 100%
 
-        .dash_info
-            display: flex
-            gap: 30px
+            & > *
+                margin-bottom: 40px
 
-            padding-top: 40px
-            border-top: 1px solid black
+                & > h1
+                    margin-top: 0
 
-            #dash_content
-                width: 100%
+            #res_prof
+                &>:not(:first-child)
+                    margin-left: 60px
 
-                & > *
-                    margin-bottom: 40px
+                #res_directions
+                    display: flex
+                    flex-direction: column
 
-                    & > h1
-                        margin-top: 0
-
-                #res_prof
-                    &>:not(:first-child)
-                        margin-left: 60px
-
-                    #res_directions
-                        display: flex
-                        flex-direction: column
-
-                #res_hist, #res_lists
-                    padding-top: 40px
-                    border-top: 1px solid black
+            #res_hist, #res_lists
+                padding-top: 40px
+                border-top: 1px solid black
 
 // Menú de navegación lateral
 #dash_menu
     height: fit-content
     width: 100%
     padding: 30px
-    border: 1px solid black
+    @include std_border
     border-radius: 15px
     flex: 1 0 200px
 
@@ -56,7 +52,7 @@
     li:nth-last-child(n+3)
         height: 35px
         width: 100%
-        border: 1px solid black
+        @include std_border
         border-radius: 150px
         display: flex
         position: relative
@@ -94,7 +90,7 @@
         height: fit-content
         width: fit-content
         overflow: hidden
-        border: 1px solid black
+        @include std_border
         border-radius: 10px
         display: flex
         flex-direction: column
@@ -142,7 +138,7 @@
 
 .dir_card
     font-size: 12px
-    border: 1px solid black
+    @include std_border
     border-radius: 10px
     padding: 10px
     display: flex
@@ -176,14 +172,14 @@
     padding: 10px
     width: fit-content
 
-    border: 1px solid black
+    @include std_border
     border-radius: 10px
 
     .list_card_info
         .list_img_wrapper
             height: 196px
             width: 196px
-            border: 1px solid black
+            @include std_border
             border-radius: 10px
             overflow: hidden
             display: flex
@@ -226,7 +222,7 @@
     flex-direction: column
 
     .order_card
-        border: 1px solid black
+        @include std_border
         border-radius: 10px
         overflow: hidden
         margin-bottom: 40px
@@ -271,7 +267,7 @@
 
             .prod_img
                 height: 100px
-                border: 1px solid black
+                @include std_border
                 border-radius: 10px
 
             .prod_text
@@ -321,7 +317,7 @@
         width: 160px
         height: 26px
         border-radius: $bord_rad_small
-        border: 1px solid black
+        @include std_border
         display: flex
         padding: 3px
         overflow: hidden
@@ -344,7 +340,7 @@
     gap: 10px
 
     button
-        border: 1px solid black
+        @include std_border
         background-color: red
         margin: 0
         padding: 2px
@@ -362,7 +358,7 @@
     .user_img
         height: 48px
         border-radius: $bord_rad_small
-        border: 1px solid black
+        @include std_border
 
         img
             height: 100%
@@ -429,7 +425,7 @@
         width: 100%
         height: 100%
         border-radius: $bord_rad_small
-        border: 1px solid black
+        @include std_border
         padding: 2px 6px
 
     #sendMsg
@@ -439,7 +435,7 @@
         display: flex
         align-items: center
         justify-content: center
-        border: 1px solid black
+        @include std_border
         border-radius: $bord_rad_small
 
         img
@@ -470,7 +466,7 @@
         width: 30px
         height: 30px
         border-radius: $bord_rad_small
-        border: 1px solid black
+        @include std_border
 
 .hour
     font-size: 0.625em
@@ -483,7 +479,6 @@
     &.spaced
         .message
             margin-left: 45px
-
 
 .me
     flex-direction: row-reverse

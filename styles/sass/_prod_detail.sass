@@ -1,13 +1,15 @@
 .prod_det_body
     #product_info
         display: flex
-        gap: 20px
+        gap: 50px
+        margin-bottom: 60px
 
     #imgs_viewer
         flex: 1
-        img
+
+        #main_image
             width: 100%
-            border: 1px solid black
+            @include std_border
             border-radius: 10px
 
     #product_desc
@@ -17,23 +19,129 @@
             p
                 margin: 0
 
+            .producer_name
+                font-size: 0.875em
+                text-decoration: none
+                color: $c_link
+
+            .product_name
+                font-size: 2em
+                font-weight: 600
+
+            .price
+                display: flex
+                align-items: center
+                gap: 10px
+                height: min-content
+                font-size: 1.25em
+
+                span:last-of-type
+                    font-weight: 600
+
+            .discount
+                color: red
+
+            .description
+                padding: 30px 0
+                margin: 30px 0
+                border-top: 1px solid black
+                border-bottom: 1px solid black
+
+            .descript_title
+                font-size: 1.125em
+                font-weight: 600
+                margin-bottom: 24px
+
+    #nut_info
+        display: flex
+        flex-direction: column
+        gap: 45px
+
+        #nut_info_tabs
+            display: flex
+
+            span
+                width: 100%
+                text-align: center
+                border-bottom: 1px solid gray
+                color: gray
+
+                &:hover
+                    cursor: pointer
+
+            .nut_info_tab_active
+                border-bottom: 2px solid black
+                color: black
+
+        .nut_info_content
+            table
+                margin: auto
+                border-spacing: 0
+                border-collapse: collapse
+
+                td, th
+                    border-bottom: 1px solid black
+                    padding: 10px
+
+                tr
+                    td:first-of-type, th
+                        border-right: 1px solid black
+
+                    &:first-of-type th:last-of-type
+                        border-right: none
+
+                    &:last-of-type
+                        td, th
+                            border-bottom: none
+
+                    th:first-of-type
+                        text-align: start
+
+                        &:has(span)
+                            font-weight: 500
+
+                            span
+                                font-weight: 600
+
+                    &:nth-of-type(3), &:nth-of-type(5)
+                        td, th
+                            border-bottom: none
+                            padding-bottom: 2px
+
+                    &:nth-of-type(4), &:nth-of-type(6)
+                        td, th
+                            padding-top: 0
+
+                        td
+                            padding-left: 20px
+
+                            &:not(:last-of-type)
+                                border-right: 1px solid black
+
+
     #prod_cta
         display: grid
-        grid-template-areas: "label label" "formats formats" "qty_sel cart_cadd"
+        grid-template-areas: "label label" "formats formats" "qty_sel cart_add"
         grid-template-rows: auto
         grid-template-columns: auto 1fr
-        gap: 0 20px
+        gap: 0 60px
+        margin: 30px 0 60px 0
 
         label
             grid-area: label
+            font-size: 0.875em
+            font-weight: 600
+            margin-bottom: 10px
 
         fieldset
             grid-area: formats
-            border: 1px solid black
+            @include std_border
             border-radius: $bord_rad_small
             display: flex
             padding: 0
             margin: 0
+            margin-bottom: 45px
+            overflow: hidden
 
             label
                 cursor: pointer
@@ -43,14 +151,12 @@
                 flex: 0 0 100%
                 height: 100%
 
-
             .format_sel_item
                 flex: 1
                 height: 40px
                 text-align: center
                 display: flex
                 justify-content: center
-                align-items: center
 
                 &:has(input:checked)
                     background-color: $color2
@@ -61,13 +167,56 @@
                 input
                     display: none
 
-
         #prod_qty_selector
             grid-area: qty_sel
             display: flex
+            height: 45px
+            border: 1px solid black
+            border-radius: $bord_rad_small
+            align-items: center
+            overflow: hidden
 
-        #add_bt
+            span
+                width: 110px
+                text-align: center
+
+            button
+                width: 45px
+                margin: 0
+                padding: 0
+                background-color: white
+                display: flex
+                justify-content: center
+                align-items: center
+                border: none
+                height: 100%
+                font-size: 1em
+
+                &:first-of-type
+                    border-right: 1px solid black
+
+                &:last-of-type
+                    border-left: 1px solid black
+
+        #add_btn
             grid-area: cart_add
+            height: 45px
+            background-color: $color2
+            border-radius: 50px
+            border: 1px solid black
+            margin: 0
+            padding: 0
+            font-weight: 600
+
+    #buyed_together, #similar_prods, #ratings, #alim_safety
+        padding: 20px 0 40px 0
+        border-top: 2px solid black
+
+        h2
+            margin-top: 0
+            margin-bottom: 15px
+            font-size: 3em
+            font-weight: 600
 
     #similar_prods
         display: flex
@@ -75,20 +224,38 @@
 
         .all_sim_prods
             display: flex
+            gap: 60px
 
             .sim_prod
                 display: flex
                 flex-direction: column
                 flex: 1
-                gap: 5px
+                gap: 20px
                 max-width: 266px
 
                 img
-                    border: 1px solid black
+                    @include std_border
                     border-radius: $bord_rad_small
 
-                p
+                    &:hover
+                        cursor: pointer
+
+                .sim_prod_info
+                    p
+                        margin: 0
+                        font-size: 1.25em
+
+                button
+                    width: 100%
+                    height: 45px
                     margin: 0
+                    padding: 0
+                    background-color: white
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border: 1px solid black
+                    border-radius: $bord_rad_small
 
     #ratings
         display: flex
@@ -108,7 +275,7 @@
                     .rate_bar
                         width: 170px
                         height: 22px
-                        border: 1px solid black
+                        @include std_border
                         border-radius: $bord_rad_small
 
                         .rate_meter
@@ -116,78 +283,181 @@
                             border-right: 1px solid black
                             background-color: $color2
 
-                #prod_opinion_val
-                    display: flex
-
-                    img
-                        width: 80px
-
-            #opinion_list
-                display: flex
-                flex-direction: column
-                gap: 30px
-
-                .prod_opinion
-                    display: flex
-                    flex-direction: column
-
-                    & p
-                        margin: 0
-                        font-size: 14pt
-
-                    .user_info
+                    #prod_opinion_val
                         display: flex
-                        align-items: center
                         gap: 10px
                         margin-bottom: 10px
 
                         img
-                            height: 33px
-                            border-radius: 3px
-                            border: 1px solid black
+                            width: 80px
 
                         p
-                            height: fit-content
-                            font-size: 18pt
+                            margin: 0
+                            font-size: 1.5em
 
-                    .rate
-                        margin-bottom: 20px
+                    table
+                        padding: 25px 0 60px 0
+                        border-bottom: 1px solid black
+                        border-spacing: 0 15px
 
-                        .visual_rate
-                            display: flex
-                            gap: 10px
-                            margin-bottom: 10px
+                        tr
+                            td
+                                &:nth-of-type(2)
+                                    padding: 0 20px
 
-                            img
-                                width: 85px
+                                &:last-of-type
+                                    text-align: end
 
-                            p
-                                font-weight: 700
+            #cta_opinion
+                #cta_opinion_text
+                    margin: 30px 0 20px 0
 
-                        &>p
-                            font-size: 14pt
-                            color: $c_fade_txt
+                    h3
+                        margin: 0
+                        font-size: 1.5em
+                        font-weight: 600
 
-                    .opinion_body
-                        font-size: 12pt
-                        margin-bottom: 20px
+                button
+                    height: 45px
+                    width: 100%
+                    margin: 0
+                    padding: 0
+                    background-color: white
+                    border-radius: 50px
+                    border: 1px solid black
+                    font-weight: 600
 
-                    .util_count
-                        margin-bottom: 20px
-                        color: $c_fade_txt
+            #opinion_list
+                display: flex
+                flex-direction: column
+                gap: 50px
+
+                &:has(.no_opinions)
+                    width: 100%
+                    text-align: center
+                    justify-content: center
 
 
-                .opinion_cta
-                    display: flex
-                    align-items: center
-                    gap: 30px
+.prod_opinion
+    display: flex
+    flex-direction: column
 
-                    a, button
-                        font-size: 14pt
+    & p
+        margin: 0
 
-                    a
-                        text-decoration: none
-                        height: fit-content
+    .user_info
+        display: flex
+        align-items: center
+        gap: 10px
+        margin-bottom: 10px
 
-                    button
-                        padding: 20px
+        img
+            height: 33px
+            border-radius: 3px
+            @include std_border
+
+        p
+            height: fit-content
+        font-size: 1.125em
+
+    .rate
+        margin-bottom: 20px
+
+        .visual_rate
+            display: flex
+            gap: 10px
+            margin-bottom: 10px
+
+            img
+                width: 85px
+
+            p
+                font-size: 1.125em
+                font-weight: 700
+
+        &>p
+            font-size: 0.875em
+            color: $c_fade_txt
+
+    .opinion_body
+        font-size: 1em
+        margin-bottom: 20px
+
+    .util_count
+        margin-bottom: 20px
+        color: $c_fade_txt
+
+    .opinion_cta
+        display: flex
+        align-items: center
+        gap: 30px
+
+        a, button
+            font-size: 0.875em
+
+        a
+            text-decoration: none
+            height: fit-content
+
+        button
+            height: 45px
+            background-color: white
+            border-radius: $bord_rad_small
+            border: 1px solid black
+            padding: 0 20px
+            font-weight: 600
+
+.thumbnail_wrapper
+    display: flex
+    gap: 10px
+    margin-top: 15px
+
+.thumbnail
+    height: 70px
+    width: 70px
+    border-radius: $bord_rad_small
+    @include std_border
+    transition: border-radius 0.2s ease-in-out
+
+    &:hover
+        cursor: pointer
+        border-radius: $bord_rad_big
+
+.selected_thumbnail
+    border-radius: $bord_rad_big
+
+#img_viewer_nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    width: 100%
+    height: 100%
+
+    .img_nav_btn
+        width: 32px
+        height: 32px
+        background-color: white
+        border-radius: 50%
+        border: 1px solid black
+
+        img
+            width: inherit
+            padding: 4px
+
+        &:hover
+            cursor: pointer
+
+#main_viewer
+    display: flex
+    position: relative
+
+#img_viewer_nav_left
+    transform: translateX(-16px)
+
+#img_viewer_nav_right
+    transform: translateX(16px)
+
+.no_opinions
+    font-size: 1.5em
+    color: #c9c9c9

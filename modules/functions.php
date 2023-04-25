@@ -29,6 +29,26 @@ function getChatUserData($chat)
     ];
 }
 
+// Comprobar si el producto está en la lista de favoritos del usuario
+function isFaved($productID)
+{
+    // TODO Meter un if para comprobar si el usuario está logueado - ya que da error en la tienda si no está
+    global $user_data;
+
+    if (isset($user_data)) {
+
+        $raw_user_fav_list = $user_data->lists->desired_prods->prods->bsonSerialize();
+        $callback = function ($objId) {
+            return (string) $objId;
+        };
+        $fav_list = array_map($callback, $raw_user_fav_list);
+
+        return in_array($productID, $fav_list);
+    } else {
+        return false;
+    }
+}
+
 // Formatear fechas
 $monthTranslatePool = [
     'Jan' => 'enero',
@@ -133,36 +153,4 @@ function destroyCookie($cookieName)
 {
     setcookie($cookieName, '', time() - 3600, '/');
     destroyCookie($cookieName);
-}
-
-function update_cart() {
-
-}
-
-function save_cart() {
-
-}
-
-function update_item() {
-
-}
-
-function delete_item($user, $productID) {
-
-}
-
-function save_item_for_later($user, $productID) {
-
-}
-
-function look_for_similar_item() {
-
-}
-
-function recover_saved_item() {
-    
-}
-
-function delete_saved_item() {
-
 }

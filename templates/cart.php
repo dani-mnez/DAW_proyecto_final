@@ -2,7 +2,7 @@
 <div id="content">
     <h1 id="page_title">Cesta</h1>
     <div id="main_cart">
-        <a href="#" id="deselect_all">Anula la selección de todos los productos</a>
+        <span id="select_all">Selecciona todos los productos</span>
         <div id="cart_item_wrapper">
             <div id="cart_items">
                 <?php
@@ -42,8 +42,11 @@
                         $price = $prod_info->stock[$prod_size_buyed]->price;
                         $totalPriceItem = $price * $prod_qty_buyed;
 
-                        $totalProds += $prod_qty_buyed;
-                        $totalPrice += $totalPriceItem;
+                        if ($prod->selected) {
+                            $totalProds += $prod_qty_buyed;
+                            $totalPrice += $totalPriceItem;
+                        }
+
                         include('./components/cart_item.php');
                     }
                 }
@@ -68,9 +71,9 @@
                     </button>
                 </a>
             </div>
-            <div id="related_prods">
+            <!-- <div id="related_prods">
                 <p>Productos relacionados</p>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -82,17 +85,12 @@
         ?>
         <div id="lists">
             <div class="tabs">
-                <div class="later">
+                <div id="later_btn_tab" class="selected_cta_tab">
                     <p>Guardado para mas tarde (<?php echo count($saved_prods) . $palabra ?>)</p>
                 </div>
-                <div class="recent">
+                <div id="recent_btn_tab">
                     <p>Comprados anteriormente</p>
                 </div>
-                <!-- Añadiría en esta sección los que se ha guardado como favoritos
-                            <div class="listed">
-                                <p>Tus favoritos</p>
-                            </div>
-                            -->
             </div>
             <div id="list_prod_wrapper">
                 <?php
@@ -118,7 +116,23 @@
             </div>
         </div>
         <!-- Pestaña: Comprar de nuevo
-                                Accede al historial de compras (BDD) para sugerirte productos comprados anteriormente y/o comprados varias veces -->
+            Accede al historial de compras (BDD) para sugerirte productos comprados anteriormente y/o comprados varias veces -->
     </div>
 </div>
+
+<div id="qty_select_dropdown">
+    <span>0 (Eliminar)</span>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span>7</span>
+    <span>8</span>
+    <span>9</span>
+    <span>10+</span>
+    <!-- TODO Hacer que la cantidad esté resaltada al abrir el menú -->
+</div>
+
 <?php include_once(__DIR__ . '/components/footer.php'); ?>

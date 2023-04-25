@@ -1,58 +1,168 @@
 .shop_body
     #main_frame
-
         #content
-            display: flex
-            flex-direction: column
             gap: 10px
 
-            #shop_header
-                h1
-                    font-size: 72px
-                    font-weight: 700
-                    margin: 0
+// Título y subtítulo de la tienda
+#shop_header
+    h1
+        font-size: 72px
+        font-weight: 700
+        margin: 0
 
-                p
-                    margin: 0
+    p
+        margin: 0
 
-            #cat_shop_menu
-                #cat_shop_menu_title
-                    margin: 0
-                    &::after
-                        content: ""
+// Div de grupos de productos
+#products
+    margin-top: 30px
 
-                #cat_shop_menu_buttons
-                    padding: 20px 0 30px
-                    width: 100%
-                    height: fit-content
-                    display: flex
-                    justify-content: space-between
-                    gap: 20px
-                    border-bottom: 1px solid black
+    .prod_cat
+        width: 100%
+        margin-bottom: 40px
 
-                    a
-                        width: 100%
-                        text-align: center
-                        border: 1px solid black
-                        border-radius: 10px
-                        line-height: 90px
-                        font-weight: 700
-                        font-size: 1.2em
-                        color: white
-                        background-position: center center
-                        background-size: cover
+        &:not(:last-child)
+            padding-bottom: 40px
+            border-bottom: 1px solid black
 
-                        &:first-of-type
-                            background-color: black
-            #products
-                .prod_cat
-                    width: 100%
-                    margin-bottom: 60px
+        .cat_title
+            margin: 0 0 20px 0
+            font-size: 34px
 
-                    &:not(:last-child)
-                        padding-bottom: 40px
-                        border-bottom: 1px solid black
+// Menú de selección de categorías de productos
+#cat_shop_menu
+    margin-top: 30px
 
-                    .cat_title
-                        margin: 0 0 20px 0
-                        font-size: 34px
+    #cat_shop_menu_title
+        margin: 0
+        display: flex
+        align-items: center
+        gap: 10px
+        white-space: nowrap
+
+        &::after
+            content: ""
+            height: 1px
+            background-color: black
+            width: 100%
+
+    #cat_shop_menu_buttons
+        padding: 20px 0 30px
+        width: 100%
+        height: fit-content
+        display: flex
+        justify-content: space-between
+        gap: 20px
+        border-bottom: 1px solid black
+
+        .cat_shop_btn
+            width: 100%
+            text-align: center
+            @include std_border
+            border-radius: 10px
+            line-height: 90px
+            font-weight: 700
+            font-size: 1.2em
+            color: white
+            background-position: center center
+            background-size: 100%
+            transition: background-size 0.2s ease-in-out, font-size 0.3s ease-in-out
+
+            &:first-of-type
+                background-color: black
+
+            &:hover
+                background-size: 102%
+                font-size: 1.3em
+
+// Contenedor de las tarjetas de producto
+.prod_wrapper
+    display: flex
+    flex-wrap: wrap
+    gap: 60px $x_gap
+
+// Tarjeta de producto
+.product
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
+    gap: 7px
+    height: fit-content
+
+    .product_img_wrapper
+        // height: calc(((100% - $x_gap * ($prods_cols - 1)) / $prods_cols) * $img_ratio)
+        position: relative
+        height: 200px
+        display: flex
+        border-radius: 10px
+        @include std_border
+        overflow: hidden
+        transition: border 0.2s ease-in-out
+
+        &>img
+            width: 100%
+            object-fit: cover
+            transition: transform 0.2s ease-in-out
+
+        .buttons
+            position: absolute
+            display: flex
+            flex-direction: column
+            width: fit-content
+            justify-content: space-between
+            padding: 10px 0
+            right: 10px
+            top: 0
+            bottom: 0
+
+    p
+        margin: 0
+        display: inline-block
+
+    .producer_name > a
+        color: $c_link
+        display: inline
+        text-decoration: none
+
+    .product_name
+        font-size: 1.2em
+        font-weight: 600
+
+    .subcat
+        font-size: 1.2em
+
+    .price
+        font-weight: 600
+
+    .description
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        text-overflow: ellipsis
+        overflow: hidden
+
+    &:hover
+        .product_img_wrapper
+            border: 2px solid black
+
+            img
+                transform: scale(1.03)
+
+
+.like_btn, .add_cart_btn
+    display: inline-block
+    background-color: white
+    border-radius: 20px
+    line-height: 0
+    width: fit-content
+    @include std_border
+    transition: background-color 0.2s ease-in-out
+
+    img
+        width: 20px
+        margin: 5px
+
+.faved
+    .like_btn
+        background-color: red

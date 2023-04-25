@@ -1,9 +1,10 @@
 #main_menu
+    z-index: 999
     position: sticky
     top: 20px
     width: calc(100% - 80px)
     grid-area: m_menu
-    border: 1px solid black
+    @include std_border
     background-color: rgba(255, 255, 255, 0.75)
     display: flex
     justify-content: center
@@ -37,7 +38,7 @@
             color: black
 
         #main_search
-            border: 1px solid black
+            @include std_border
             border-radius: 7px
             overflow: hidden
             display: flex
@@ -71,13 +72,12 @@
             column-gap: 10px
 
             #access_btn
-                border: 1px solid black
+                @include std_border
                 border-radius: 7px
                 padding: 10px
                 font-family: "Mona Sans"
                 font-weight: 600
                 background-color: white
-                cursor: pointer
 
             &>*
                 margin: 0
@@ -115,12 +115,12 @@
                 .profile_pic
                     height: 38px
                     border-radius: $bord_rad_small
-                    border: 1px solid black
+                    @include std_border
                     z-index: 999
 
                 #profile_pic_menu
                     border-radius: 10px 0 10px 10px
-                    border: 1px solid black
+                    @include std_border
                     display: none
                     width: fit-content
                     height: fit-content

@@ -1,6 +1,6 @@
 #access_view
     background-color: white
-    border: 1px solid black
+    @include std_border
     border-radius: $bord_rad_big
     width: fit-content
     display: flex
@@ -44,7 +44,7 @@
                 justify-content: center
                 height: 40px
                 width: 40%
-                border: 1px solid black
+                @include std_border
                 border-radius: 150px
 
                 &:has(input:checked)

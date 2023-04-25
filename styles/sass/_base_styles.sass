@@ -15,11 +15,9 @@ text, p, a, span
     color: black
 
 a
-    cursor: pointer
     width: auto
     line-height: auto
     display: block
-
 
 // || General
 *
@@ -48,6 +46,10 @@ body
 .hidden
     display: none
 
+button, a
+    &:hover
+        cursor: pointer
+
 // || Menus
 ul
     list-style: none
@@ -55,7 +57,6 @@ ul
     margin: 0
 
 nav
-
     a:link,
     a:visited,
     a:hover,
@@ -63,81 +64,12 @@ nav
         text-decoration: none
 
 #content
-    max-width: 1600px
-    width: 100%
-    padding: 0 75px
-
-
-// || Tiendas
-// Contenedor de las tarjetas de producto
-.prod_wrapper
-    display: flex
-    flex-wrap: wrap
-    gap: 60px $x_gap
-
-// Tarjeta de producto
-.product
-    $img_ratio: 1.5
-    cursor: pointer
     display: flex
     flex-direction: column
-    flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
-    gap: 7px
-    height: fit-content
+    max-width: 1600px
+    width: 100%
 
-    .product_img_wrapper
-        // height: calc(((100% - $x_gap * ($prods_cols - 1)) / $prods_cols) * $img_ratio)
-        height: 200px
-        display: flex
-        border-radius: 10px
-        border: 1px solid black
-        overflow: hidden
-
-        img
-            width: 100%
-            object-fit: cover
-
-        // FIX Creo que el problema de que se vaya todo a la puta es del posicionamiento de los buttons, que son RELATIVE
-        .buttons
-            position: relative
-            display: flex
-            flex-direction: column
-            width: fit-content
-            justify-content: space-between
-            padding: 5px 0
-            right: 5px
-            float: right
-            height: 100%
-
-            .like_btn, .add_cart_btn
-                display: inline-block
-                background-color: white
-                border-radius: 20px
-                line-height: 0
-                width: fit-content
-                border: 1px solid black
-
-                img
-                    width: 20px
-                    margin: 5px
-
-    p
-        margin: 0
-        display: inline-block
-
-    .producer_name > a
-        color: $c_link
-        display: inline
-
-    .product_name, .price
-        font-size: 1.2em
-        font-weight: 600
-
-    .subcat
-        padding: 3px 5px
-        background-color: #d6ae62 //OJO Se puede hacer que con cada subgategoría se tenga un color identificativo --> Ej.: los embutidos todos rojizos, pero dependiendo del tipo de embutido, un rojo diferente
-        border-radius: $bord_rad_big
-        width: fit-content
+// || Tiendas
 
 // Tarjeta de producto dentro de lista
 .list_product
@@ -149,7 +81,7 @@ nav
 
     img
         border-radius: 15px
-        border: 1px solid black
+        @include std_border
         width: 100%
 
     p
@@ -175,7 +107,7 @@ nav
             padding: 16px
             background-color: white
             border-radius: $bord_rad_small
-            border: 1px solid black
+            @include std_border
             margin-bottom: 10px
             font-size: 16px
 
