@@ -161,4 +161,5 @@
         </div>
     </div>
 </div>
+<?php require_once(__DIR__ . '/components/prod_qty_dropdown.php'); ?>
 <?php include_once(__DIR__ . '/components/footer.php'); ?>

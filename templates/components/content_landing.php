@@ -1,4 +1,24 @@
 <div id="landing">
+    <div id="landing_scroll">
+        <div class="landing_big_text">
+            Pero mira esto...
+        </div>
+        <div class="landing_big_text">
+            ¡Qué rico está el queso!
+        </div>
+        <div class="landing_big_text">
+            La de vueltas que está dando
+        </div>
+        <div class="landing_big_text">
+            Y lo mejor de todo:
+        </div>
+        <div class="landing_big_text">
+            Lo puedes comprar muy barato en esta tienda
+        </div>
+        <div class="landing_big_text">
+            ...y de los mejores productores
+        </div>
+    </div>
     <script type="importmap">
         {
             "imports": {
@@ -7,63 +27,5 @@
             }
         }
     </script>
-    <script type="module">
-        import * as THREE from 'three';
-        import {
-            GLTFLoader
-        } from '/DAW_proyecto_final/lib/threejs/examples/jsm/loaders/GLTFLoader.js';
-        let cheese;
-
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
-
-        const renderer = new THREE.WebGLRenderer({
-            alpha: true
-        });
-
-        let light1 = new THREE.PointLight(0xffffff, 1)
-        light1.castShadow = true
-        light1.position.x = 7
-        light1.position.y = 5
-        light1.position.z = 50
-        scene.add(light1)
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        const textureLoader = new THREE.TextureLoader();
-        const texture = textureLoader.load("/DAW_proyecto_final/assets/3dscene/textures/Cheese_baseColor.jpeg");
-        const metalness = textureLoader.load("/DAW_proyecto_final/assets/3dscene/textures/Cheese_metallicRoughness.png");
-        const normal = textureLoader.load("/DAW_proyecto_final/assets/3dscene/textures/Cheese_normal.png");
-
-        const loader = new GLTFLoader();
-        loader.load('/DAW_proyecto_final/assets/3dscene/scene.gltf', function(gltf) {
-            cheese = gltf.scene.children[0];
-            cheese.material = new THREE.MeshStandardMaterial({
-                map: texture,
-                side: THREE.DoubleSide,
-                metalnessMap: metalness,
-                normalMap: normal,
-                metalness: 1,
-                roughness: 0
-            });
-            cheese.scale.set(0.3, 0.3, 0.3);
-            cheese.position.set(0, 0, 0);
-
-            scene.add(cheese);
-
-            function animate() {
-                requestAnimationFrame(animate);
-
-                cheese.rotation.x += 0.01;
-                cheese.rotation.y += 0.01;
-
-                renderer.render(scene, camera);
-            }
-
-            animate();
-        }, undefined, function(error) {
-            console.error(error);
-        });
-    </script>
+    <script type="module" src="/DAW_proyecto_final/lib/threejs_content.js"></script>
 </div>

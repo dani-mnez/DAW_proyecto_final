@@ -4,7 +4,6 @@ if (isset($_GET['id'])) {
     $prod = $mongo_db->exec(
         'find_one',
         'products',
-        // OJO Para seleccionar un objeto por su ID, ha de crearse primero un objeto BSON de tipo ObjectId
         ['_id' => new MongoDB\BSON\ObjectId($_GET['id'])]
     );
 
@@ -23,8 +22,31 @@ if (isset($_GET['id'])) {
         'producers',
         ['_id' => $prod->producer]
     );
+
+    if (property_exists($prod, 'allergens')) {
+        $allergens = [];
+        foreach ($prod->allergens as $allergen) {
+            array_push($allergens, $mongo_db->exec(
+                'find_one',
+                'allergens',
+                ['_id' => $allergen]
+            ));
+        }
+    }
 }
 ?>
+
+<script type="text/javascript">
+    let product = JSON.parse('<?php echo json_encode($prod) ?>');
+    <?php
+    $varContent = "null";
+
+    if (isset($allergens)) {
+        $varContent = "JSON.parse('" . json_encode($allergens) . "');";
+    }
+    echo "let allergens = {$varContent};";
+    ?>
+</script>
 
 <div id="content">
     <div id="product_wrap" data-prod-id="<?php echo $_GET['id'] ?>">
@@ -56,7 +78,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <form id="prod_cta" action="" method="post">
                     <label>Tamaño:</label>
-                    <fieldset>
+                    <fieldset id="size_selector">
                         <?php foreach ($prod->stock as $idx => $val) : ?>
                             <div class="format_sel_item">
                                 <?php if ($idx == 0) : ?>
@@ -80,60 +102,67 @@ if (isset($_GET['id'])) {
                     <div id="nut_info_tabs">
                         <span class="nut_info_tab_active">Información nutricional</span>
                         <span <?php
-                                if (count($prod->allergens) > 0) {
+                                if (isset($prod->allergens)) {
 
-                                    $allergens_to_show = '';
-                                    foreach ($prod->allergens as $idx => $val) {
-                                        $allergens_to_show .= $val;
-                                        if ($idx < count($prod->allergens) - 1) {
-                                            $allergens_to_show .= '/';
+                                    if (count($prod->allergens) > 0) {
+
+                                        $allergens_to_show = '';
+                                        foreach ($prod->allergens as $idx => $val) {
+                                            $allergens_to_show .= $val;
+                                            if ($idx < count($prod->allergens) - 1) {
+                                                $allergens_to_show .= '/';
+                                            }
                                         }
+                                        echo "data-alergens='$allergens_to_show'";
                                     }
-                                    echo "data-alergens='$allergens_to_show'";
                                 }
                                 ?>>Alérgenos</span>
                     </div>
-                    <div class="nut_info_content">
-                        <table>
+                    <div id="nut_info_content">
+                        <table data-size="0">
                             <tr>
                                 <th></th>
                                 <th>Por 100g</th>
                                 <th>Por cantidad seleccionada</th>
                             </tr>
                             <tr>
+                                <?php
+                                $kj = $prod->nut_info->kcals * 4.184;
+                                $cals = $prod->nut_info->kcals;
+                                ?>
                                 <th>Valor energético</th>
-                                <td><?php echo $prod->nut_info->kcals * 4.184 . "kJ / {$prod->nut_info->kcals} kcal" ?></td>
-                                <td><?php echo (($prod->nut_info->kcals * 4.184) * $prod->stock[0]->weight / 100) . 'kJ / ' . ($prod->nut_info->kcals * $prod->stock[0]->weight / 100) . 'kcal' ?></td>
+                                <td><?php echo formatToDecimal($kj) . 'kJ /' . formatToDecimal($cals) . 'kcal' ?></td>
+                                <td><?php echo formatToDecimal($kj * $prod->stock[0]->weight / 100) . 'kJ / ' . formatToDecimal($cals * $prod->stock[0]->weight / 100) . 'kcal' ?></td>
                             </tr>
                             <tr>
                                 <th><span>Grasas</span><br>de las cuales:</th>
-                                <td><?php echo $prod->nut_info->fats->total ?>g</td>
-                                <td><?php echo $prod->nut_info->fats->total * $prod->stock[0]->weight / 100 ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->fats->total) ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->fats->total * $prod->stock[0]->weight / 100) ?>g</td>
                             </tr>
                             <tr>
                                 <td>Saturadas</td>
-                                <td><?php echo $prod->nut_info->fats->sat ?>g</td>
-                                <td><?php echo $prod->nut_info->fats->sat * $prod->stock[0]->weight / 100 ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->fats->sat) ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->fats->sat * $prod->stock[0]->weight / 100) ?>g</td>
                             </tr>
                             <tr>
                                 <th><span>Hidratos de carbono</span><br> de los cuales:</th>
-                                <td><?php echo $prod->nut_info->carbs->total ?>g</td>
-                                <td><?php echo $prod->nut_info->carbs->total * $prod->stock[0]->weight / 100 ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->carbs->total) ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->carbs->total * $prod->stock[0]->weight / 100) ?>g</td>
                             </tr>
                             <tr>
                                 <td>Azúcares</td>
-                                <td><?php echo $prod->nut_info->carbs->sugar ?>g</td>
-                                <td><?php echo $prod->nut_info->carbs->sugar * $prod->stock[0]->weight / 100 ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->carbs->sugar) ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->carbs->sugar * $prod->stock[0]->weight / 100) ?>g</td>
                             </tr>
                             <tr>
                                 <th>Proteínas</th>
-                                <td><?php echo $prod->nut_info->prots ?>g</td>
-                                <td><?php echo $prod->nut_info->prots * $prod->stock[0]->weight / 100 ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->prots) ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->prots * $prod->stock[0]->weight / 100) ?>g</td>
                             </tr>
                             <tr>
                                 <th>Sal</th>
-                                <td><?php echo $prod->nut_info->salt ?>g</td>
-                                <td><?php echo $prod->nut_info->salt * $prod->stock[0]->weight / 100 ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->salt) ?>g</td>
+                                <td><?php echo formatToDecimal($prod->nut_info->salt * $prod->stock[0]->weight / 100) ?>g</td>
                             </tr>
                         </table>
                     </div>

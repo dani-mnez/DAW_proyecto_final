@@ -157,3 +157,12 @@ function destroyCookie($cookieName)
     setcookie($cookieName, '', time() - 3600, '/');
     destroyCookie($cookieName);
 }
+
+// Formatear a 2 decimales
+function formatToDecimal($number)
+{
+    $whole = floor($number);
+    $fraction = $number - $whole;
+
+    return (strlen($fraction) != 0 && $fraction != 0) ? number_format($number, 2, ',', '.') : $number;
+}

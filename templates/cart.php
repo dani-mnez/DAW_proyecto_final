@@ -4,83 +4,97 @@
     <div id="main_cart">
         <span id="select_all">Selecciona todos los productos</span>
         <div id="cart_item_wrapper">
-            <div id="cart_items">
-                <?php
-                $user = unserialize($_SESSION['user'])->mail;
-                $user = $mongo_db->exec(
-                    'find_one',
-                    'users',
-                    ['mail' => $user]
-                );
+            <?php
+            $userCart = $user_data->cart;
 
-                $results = $user->cart;
+            if (count($userCart) > 0) : ?>
+                <div id="cart_items">
+                    <?php
+                    if (count($userCart) > 0) {
+                        $totalPrice = 0.0;
+                        $totalProds = 0;
+                        $allProductsInfo = [];
 
-                if ($results) {
-                    $totalPrice = 0.0;
-                    $totalProds = 0;
+                        foreach ($userCart as $prod) {
+                            $prod_info = $mongo_db->exec(
+                                'find_one',
+                                'products',
+                                ['_id' => $prod->product]
+                            );
+                            array_push($allProductsInfo, $prod_info);
 
-                    foreach ($results as $prod) {
-                        $prod_size_buyed = $prod->size;
-                        $prod_qty_buyed = $prod->qty;
+                            $producerName = $mongo_db->exec(
+                                'find_one',
+                                'producers',
+                                ['_id' => $prod_info->producer]
+                            )->company_name;
+                            $prodSubcat = $mongo_db->exec(
+                                'find_one',
+                                'subcats',
+                                ['_id' => $prod_info->subcat]
+                            )->name;
 
-                        $prod_info = $mongo_db->exec(
-                            'find_one',
-                            'products',
-                            ['_id' => $prod->product]
-                        );
-                        $producerName = $mongo_db->exec(
-                            'find_one',
-                            'producers',
-                            ['_id' => $prod_info->producer]
-                        )->company_name;
-                        $prodSubcat = $mongo_db->exec(
-                            'find_one',
-                            'subcats',
-                            ['_id' => $prod_info->subcat]
-                        )->name;
+                            foreach ($prod->sizes as $prod_size_buyed => $sizeInfo) {
+                                $prod_qty_buyed = $sizeInfo->qty;
 
-                        $price = $prod_info->stock[$prod_size_buyed]->price;
-                        $totalPriceItem = $price * $prod_qty_buyed;
+                                $price = $prod_info->stock[$prod_size_buyed]->price;
+                                $totalPriceItem = $price * $prod_qty_buyed;
 
-                        if ($prod->selected) {
-                            $totalProds += $prod_qty_buyed;
-                            $totalPrice += $totalPriceItem;
+                                if ($sizeInfo->selected) {
+                                    $totalProds += $prod_qty_buyed;
+                                    $totalPrice += $totalPriceItem;
+                                }
+
+                                include('./components/cart_item.php');
+                            }
                         }
-
-                        include('./components/cart_item.php');
                     }
-                }
-                ?>
+                    ?>
+                    <script type="text/javascript">
+                        let totalProds = <?php echo $totalProds ?>;
+                        let totalPrice = <?php echo $totalPrice ?>;
+                        let allCartProds = JSON.parse('<?php echo json_encode($userCart) ?>');
+                        let likeList = JSON.parse('<?php echo json_encode($user_data->lists->saved_prods->prods) ?>');
+                        let allProductsInfo = JSON.parse('<?php echo json_encode($allProductsInfo) ?>');
+                    </script>
 
-                <div class="subtotal_text">
-                    <span>Subtotal (<?php echo $totalProds ?> productos):</span>
-                    <span><?php echo $totalPrice ?> €</span>
+                    <div class="subtotal_text">
+                        <span>Subtotal (<?php echo $totalProds ?> productos):</span>
+                        <span><?php echo $totalPrice ?> €</span>
+                    </div>
                 </div>
-            </div>
+            <?php else : ?>
+                <p class="void_cart_msg">Aún no has agregado ningún producto al carrito</p>
+            <?php endif; ?>
         </div>
         <div id="cart_resume">
             <div id="cta_box">
                 <div class="subtotal_text">
-                    <span>Subtotal (<?php echo $totalProds ?> productos):</span>
-                    <span><?php echo $totalPrice ?> €</span>
+                    <?php if (count($userCart) > 0) : ?>
+                        <span>Subtotal (<?php echo $totalProds ?> productos):</span>
+                        <span><?php echo $totalPrice ?> €</span>
+                    <?php else : ?>
+                        <span>Agrega productos al carrito primero</span>
+                    <?php endif; ?>
                 </div>
-                <a href="./checkout.php">
-                    <button id="checkout_btn">
-                        <span>Tramitar pedido</span>
-                        <img src="/DAW_proyecto_final/assets/icons/arrow_fwd.svg" alt="Flecha hacia delante">
-                    </button>
-                </a>
+                <?php if (count($userCart) > 0) : ?>
+                    <a href="./checkout.php">
+                    <?php else : ?>
+                        <a class="nulledLink" href="#">
+                        <?php endif; ?>
+                        <button class="checkout_btn">
+                            <span>Tramitar pedido</span>
+                            <img src="/DAW_proyecto_final/assets/icons/arrow_fwd.svg" alt="Flecha hacia delante">
+                        </button>
+                        </a>
             </div>
-            <!-- <div id="related_prods">
-                <p>Productos relacionados</p>
-            </div> -->
         </div>
     </div>
 
     <div id="my_prods">
         <h2>Tus productos</h2>
         <?php
-        $saved_prods = $user->lists->saved_prods->prods;
+        $saved_prods = $user_data->lists->saved_prods->prods;
         $palabra = (count($saved_prods) > 1) ? " productos" : " producto";
         ?>
         <div id="lists">
@@ -93,46 +107,33 @@
                 </div>
             </div>
             <div id="list_prod_wrapper">
-                <?php
-                $later_prods = [];
-                foreach ($saved_prods as $prod_id) {
-                    $prod_info = $mongo_db->exec(
-                        'find_one',
-                        'products',
-                        ['_id' => $prod_id]
-                    );
-                    array_push($later_prods, $prod_info);
-                }
+                <?php if (count($saved_prods) > 0) : ?>
+                    <?php
+                    $later_prods = [];
+                    foreach ($saved_prods as $prod_id) {
+                        $prod_info = $mongo_db->exec(
+                            'find_one',
+                            'products',
+                            ['_id' => $prod_id]
+                        );
+                        array_push($later_prods, $prod_info);
+                    }
 
-                foreach ($later_prods as $prod) {
-                    $producer_name = $mongo_db->exec(
-                        'find_one',
-                        'producers',
-                        ['_id' => $prod->producer]
-                    )->company_name;
-                    include('./components/list_product_card.php');
-                }
-                ?>
+                    foreach ($later_prods as $prod) {
+                        $producer_name = $mongo_db->exec(
+                            'find_one',
+                            'producers',
+                            ['_id' => $prod->producer]
+                        )->company_name;
+                        include('./components/list_product_card.php');
+                    }
+                    ?>
+                <?php else : ?>
+                    <p>Aún no has agregado ningún producto a esta lista</p>
+                <?php endif; ?>
             </div>
         </div>
-        <!-- Pestaña: Comprar de nuevo
-            Accede al historial de compras (BDD) para sugerirte productos comprados anteriormente y/o comprados varias veces -->
     </div>
 </div>
-
-<div id="qty_select_dropdown">
-    <span>0 (Eliminar)</span>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
-    <span>4</span>
-    <span>5</span>
-    <span>6</span>
-    <span>7</span>
-    <span>8</span>
-    <span>9</span>
-    <span>10+</span>
-    <!-- TODO Hacer que la cantidad esté resaltada al abrir el menú -->
-</div>
-
+<?php require_once(__DIR__ . '/components/prod_qty_dropdown.php'); ?>
 <?php include_once(__DIR__ . '/components/footer.php'); ?>

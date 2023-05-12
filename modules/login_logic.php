@@ -8,6 +8,7 @@ include_once 'init_code.php';
 
 if (isset($_POST['submit'])) {
     $producer = $_POST['user_type'] == 'producer';
+
     $account = $mongo_db->exec(
         'find_one',
         ($producer) ? 'producers' : 'users',
