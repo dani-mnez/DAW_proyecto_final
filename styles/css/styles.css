@@ -43,7 +43,9 @@ body {
 }
 
 .hidden {
+  opacity: 0;
   display: none;
+  transition: opacity 0.5s ease-in-out;
 }
 
 button:hover, a:hover {
@@ -435,7 +437,6 @@ nav a:active {
   align-items: center;
   width: 100%;
   max-width: 1490px;
-  border-bottom: 1px solid white;
 }
 #footer #mid_footer #footer_logo {
   height: 72px;
@@ -458,21 +459,28 @@ nav a:active {
   margin-top: 16px;
 }
 #footer #bottom_footer {
-  max-width: 1600px;
   width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: center;
+}
+#footer #bottom_footer .bottom_footer_content {
+  max-width: 1490px;
   display: flex;
   justify-content: space-between;
   padding: 20px 55px;
+  width: 100%;
 }
-#footer #bottom_footer p {
+#footer #bottom_footer .bottom_footer_content p {
   margin: 0;
   color: white;
   font-size: 12px;
 }
-#footer #bottom_footer .credits {
+#footer #bottom_footer .bottom_footer_content .credits {
   display: inline-flex;
 }
-#footer #bottom_footer .credits * {
+#footer #bottom_footer .bottom_footer_content .credits * {
   color: inherit;
 }
 
@@ -652,21 +660,60 @@ nav a:active {
   margin: 5px;
 }
 
-.faved .like_btn {
-  background-color: red;
+.faved {
+  background-color: #f20d0d;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add_cart_btn_clicked {
+  background-color: #5ca141;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.subcat_img {
+  background-color: white;
+}
+
+.subcat_button_selected {
+  background-color: black;
+  transition: background-color 0.2s ease-in-out;
+}
+.subcat_button_selected p {
+  color: white;
+  transition: color 0.2s ease-in-out;
 }
 
 #subcat_shop_header h1 {
   font-size: 72px;
-  margin: 0 0 20px 0;
+  margin: 0;
+}
+#subcat_shop_header p {
+  margin-top: 0;
+}
+
+#subcat_shop_menu {
+  margin-top: 30px;
+  border-bottom: 1px solid black;
+}
+
+#subcat_shop_menu_title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+#subcat_shop_menu_title::after {
+  content: "";
+  height: 1px;
+  background-color: black;
+  width: 100%;
 }
 
 #subcat_shop_menu_buttons {
   display: flex;
   gap: 10px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid black;
-  margin-bottom: 30px;
+  padding: 20px 0 30px 0;
 }
 
 .subcat_button {
@@ -2080,12 +2127,10 @@ nav a:active {
 
 #col_left {
   width: 100%;
-  z-index: -1;
 }
 
 #col_right {
   text-align: center;
-  z-index: -1;
   border: 1px solid black;
   border-radius: 20px;
   height: -moz-fit-content;
@@ -2115,7 +2160,7 @@ nav a:active {
   justify-content: center;
 }
 .payment_method:hover {
-  pointer: cursor;
+  cursor: pointer;
 }
 .payment_method img {
   width: 100%;
@@ -2131,6 +2176,12 @@ nav a:active {
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 15px;
+}
+
+#resume_wrapper_items {
+  display: flex;
+  flex-direction: column;
   gap: 15px;
 }
 

@@ -21,11 +21,9 @@
 
 #col_left
     width: 100%
-    z-index: -1
 
 #col_right
     text-align: center
-    z-index: -1
     border: 1px solid black
     border-radius: 20px
     height: fit-content
@@ -52,7 +50,7 @@
     justify-content: center
 
     &:hover
-        pointer: cursor
+        cursor: pointer
 
     img
         width: 100%
@@ -67,6 +65,11 @@
     display: flex
     flex-direction: column
     width: 100%
+    gap: 15px
+
+#resume_wrapper_items
+    display: flex
+    flex-direction: column
     gap: 15px
 
 #resume_wrapper_total

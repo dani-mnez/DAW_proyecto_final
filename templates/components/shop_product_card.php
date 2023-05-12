@@ -1,8 +1,8 @@
-<div class="product <?php if (isFaved($prod->_id)) echo "faved" ?>" data-id="<?php echo $prod->_id ?>">
+<div class="product" data-id="<?php echo $prod->_id ?>">
     <div class="product_img_wrapper">
         <img src="<?php echo '/DAW_proyecto_final/assets/db_data/products/' . $prod->imgs->cover ?>.jpg" alt="Imagen de producto">
         <div class="buttons">
-            <a class="like_btn"><img src="/DAW_proyecto_final/assets/icons/fav.svg" alt=""></a>
+            <a class="like_btn <?php if (isFaved($prod->_id)) echo "faved" ?>"><img src="<?php echo (isFaved($prod->_id)) ? "/DAW_proyecto_final/assets/icons/fav_full.svg" : "/DAW_proyecto_final/assets/icons/fav.svg" ?>" alt=""></a>
             <a class="add_cart_btn"><img src="/DAW_proyecto_final/assets/icons/add_cart.svg" alt=""></a>
         </div>
     </div>

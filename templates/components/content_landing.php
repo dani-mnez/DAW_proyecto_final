@@ -1,17 +1,69 @@
 <div id="landing">
-    <img src="https://picsum.photos/1600/900" alt="">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "/DAW_proyecto_final/lib/threejs/build/three.module.js",
+                "three/addons/": "/DAW_proyecto_final/lib/threejs/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import {
+            GLTFLoader
+        } from '/DAW_proyecto_final/lib/threejs/examples/jsm/loaders/GLTFLoader.js';
+        let cheese;
 
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
 
-    <img src="https://picsum.photos/1600/900" alt="">
+        const renderer = new THREE.WebGLRenderer({
+            alpha: true
+        });
 
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        let light1 = new THREE.PointLight(0xffffff, 1)
+        light1.castShadow = true
+        light1.position.x = 7
+        light1.position.y = 5
+        light1.position.z = 50
+        scene.add(light1)
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
 
-    <img src="https://picsum.photos/1600/900" alt="">
+        const textureLoader = new THREE.TextureLoader();
+        const texture = textureLoader.load("/DAW_proyecto_final/assets/3dscene/textures/Cheese_baseColor.jpeg");
+        const metalness = textureLoader.load("/DAW_proyecto_final/assets/3dscene/textures/Cheese_metallicRoughness.png");
+        const normal = textureLoader.load("/DAW_proyecto_final/assets/3dscene/textures/Cheese_normal.png");
 
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        const loader = new GLTFLoader();
+        loader.load('/DAW_proyecto_final/assets/3dscene/scene.gltf', function(gltf) {
+            cheese = gltf.scene.children[0];
+            cheese.material = new THREE.MeshStandardMaterial({
+                map: texture,
+                side: THREE.DoubleSide,
+                metalnessMap: metalness,
+                normalMap: normal,
+                metalness: 1,
+                roughness: 0
+            });
+            cheese.scale.set(0.3, 0.3, 0.3);
+            cheese.position.set(0, 0, 0);
 
-    <img src="https://picsum.photos/1600/900" alt="">
+            scene.add(cheese);
 
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            function animate() {
+                requestAnimationFrame(animate);
+
+                cheese.rotation.x += 0.01;
+                cheese.rotation.y += 0.01;
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+        }, undefined, function(error) {
+            console.error(error);
+        });
+    </script>
 </div>
