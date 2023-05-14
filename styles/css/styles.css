@@ -149,38 +149,6 @@ nav a:active {
   flex-direction: column;
   gap: 30px;
 }
-#access_view #log_form #login_user_type_select {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: none;
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-#access_view #log_form #login_user_type_select .btn_user_type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 40%;
-  border: 1px solid black;
-  border-radius: 150px;
-}
-#access_view #log_form #login_user_type_select .btn_user_type:has(input:checked) {
-  background-color: #D2E83A;
-}
-#access_view #log_form #login_user_type_select .btn_user_type input {
-  display: none;
-}
-#access_view #log_form #login_user_type_select .btn_user_type label {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 #access_view #log_form #log_mail_wrapper *, #access_view #log_form #log_pwd_wrapper * {
   width: 100%;
 }
@@ -222,6 +190,39 @@ nav a:active {
 }
 #access_view #log_links a:nth-of-type(3) {
   grid-area: register;
+}
+
+#login_user_type_select {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+#login_user_type_select .btn_user_type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 150px;
+}
+#login_user_type_select .btn_user_type:has(input:checked) {
+  background-color: #D2E83A;
+}
+#login_user_type_select .btn_user_type input {
+  display: none;
+}
+#login_user_type_select .btn_user_type label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #main_menu {
@@ -301,14 +302,6 @@ nav a:active {
   width: fit-content;
   -moz-column-gap: 10px;
        column-gap: 10px;
-}
-#main_menu #m_menu_content #user_control #access_btn {
-  border: 1px solid black;
-  border-radius: 7px;
-  padding: 10px;
-  font-family: "Mona Sans";
-  font-weight: 600;
-  background-color: white;
 }
 #main_menu #m_menu_content #user_control > * {
   margin: 0;
@@ -404,6 +397,15 @@ nav a:active {
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
+}
+
+#access_btn {
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 10px;
+  font-family: "Mona Sans";
+  font-weight: 600;
+  background-color: white;
 }
 
 #footer {
@@ -1590,6 +1592,81 @@ nav a:active {
 .message p {
   margin: 0;
   font-size: 0.875em;
+}
+
+.prod {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  width: 100%;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+.prod .prod_img_wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.prod .prod_img_wrapper img {
+  border-radius: 15px;
+  width: 170px;
+  border: 1px solid black;
+}
+.prod .prod_img_wrapper input {
+  width: 22px;
+  height: 22px;
+}
+.prod .cart_text_wrap {
+  display: flex;
+  flex-direction: column;
+}
+.prod .cart_text_wrap p {
+  margin: 0;
+}
+.prod .cart_text_wrap .name {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+.prod .cart_text_wrap .producer, .prod .cart_text_wrap .stock {
+  font-size: 0.875em;
+}
+.prod .cart_text_wrap .producer a {
+  display: inline-block;
+  text-decoration: none;
+  color: #0076d6;
+}
+.prod .cart_text_wrap .stock {
+  margin: 20px 0 auto 0;
+}
+.prod .prod_management {
+  display: flex;
+  align-self: flex-end;
+  gap: 30px;
+  align-items: center;
+}
+.prod .prod_management .prod_qty_wrapper {
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.prod .prod_management .prod_qty_wrapper:hover {
+  cursor: pointer;
+}
+.prod .prod_management .prod_qty_wrapper img {
+  height: 20px;
+  margin-left: 10px;
+}
+.prod .prod_management a {
+  color: #0076d6;
+  text-decoration: none;
+}
+.prod .price {
+  margin-left: auto;
+  font-weight: bold;
 }
 
 .prod_det_body #product_info {

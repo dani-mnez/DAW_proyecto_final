@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     );
 
     if ($account) {
-        if ($account['password'] == $_POST['pwd']) {
+        if ($account->password == $_POST['pwd']) {
             $_SESSION['user'] = serialize(new User([
                 'id' => (string) $account->_id,
                 'mail' => $account->mail,

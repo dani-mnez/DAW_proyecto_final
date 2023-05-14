@@ -49,9 +49,20 @@ $user = unserialize($_SESSION['user'])
                             echo "<button>Ver todos los pedidos</button>
                             </div>";
                         } else {
-                            require_once(__DIR__ . '/components/dash/resume/res_graphs.php');
-                            require_once(__DIR__ . '/components/dash/resume/res_products.php');
-                            require_once(__DIR__ . '/components/dash/resume/res_incid.php');
+                            echo "<div id='res_graph'>
+                            <h1>Gráficos de ingresos</h1>";
+                            require_once(__DIR__ . '/components/dash/blocks/graphs.php');
+                            echo "</div>";
+                            
+                            echo "<div id='res_products'>
+                            <h1>Tus productos</h1>";
+                            require_once(__DIR__ . '/components/dash/pages/products.php');
+                            echo "</div>";
+                            
+                            echo "<div id='res_incidences'>
+                            <h1>Incidencias por resolver</h1>";
+                            require_once(__DIR__ . '/components/dash/pages/incidences.php');
+                            echo "</div>";
                         }
                         break;
                     case 'profile':
