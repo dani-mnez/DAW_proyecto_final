@@ -16,8 +16,9 @@ text, p, a, span
 
 a
     width: auto
-    line-height: auto
     display: block
+    text-decoration: none
+    cursor: pointer
 
 // || General
 *
@@ -43,8 +44,13 @@ body
     width: 100%
     height: 100%
 
+// FIX Hacer que se anime bien
+// TODO Hacer animación para controlar mejor el cambio
 .hidden
-    display: none
+    opacity: 0 !important
+    height: 0px !important
+    transition: all 0.2s ease-in-out !important
+    margin: 0 !important
 
 button, a
     &:hover
@@ -73,13 +79,13 @@ nav
 
 // Tarjeta de producto dentro de lista
 .list_product
-    cursor: pointer
     display: flex
     flex-direction: column
     flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
     gap: 7px
 
     img
+        cursor: pointer
         border-radius: 15px
         @include std_border
         width: 100%
@@ -95,6 +101,8 @@ nav
     .producer_name
         a
             display: inline-block
+            text-decoration: none
+            color: $c_link
 
     .list_item_cta
         display: grid
@@ -120,3 +128,49 @@ nav
 
             &:last-of-type
                 grid-area: show
+
+
+// Proceso pago
+.checkout_btn
+    display: grid
+    align-items: center
+    justify-content: space-around
+    width: 290px
+    height: 50px
+    background-color: $c_main
+    border: 1px solid black
+    border-radius: 200px
+    grid-template-areas: ". text icon"
+    cursor: pointer
+
+    span
+        grid-area: text
+        align-self: center
+        text-decoration: none
+
+    img
+        grid-area: icon
+        width: 24px
+
+#qty_select_dropdown
+    @include std_border
+    border-radius: $bord_rad_small
+    position: absolute
+    display: none
+    flex-direction: column
+    overflow: hidden
+    background-color: white
+    padding: 5px 0
+
+    span
+        padding: 3px 15px
+
+        &:hover
+            cursor: pointer
+            background-color: lightgrey
+
+    &:focus
+        outline: none
+
+.selected_qty
+    background-color: $c_secondary

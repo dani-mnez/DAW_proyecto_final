@@ -1,10 +1,54 @@
 .index_body
-    #main_frame
-        grid-template-columns: auto
-        grid-template-areas: 'm_menu' 'content' 'footer'
+    height: 100vh
 
-        #landing
-            img
-                width: 100%
-                @include std_border
-                border-radius: 10px
+    #content
+        flex-grow: 2
+
+    #landing
+        height: 100%
+        position: relative
+
+        img
+            width: 100%
+            @include std_border
+            border-radius: 10px
+
+        canvas
+            position: fixed
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+    // TODO Hacer que el padre sea el que tenga el overflow hidden y que el hijo se pueda scrollear - quizá tenga que hacerlo solo con JS
+    // TODO Hacer que el queso gire cuando haga scroll
+    // Hacer que el pivote del queso esté en el centro
+    // Ajustar la cámara para que se vea el queso entero
+
+#landing_scroll
+    display: flex
+    flex-direction: column
+    margin: 50% 0
+
+.landing_big_text
+    font-size: 6rem
+    font-weight: 800
+    margin: 200px 0
+    inline-size: 42%
+    overflow-wrap: break-word
+    background: linear-gradient(45deg, #eee, #333)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+    &:first-child
+        margin-top: 0
+
+    &:last-child
+        margin-bottom: 0
+
+    &:nth-child(odd)
+        text-align: start
+        align-self: flex-start
+
+    &:nth-child(even)
+        text-align: end
+        align-self: flex-end

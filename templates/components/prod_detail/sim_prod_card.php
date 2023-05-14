@@ -4,5 +4,5 @@
         <p><?php echo $s_prod->name . ' (' . $s_prod->stock[0]->format . ')' ?></p>
         <p><?php echo $s_prod->stock[0]->price ?>€</p>
     </div>
-    <button>Mover a la cesta</button>
+    <button>Añadir a la cesta</button>
 </div>

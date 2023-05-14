@@ -1,6 +1,12 @@
 <nav id="subcat_shop_menu" aria-label="Menú lateral">
     <p id="subcat_shop_menu_title">Filtra por: Tipo</p>
     <div id="subcat_shop_menu_buttons">
+        <div class="subcat_button subcat_button_selected" data-subcat="all">
+            <div class="subcat_img">
+                <img src="/DAW_proyecto_final/assets/icons/all.svg" alt="Icono de categoría de producto">
+            </div>
+            <p class="subcat_name">Todos</p>
+        </div>
         <?php
         if ($prod_cat_qty) :
             foreach ($subcats as $subcat) :

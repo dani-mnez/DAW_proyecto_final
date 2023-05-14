@@ -6,7 +6,7 @@
         <ul>
             <li><a href="/DAW_proyecto_final/templates/shop.php">Tienda</a></li>
             <li><a href="/DAW_proyecto_final/templates/nosotros.php">Nosotros</a></li>
-            <li><a href="">Los productores</a></li>
+            <li><a href="/DAW_proyecto_final/templates/producers.php">Los productores</a></li>
         </ul>
         <div id="main_search">
             <select>
@@ -21,6 +21,7 @@
             <input type="search" name="" id="">
             <input type="submit" value="Busca">
         </div>
+
         <?php if (isset($_SESSION['user'])) :?>
             <div id="user_control">
                 <?php if(isset($user_data)): ?>

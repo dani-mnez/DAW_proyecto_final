@@ -1,14 +1,32 @@
 #subcat_shop_header
     h1
         font-size: 72px
-        margin: 0 0 20px 0
+        margin: 0
+
+    p
+        margin-top: 0
+
+#subcat_shop_menu
+    margin-top: 30px
+    border-bottom: 1px solid black
+
+#subcat_shop_menu_title
+    margin: 0
+    display: flex
+    align-items: center
+    gap: 10px
+    white-space: nowrap
+
+    &::after
+        content: ""
+        height: 1px
+        background-color: black
+        width: 100%
 
 #subcat_shop_menu_buttons
     display: flex
     gap: 10px
-    padding-bottom: 20px
-    border-bottom: 1px solid black
-    margin-bottom: 30px
+    padding: 20px 0 30px 0
 
 .subcat_button
     display: flex
@@ -61,3 +79,6 @@
 
 .prod_subcat
     margin-bottom: 60px
+    opacity: 1
+    height: auto
+    transition: all 0.2s ease-in-out

@@ -66,7 +66,6 @@ if (!isset($products)) {
 
 // TODO Se puede meter aquí mucha mas info que no haga falta rellamarse
 
-
 if (isset($_SESSION['user']) && !isset($user_data)) {
     $collectionType = unserialize($_SESSION['user'])->type == 'producer' ? 'producers' : 'users';
         $user_data = $mongo_db->exec(

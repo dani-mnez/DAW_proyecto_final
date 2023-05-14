@@ -26,7 +26,6 @@
         align-items: center
         width: 100%
         max-width: calc(1600px - 2 * 55px)
-        border-bottom: 1px solid white
 
         #footer_logo
             height: 72px
@@ -48,18 +47,25 @@
                 margin-top: 16px
 
     #bottom_footer
-        max-width: 1600px
         width: 100%
+        margin: 0 auto
+        border-top: 1px solid white
         display: flex
-        justify-content: space-between
-        padding: 20px 55px
+        justify-content: center
 
-        p
-            margin: 0
-            color: white
-            font-size: 12px
+        .bottom_footer_content
+            max-width: calc(1600px - 2 * 55px)
+            display: flex
+            justify-content: space-between
+            padding: 20px 55px
+            width: 100%
 
-        .credits
-            display: inline-flex
-            & *
-                color: inherit
+            p
+                margin: 0
+                color: white
+                font-size: 12px
+
+            .credits
+                display: inline-flex
+                & *
+                    color: inherit

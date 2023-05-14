@@ -6,11 +6,11 @@
                         <ul>
                             <li class='title'>PRODUCTOS</li>
                             <?php
-                                if ($prod_cat_qty) {
-                                    foreach ($prod_cat_qty as $row) {
-                                        echo "<li><a href='/DAW_proyecto_final/templates/cat_shop.php?cat_id=$row->_id'>{$row->name}</a></li>";
-                                    }
+                            if ($prod_cat_qty) {
+                                foreach ($prod_cat_qty as $row) {
+                                    echo "<li><a href='/DAW_proyecto_final/templates/cat_shop.php?cat_id=$row->_id'>{$row->name}</a></li>";
                                 }
+                            }
                             ?>
                         </ul>
                         <ul>
@@ -46,22 +46,26 @@
                             <li>Calle de Gabriel Usera, 54</li>
                             <li>28026, Madrid</li>
                             <li>Telf.: 96 623 424</li>
-                            <li><mail>info@soldemarzo.com</mail></li>
+                            <li>
+                                <mail>info@soldemarzo.com</mail>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div id="bottom_footer">
-                    <p class="copy">© 2023 Soldemarzo. Todos los derechos reservados.</p>
-                    <p class="credits">Hecho con ♥ por:&nbsp;
-                        <a href="https://www.linkedin.com/in/aar%C3%B3n-fern%C3%A1ndez-moreno-3a37b3250/">Aarón Fernández</a>,&nbsp;
-                        <a href="https://www.linkedin.com/in/catalinalauchan/">Catalina Lau Chan</a>,&nbsp;
-                        <a href="https://www.linkedin.com/in/dani-mnez/">Dani Martínez</a>&nbsp;&&nbsp;
-                        <a href="">Laura Gómez</a>.
-                        <!-- TODO Laura ponte el link que quieras -->
-                    </p>
+                    <div class="bottom_footer_content">
+                        <p class="copy">© 2023 Soldemarzo. Todos los derechos reservados.</p>
+                        <p class="credits">Hecho con ♥ por:&nbsp;
+                            <a href="https://www.linkedin.com/in/aar%C3%B3n-fern%C3%A1ndez-moreno-3a37b3250/">Aarón Fernández</a>,&nbsp;
+                            <a href="https://www.linkedin.com/in/catalinalauchan/">Catalina Lau Chan</a>,&nbsp;
+                            <a href="https://www.linkedin.com/in/dani-mnez/">Dani Martínez</a>&nbsp;&&nbsp;
+                            <a href="">Laura Gómez</a>.<!-- TODO Laura ponte el link que quieras -->
+                        </p>
+                    </div>
                 </div>
             </nav>
-        </div>
-        <script src="/DAW_proyecto_final/lib/late_scripts.js"></script>
-    </body>
-</html>
+            </div>
+            <script src="/DAW_proyecto_final/lib/late_scripts.js"></script>
+            </body>
+
+            </html>

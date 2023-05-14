@@ -83,7 +83,6 @@
 
 // Tarjeta de producto
 .product
-    cursor: pointer
     display: flex
     flex-direction: column
     flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
@@ -91,7 +90,6 @@
     height: fit-content
 
     .product_img_wrapper
-        // height: calc(((100% - $x_gap * ($prods_cols - 1)) / $prods_cols) * $img_ratio)
         position: relative
         height: 200px
         display: flex
@@ -99,6 +97,7 @@
         @include std_border
         overflow: hidden
         transition: border 0.2s ease-in-out
+        cursor: pointer
 
         &>img
             width: 100%
@@ -151,7 +150,6 @@
 
 
 .like_btn, .add_cart_btn
-    display: inline-block
     background-color: white
     border-radius: 20px
     line-height: 0
@@ -164,5 +162,23 @@
         margin: 5px
 
 .faved
-    .like_btn
-        background-color: red
+    background-color: #f20d0d
+    transition: background-color 0.2s ease-in-out
+
+.add_cart_btn_clicked
+    background-color: #5ca141
+    transition: background-color 0.2s ease-in-out
+
+
+// Tienda de categoría
+// Menú de selección de categorías de productos
+.subcat_img
+    background-color: white
+
+.subcat_button_selected
+    background-color: black
+    transition: background-color 0.2s ease-in-out
+
+    p
+        color: white
+        transition: color 0.2s ease-in-out
