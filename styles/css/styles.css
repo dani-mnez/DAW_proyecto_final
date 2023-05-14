@@ -1596,6 +1596,7 @@ nav a:active {
 
 .prod {
   display: flex;
+  justify-content: space-between;
   -moz-column-gap: 20px;
        column-gap: 20px;
   width: 100%;
@@ -1603,70 +1604,46 @@ nav a:active {
   padding-bottom: 15px;
   border-bottom: 1px solid black;
 }
-.prod .prod_img_wrapper {
+.prod .container_data {
   display: flex;
+  align-items: flex-start;
+  margin: 4px;
   gap: 20px;
-  align-items: center;
 }
-.prod .prod_img_wrapper img {
+.prod .container_data img {
   border-radius: 15px;
   width: 170px;
+  height: 170px;
   border: 1px solid black;
 }
-.prod .prod_img_wrapper input {
-  width: 22px;
-  height: 22px;
+.prod .container_data h3 {
+  width: 76px;
 }
-.prod .cart_text_wrap {
+.prod .container_data .container_prod {
+  display: flex;
+  align-content: flex-end;
+}
+.prod .container_data .container_prod .stock_info_block {
+  border: 1px solid black;
+  border-radius: 22px;
+  margin: 4px;
+  padding: 6px;
+}
+.prod .container_data .container_prod .stock_info_block p {
+  font-size: 14px;
+}
+.prod .container_btn {
   display: flex;
   flex-direction: column;
-}
-.prod .cart_text_wrap p {
-  margin: 0;
-}
-.prod .cart_text_wrap .name {
-  font-weight: 600;
-  font-size: 1.25em;
-}
-.prod .cart_text_wrap .producer, .prod .cart_text_wrap .stock {
-  font-size: 0.875em;
-}
-.prod .cart_text_wrap .producer a {
-  display: inline-block;
-  text-decoration: none;
-  color: #0076d6;
-}
-.prod .cart_text_wrap .stock {
-  margin: 20px 0 auto 0;
-}
-.prod .prod_management {
-  display: flex;
-  align-self: flex-end;
-  gap: 30px;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
 }
-.prod .prod_management .prod_qty_wrapper {
-  height: 45px;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-}
-.prod .prod_management .prod_qty_wrapper:hover {
-  cursor: pointer;
-}
-.prod .prod_management .prod_qty_wrapper img {
-  height: 20px;
-  margin-left: 10px;
-}
-.prod .prod_management a {
-  color: #0076d6;
-  text-decoration: none;
-}
-.prod .price {
-  margin-left: auto;
-  font-weight: bold;
+.prod .container_btn .delete_prod_btn {
+  border: 0px;
+  background-color: transparent;
+  -webkit-text-decoration: underline red;
+          text-decoration: underline red;
 }
 
 .prod_det_body #product_info {

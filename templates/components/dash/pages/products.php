@@ -28,5 +28,5 @@
       echo "<p>No tienes productos</p>";
     }
   ?>
-  <button>Ver todos los productos</button>
 </div>
+<button>Ver todos los productos</button>
