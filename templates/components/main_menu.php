@@ -8,7 +8,6 @@
             <li><a href="/DAW_proyecto_final/templates/nosotros.php">Nosotros</a></li>
             <li><a href="">Los productores</a></li>
         </ul>
-
         <div id="main_search">
             <select>
                 <?php
@@ -22,27 +21,38 @@
             <input type="search" name="" id="">
             <input type="submit" value="Busca">
         </div>
-
-        <div id="user_control">
-            <?php if(isset($user_data)): ?>
-                <a href="/DAW_proyecto_final/templates/cart.php">
-                    <img id="carrito" src="/DAW_proyecto_final/assets/icons/cart.svg" alt="Carrito">
-                    <?php if (count($user_data->cart) > 0): ?>
-                        <div class="cart_prod_count">
-                            <p><?php echo count($user_data->cart); ?></p>
+        <?php if (isset($_SESSION['user'])) :?>
+            <div id="user_control">
+                <?php if(isset($user_data)): ?>
+                    <?php if ($user_data->type == 'producer') :?>
+                        <div id="prof_wrap">
+                            <?php
+                                $prof_pic = (isset($user_data->profile_img)) ? '/DAW_proyecto_final/assets/db_data/users/'.$user_data->_id.'.jpg' : '/DAW_proyecto_final/assets/img/default_profile_img.png';
+                            ?>
+                            <img class='profile_pic' src="<?php echo $prof_pic ?>" alt="Imagen de perfil">
+                            <?php include_once(__DIR__ . './menu/profile_pic_menu.php'); ?>
+                        </div>
+                    <?php elseif ($user_data->type == "buyer") :?>
+                        <a href="/DAW_proyecto_final/templates/cart.php">
+                            <img id="carrito" src="/DAW_proyecto_final/assets/icons/cart.svg" alt="Carrito">
+                            <?php if (count($user_data->cart) > 0): ?>
+                                <div class="cart_prod_count">
+                                    <p><?php echo count($user_data->cart); ?></p>
+                                </div>
+                            <?php endif; ?>
+                        </a>
+                        <div id="prof_wrap">
+                            <?php
+                                $prof_pic = ($user_data->profile_img) ? '/DAW_proyecto_final/assets/db_data/users/'.$user_data->_id.'.jpg' : '/DAW_proyecto_final/assets/img/default_profile_img.png';
+                            ?>
+                            <img class='profile_pic' src="<?php echo $prof_pic ?>" alt="Imagen de perfil">
+                            <?php include_once(__DIR__ . './menu/profile_pic_menu.php'); ?>
                         </div>
                     <?php endif; ?>
-                </a>
-                <div id="prof_wrap">
-                    <?php
-                    $prof_pic = ($user_data->profile_img) ? '/DAW_proyecto_final/assets/db_data/users/'.$user_data->_id.'.jpg' : '/DAW_proyecto_final/assets/img/default_profile_img.png';
-                    ?>
-                    <img class='profile_pic' src="<?php echo $prof_pic ?>" alt="Imagen de perfil">
-                    <?php include_once(__DIR__ . './menu/profile_pic_menu.php'); ?>
-                </div>
-            <?php else: ?>
-                <button onclick="show_log_reg()" id="access_btn" type="button">Accede</button>
-            <?php endif; ?>
-        </div>
+                <?php endif; ?>
+            </div>
+        <?php else: ?>
+            <button onclick="show_log_reg()" id="access_btn" type="button">Accede</button>
+        <?php endif; ?>
     </div>
 </nav>

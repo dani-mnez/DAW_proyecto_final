@@ -1,4 +1,14 @@
 <form action="./modules/register_logic.php" enctype='multipart/form-data' method="post" id='reg_form'>
+    <fieldset id="login_user_type_select">
+        <div class="btn_user_type">
+            <input type="radio" name="user_type" value="buyer" id="log_buyer" checked>
+            <label for="log_buyer">Quiero comprar</label>
+        </div>
+        <div class="btn_user_type">
+            <input type="radio" name="user_type" value="producer" id="log_producer">
+            <label for="log_producer">Quiero vender</label>
+        </div>
+    </fieldset>
     <label for="profile_img">Sube una foto de perfil:</label>
     <input type="file" name="profile_img" id="reg_profile_img">
     <label for="name">Nombre:</label>

@@ -33,7 +33,7 @@ if (isset($_POST['reg_submit'])) {
     // ¿Existe el usuario en la BBDD?
     $account = $mongo_db->exec(
         'find_one',
-        'users',
+        $_POST['user_type'] == 'producer' ? 'producers' : 'users',
         ["mail" => $_POST['mail']]
     );
 
@@ -78,7 +78,7 @@ if (isset($_POST['reg_submit'])) {
                     // Se sube la imagen a la carpeta destino
                     $target_dir = '../assets/db_data/users/';
                     $adapted_name = str_replace(['@', '.'], '_', $_POST['mail']);
-                    $target_name = "${adapted_name}_prof.webp";
+                    $target_name = "{adapted_name}_prof.webp";
                     $target_path = $target_dir . $target_name;
 
                     // print_r([$target_dir, $adapted_name, $target_name, $target_path]);
@@ -118,21 +118,26 @@ if (isset($_POST['reg_submit'])) {
 
 
             // Se escribe la información sobre el nuevo usuario en la BBDD (en la tabla temp_users)
+            $data = [
+                'mail' => $_POST['mail'],
+                'password' => $_POST['pwd'],
+                'name' => [
+                    'name' => $_POST['name'],
+                    'surname1' => $_POST['surname1'],
+                    'surname2' => $_POST['surname2'],
+                ],
+                'confirm_code' => $hash
+            ];
+
+            if ($_POST['user_type'] == 'producer') {
+                $data['company_name'] = S_POST['company_name'];
+            }
+            
             $mongo_db->exec(
                 'insert_one',
-                'users',
-                [
-                    'mail' => $_POST['mail'],
-                    'password' => $_POST['pwd'],
-                    'name' => [
-                        'name' => $_POST['name'],
-                        'surname1' => $_POST['surname1'],
-                        'surname2' => $_POST['surname2']
-                    ],
-                    'confirm_code' => $hash
-                ]
+                $_POST['user_type'] == 'producer' ? 'producers' : 'users',
+                $data
             );
-
             //OJO Esto no sería necesario si no salimos de home porque estamos en un popup de registro (??)
             header("Location: ../index.php");
             exit();
@@ -142,4 +147,6 @@ if (isset($_POST['reg_submit'])) {
             echo 'Las contraseñas no coinciden';
         }
     }
+
+
 }
