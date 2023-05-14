@@ -1,18 +1,3 @@
-<?php
-    $list_info = null;
-    if (isset($_GET['list'])) {
-        $list_info = $user_data->lists[$_GET['list']];
-
-        if ($_GET['list'] == "desired_prods") {
-            $list_selected_name = "Deseados";
-        } elseif ($_GET['list'] == "saved_prods") {
-            $list_selected_name = "Guardados";
-        } else {
-            $list_selected_name = $list_info->title;
-        }
-    }
-?>
-
 <div id="lists">
     <h1>Todas las listas</h1>
     <?php require_once(__DIR__ . '/../blocks/list_lists.php'); ?>

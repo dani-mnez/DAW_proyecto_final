@@ -58,7 +58,7 @@
             $user_dir = $mongo_db->exec(
                 'find_one',
                 'addresses',
-                ['_id' => $user_data->address[0]]
+                ['_id' => $user_data->adress]
             );
             unset($user_dir['_id']);
             unset($user_dir['default_location']);
@@ -98,7 +98,7 @@
             $fiscal_info = $mongo_db->exec(
                 'find_one',
                 'addresses',
-                ['_id' => $user_data->address[0]]
+                ['_id' => $user_data->adress]
             );
             unset($user_dir['_id']);
             unset($user_dir['default_location']);

@@ -202,38 +202,6 @@ nav a:active {
   flex-direction: column;
   gap: 30px;
 }
-#access_view #log_form #login_user_type_select {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: none;
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-#access_view #log_form #login_user_type_select .btn_user_type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 40%;
-  border: 1px solid black;
-  border-radius: 150px;
-}
-#access_view #log_form #login_user_type_select .btn_user_type:has(input:checked) {
-  background-color: #D2E83A;
-}
-#access_view #log_form #login_user_type_select .btn_user_type input {
-  display: none;
-}
-#access_view #log_form #login_user_type_select .btn_user_type label {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 #access_view #log_form #log_mail_wrapper *, #access_view #log_form #log_pwd_wrapper * {
   width: 100%;
 }
@@ -275,6 +243,39 @@ nav a:active {
 }
 #access_view #log_links a:nth-of-type(3) {
   grid-area: register;
+}
+
+#login_user_type_select {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+#login_user_type_select .btn_user_type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 150px;
+}
+#login_user_type_select .btn_user_type:has(input:checked) {
+  background-color: #D2E83A;
+}
+#login_user_type_select .btn_user_type input {
+  display: none;
+}
+#login_user_type_select .btn_user_type label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #main_menu {
@@ -354,14 +355,6 @@ nav a:active {
   width: fit-content;
   -moz-column-gap: 10px;
        column-gap: 10px;
-}
-#main_menu #m_menu_content #user_control #access_btn {
-  border: 1px solid black;
-  border-radius: 7px;
-  padding: 10px;
-  font-family: "Mona Sans";
-  font-weight: 600;
-  background-color: white;
 }
 #main_menu #m_menu_content #user_control > * {
   margin: 0;
@@ -1816,6 +1809,64 @@ body[data-page=nosotros] .memberCard p {
 .message p {
   margin: 0;
   font-size: 0.875em;
+}
+
+.prod {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  width: 100%;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+.prod .container_data {
+  display: flex;
+  align-items: flex-start;
+  margin: 4px;
+  gap: 20px;
+}
+.prod .container_data img {
+  border-radius: 15px;
+  width: 170px;
+  height: 170px;
+  border: 1px solid black;
+}
+.prod .container_data h3 {
+  width: 170px;
+}
+.prod .container_data .container_prod {
+  display: flex;
+  align-content: flex-end;
+}
+.prod .container_data .container_prod .stock_info_block {
+  width: 148px;
+  height: 148px;
+  border: 1px solid black;
+  border-radius: 22px;
+  margin: 4px;
+  padding: 6px;
+  text-align: center;
+}
+.prod .container_data .container_prod .stock_info_block p {
+  font-size: 14px;
+}
+.prod .container_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.prod .container_btn .edit_prod_btn {
+  width: 200px;
+}
+.prod .container_btn .delete_prod_btn {
+  border: 0px;
+  background-color: transparent;
+  -webkit-text-decoration: underline red;
+          text-decoration: underline red;
 }
 
 .prod_det_body #product_info {

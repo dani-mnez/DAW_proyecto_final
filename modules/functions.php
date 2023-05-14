@@ -37,13 +37,18 @@ function isFaved($productID)
 
     if (isset($user_data)) {
 
-        $raw_user_fav_list = $user_data->lists->desired_prods->prods->bsonSerialize();
-        $callback = function ($objId) {
-            return (string) $objId;
-        };
-        $fav_list = array_map($callback, $raw_user_fav_list);
+        if ($user_data->type == 'buyer') {
+        
+            $raw_user_fav_list = $user_data->lists->desired_prods->prods->bsonSerialize();
+            $callback = function ($objId) {
+                return (string) $objId;
+            };
+            $fav_list = array_map($callback, $raw_user_fav_list);
 
-        return in_array($productID, $fav_list);
+            return in_array($productID, $fav_list);
+        } else {
+            return false;
+        }
     } else {
         return false;
     }
