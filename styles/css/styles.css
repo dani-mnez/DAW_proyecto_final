@@ -1617,17 +1617,20 @@ nav a:active {
   border: 1px solid black;
 }
 .prod .container_data h3 {
-  width: 76px;
+  width: 170px;
 }
 .prod .container_data .container_prod {
   display: flex;
   align-content: flex-end;
 }
 .prod .container_data .container_prod .stock_info_block {
+  width: 148px;
+  height: 148px;
   border: 1px solid black;
   border-radius: 22px;
   margin: 4px;
   padding: 6px;
+  text-align: center;
 }
 .prod .container_data .container_prod .stock_info_block p {
   font-size: 14px;
@@ -1638,6 +1641,9 @@ nav a:active {
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+.prod .container_btn .edit_prod_btn {
+  width: 200px;
 }
 .prod .container_btn .delete_prod_btn {
   border: 0px;

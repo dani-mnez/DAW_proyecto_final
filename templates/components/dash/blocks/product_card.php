@@ -6,10 +6,10 @@
             <?php 
                 foreach ($products[$i]->stock as $size): ?>
                     <div class="stock_info_block">
-                    <p><?php echo "Formato: " . $size->format; ?></p>
-                    <p><?php echo "Precio: " .  $size->price . " €"; ?></p>
-                    <p><?php echo "Stock: " .  $size->qty . " ud"; ?></p>
-                    <p><?php echo "Peso: " .  $size->weight . " gr"; ?></p>
+                    <p><?php echo "<b>Formato: </b>" . $size->format; ?></p>
+                    <p><?php echo "<b>Precio: </b>" .  $size->price . " €"; ?></p>
+                    <p><?php echo "<b>Stock: </b>" .  $size->qty . " ud"; ?></p>
+                    <p><?php echo "<b>Peso: </b>" .  $size->weight . " gr"; ?></p>
                     </div>
                 <?php 
                 endforeach;
