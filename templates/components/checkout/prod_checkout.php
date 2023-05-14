@@ -25,11 +25,11 @@
         <div class="cart_text_wrap">
             <span class='name'><?php echo $prod_info->name ?></span>
             <span class="producer">Vendido por: <?php echo $producerName ?></span>
-            <span class="stock"><?php echo $prod_info->stock[$prod_carrito->size]->qty > 0 ? 'En stock' : 'Agotado'; ?></span>
+            <span class="stock"><?php echo $prod_info->stock[$size]->qty > 0 ? 'En stock' : 'Agotado'; ?></span>
             <span class="price"><?php echo $price ?>€</span>
             <div class="prod_qty_wrapper">
                 <span>Cant.:&nbsp;</span>
-                <span><?php echo $prod_carrito->qty ?></span>
+                <span><?php echo $prod_carrito->sizes[$size]->qty ?></span>
                 <img src="/DAW_proyecto_final/assets/icons/expand.svg" alt="">
             </div>
         </div>

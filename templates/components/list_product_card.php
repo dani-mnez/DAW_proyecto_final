@@ -9,7 +9,7 @@
                                 ?> unidades</p>
     <div class="list_item_cta">
         <button>Mover a la cesta</button>
-        <a href="">Eliminar</a>
+        <a href="#">Eliminar</a>
         <!-- <a href="">Ver productos similares</a> -->
     </div>
 </div>

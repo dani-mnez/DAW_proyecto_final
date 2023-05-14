@@ -79,13 +79,13 @@ nav
 
 // Tarjeta de producto dentro de lista
 .list_product
-    cursor: pointer
     display: flex
     flex-direction: column
     flex-basis: calc((100% - $x_gap * ($prods_cols - 1)) / $prods_cols)
     gap: 7px
 
     img
+        cursor: pointer
         border-radius: 15px
         @include std_border
         width: 100%

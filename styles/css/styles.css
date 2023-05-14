@@ -75,13 +75,13 @@ nav a:active {
 }
 
 .list_product {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   flex-basis: calc((100% - 90px) / 4);
   gap: 7px;
 }
 .list_product img {
+  cursor: pointer;
   border-radius: 15px;
   border: 1px solid black;
   width: 100%;
@@ -536,12 +536,106 @@ nav a:active {
   color: inherit;
 }
 
+body[data-page=nosotros] h1 {
+  margin-top: 60px;
+}
+body[data-page=nosotros] #team {
+  display: flex;
+  gap: 20px;
+}
+body[data-page=nosotros] .memberCard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 100%;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+}
+body[data-page=nosotros] .memberCard:hover {
+  background-color: #D2E83A;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+body[data-page=nosotros] .memberCard .memberName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body[data-page=nosotros] .memberCard img {
+  width: 100px;
+}
+body[data-page=nosotros] .memberCard span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+body[data-page=nosotros] .memberCard p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#producers_list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 60px;
+}
+#producers_list .producer_card {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+#producers_list .producer_info {
+  padding: 0 10px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+#producers_list .producer_info .producer_card_text > * {
+  margin: 0;
+}
+#producers_list .producer_info img {
+  border-radius: 5px;
+  height: 80px;
+}
+#producers_list .producer_products {
+  display: flex;
+  gap: 10px;
+  margin: 0 10px;
+}
+#producers_list .producer_products .product, #producers_list .producer_products a {
+  width: 100%;
+  flex-basis: auto;
+}
+#producers_list .producer_products a {
+  border-radius: 15px;
+  background-color: white;
+  border: 2px dashed gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+}
+#producers_list .producer_products a:hover {
+  background-color: #D2E83A;
+  transition: background 0.3s ease-in-out;
+}
+
 .index_body {
   height: 100vh;
 }
 .index_body #content {
   flex-grow: 2;
-  overflow: hidden;
 }
 .index_body #landing {
   height: 100%;
@@ -553,7 +647,7 @@ nav a:active {
   border-radius: 10px;
 }
 .index_body #landing canvas {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -569,7 +663,7 @@ nav a:active {
   font-size: 6rem;
   font-weight: 800;
   margin: 200px 0;
-  inline-size: 33%;
+  inline-size: 42%;
   overflow-wrap: break-word;
   background: linear-gradient(45deg, #eee, #333);
   -webkit-background-clip: text;
@@ -1028,11 +1122,12 @@ nav a:active {
   row-gap: 10px;
   background-color: white;
 }
-.cart_body #main_frame #main_cart #cart_item_wrapper #cart_items .subtotal_text {
+.cart_body #main_frame #main_cart #cart_item_wrapper .subtotal_text {
   display: flex;
-  justify-content: flex-end;
+  float: right;
+  padding-right: 10px;
 }
-.cart_body #main_frame #main_cart #cart_item_wrapper #cart_items .subtotal_text span:last-of-type {
+.cart_body #main_frame #main_cart #cart_item_wrapper .subtotal_text span:last-of-type {
   font-weight: bold;
   margin-left: 5px;
 }
@@ -2275,7 +2370,6 @@ nav a:active {
 }
 
 .payment_method {
-  width: calc(25% - 30px);
   height: 70px;
   border: 1px solid black;
   border-radius: 5px;
@@ -2290,7 +2384,7 @@ nav a:active {
   cursor: pointer;
 }
 .payment_method img {
-  width: 100%;
+  height: 100%;
 }
 .payment_method p {
   margin: 0px;
@@ -2349,7 +2443,7 @@ nav a:active {
 }
 .prod_checkout .prod_img_wrapper {
   border-radius: 15px;
-  width: 170px;
+  height: 170px;
   border: 1px solid black;
 }
 .prod_checkout .prod_checkout_header {

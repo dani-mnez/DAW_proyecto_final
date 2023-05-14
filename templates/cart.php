@@ -21,13 +21,16 @@
                                 'products',
                                 ['_id' => $prod->product]
                             );
-                            array_push($allProductsInfo, $prod_info);
 
                             $producerName = $mongo_db->exec(
                                 'find_one',
                                 'producers',
                                 ['_id' => $prod_info->producer]
                             )->company_name;
+
+                            $prod_info->producerName = $producerName;
+                            array_push($allProductsInfo, $prod_info);
+
                             $prodSubcat = $mongo_db->exec(
                                 'find_one',
                                 'subcats',
@@ -57,11 +60,10 @@
                         let likeList = JSON.parse('<?php echo json_encode($user_data->lists->saved_prods->prods) ?>');
                         let allProductsInfo = JSON.parse('<?php echo json_encode($allProductsInfo) ?>');
                     </script>
-
-                    <div class="subtotal_text">
-                        <span>Subtotal (<?php echo $totalProds ?> productos):</span>
-                        <span><?php echo $totalPrice ?> €</span>
-                    </div>
+                </div>
+                <div class="subtotal_text">
+                    <span>Subtotal (<?php echo $totalProds ?> productos):</span>
+                    <span><?php echo $totalPrice ?> €</span>
                 </div>
             <?php else : ?>
                 <p class="void_cart_msg">Aún no has agregado ningún producto al carrito</p>

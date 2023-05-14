@@ -42,92 +42,99 @@ if (isset($data->action)) {
             }
             break;
         case 'add_cart':
-            $prod_in_cart = false;
-            $index_prod = false;
-            $userCart = $user_data->cart;
-
-            // Comprobamos que el producto no esté ya en el carrito
-            if (count($userCart) > 0) {
-                foreach ($userCart as $idx_prod => $prod) {
-                    if ((string) $prod->product == $data->id) {
-                        $prod_in_cart = true;
-                        $index_prod = $idx_prod;
-                        break;
-                    }
-                }
-            }
-
-            if ($prod_in_cart) {
-                $prodSizes = $userCart[$index_prod]->sizes;
-                $prodSizeExists = array_key_exists($data->size, [...$prodSizes]);
-
-                if ($prodSizeExists) {
-                    // Para cuando es el mismo tamaño
-                    $qtyInCart = $prodSizes[$data->size]->qty;
-
-                    $mongo_db->exec(
-                        'update_one',
-                        'users',
-                        [
-                            ['_id' => $user_data->_id],
-                            [
-                                '$set' => [
-                                    "cart.$[identifier].sizes.{$data->size}.qty" => $qtyInCart + $data->qty
-                                ]
-                            ],
-                            [
-                                'arrayFilters' => [
-                                    [
-                                        'identifier.product' => [
-                                            '$eq' => new MongoDB\BSON\ObjectID($data->id)
-                                        ]
-                                    ]
-                                ]
-                            ]
-                        ]
-                    );
-                } else {
-                    // Para cuando es de distinto tamaño
-                    $mongo_db->exec(
-                        'update_one',
-                        'users',
-                        [
-                            ['_id' => $user_data->_id],
-                            [
-                                '$set' => [
-                                    "cart.{$index_prod}.sizes.{$data->size}" => [
-                                        'qty' => $data->qty,
-                                        'selected' => true
-                                    ]
-                                ]
-                            ]
-                        ]
-                    );
-                }
-            } else {
-                $data_to_include = (object) [
-                    "{$data->size}" => [
-                        'qty' => $data->qty,
-                        'selected' => true
-                    ]
-                ];
-
-                $mongo_db->exec(
-                    'update_one',
-                    'users',
-                    [
-                        ['_id' => $user_data->_id],
-                        ['$push' => [
-                            "cart" => [
-                                'product' => new MongoDB\BSON\ObjectId($data->id),
-                                'sizes' => $data_to_include
-                            ]
-                        ]]
-                    ]
-                );
-            }
+            add_to_cart();
             break;
         default:
             echo 'Algo ha fallado';
+    }
+}
+
+function add_to_cart()
+{
+    global $mongo_db, $user_data, $data;
+
+    $prod_in_cart = false;
+    $index_prod = false;
+    $userCart = $user_data->cart;
+
+    // Comprobamos que el producto no esté ya en el carrito
+    if (count($userCart) > 0) {
+        foreach ($userCart as $idx_prod => $prod) {
+            if ((string) $prod->product == $data->id) {
+                $prod_in_cart = true;
+                $index_prod = $idx_prod;
+                break;
+            }
+        }
+    }
+
+    if ($prod_in_cart) {
+        $prodSizes = $userCart[$index_prod]->sizes;
+        $prodSizeExists = array_key_exists($data->size, [...$prodSizes]);
+
+        if ($prodSizeExists) {
+            // Para cuando es el mismo tamaño
+            $qtyInCart = $prodSizes[$data->size]->qty;
+
+            $mongo_db->exec(
+                'update_one',
+                'users',
+                [
+                    ['_id' => $user_data->_id],
+                    [
+                        '$set' => [
+                            "cart.$[identifier].sizes.{$data->size}.qty" => $qtyInCart + $data->qty
+                        ]
+                    ],
+                    [
+                        'arrayFilters' => [
+                            [
+                                'identifier.product' => [
+                                    '$eq' => new MongoDB\BSON\ObjectID($data->id)
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            );
+        } else {
+            // Para cuando es de distinto tamaño
+            $mongo_db->exec(
+                'update_one',
+                'users',
+                [
+                    ['_id' => $user_data->_id],
+                    [
+                        '$set' => [
+                            "cart.{$index_prod}.sizes.{$data->size}" => [
+                                'qty' => $data->qty,
+                                'selected' => true
+                            ]
+                        ]
+                    ]
+                ]
+            );
+        }
+    } else {
+        $data_to_include = (object) [
+            "{$data->size}" => [
+                'qty' => $data->qty,
+                'selected' => true
+            ]
+        ];
+
+        $mongo_db->exec(
+            'update_one',
+            'users',
+            [
+                ['_id' => $user_data->_id],
+                ['$push' => [
+                    "cart" => [
+                        'product' => new MongoDB\BSON\ObjectId($data->id),
+                        'sizes' => $data_to_include
+                    ]
+                ]]
+            ]
+        );
     }
 }

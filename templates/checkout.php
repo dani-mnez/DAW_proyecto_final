@@ -47,14 +47,10 @@
                 <div id="resume_wrapper">
                     <div id="resume_wrapper_items">
                         <?php
-                        $user = unserialize($_SESSION['user']);
-                        $carrito = $mongo_db->exec(
-                            'find_one',
-                            'users',
-                            ['_id' => new MongoDB\BSON\ObjectId(unserialize($_SESSION['user'])->id)]
-                        )->cart;
-                        foreach ($carrito as $prod_carrito) {
-                            if ($prod_carrito->selected) {
+                        $product_price_sum = 0;
+                        $total_price = 0;
+                        foreach ($user_data->cart as $prod_carrito) {
+                            foreach ($prod_carrito->sizes as $size => $prodSize) {
                                 $prod_info = $mongo_db->exec(
                                     'find_one',
                                     'products',
@@ -65,9 +61,15 @@
                                     'producers',
                                     ['_id' => $prod_info->producer]
                                 )->company_name;
-                                $price = $prod_info->stock[$prod_carrito->size]->price;
 
-                                require(__DIR__ . './components/checkout/prod_checkout.php');
+                                if ($prodSize->selected) {
+                                    $price = $prod_info->stock[$size]->price;
+
+                                    $product_price_sum = $price * $prod_carrito->sizes[$size]->qty;
+                                    $total_price = $total_price + $product_price_sum;
+
+                                    require(__DIR__ . './components/checkout/prod_checkout.php');
+                                }
                             }
                         }
                         ?>
@@ -80,17 +82,7 @@
                         <div>
                             <p>
                                 Importe total:
-                                <?php
-                                $product_price_sum = 0;
-                                $total_price = 0;
-                                foreach ($carrito as $prod_carrito) {
-                                    if ($prod_carrito->selected) {
-                                        $product_price_sum = $price * $prod_carrito->qty;
-                                        $total_price = $total_price + $product_price_sum;
-                                    }
-                                }
-
-                                echo $total_price . '€';
+                                <?php echo $total_price . '€';
                                 ?>
                             </p>
                             <p class="legal_text">

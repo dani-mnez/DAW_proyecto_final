@@ -6,7 +6,7 @@
         <ul>
             <li><a href="/DAW_proyecto_final/templates/shop.php">Tienda</a></li>
             <li><a href="/DAW_proyecto_final/templates/nosotros.php">Nosotros</a></li>
-            <li><a href="">Los productores</a></li>
+            <li><a href="/DAW_proyecto_final/templates/producers.php">Los productores</a></li>
         </ul>
 
         <div id="main_search">
@@ -26,18 +26,17 @@
         <div id="user_control">
             <?php if (isset($user_data)) : ?>
                 <a id="cart_icon" href="/DAW_proyecto_final/templates/cart.php">
-                    <?php if (count($user_data->cart) > 0) :
-                        $totalProdsInCart = 0;
-                        foreach ($user_data->cart as $prod) {
-                            foreach ($prod->sizes as $size => $val) {
-                                $totalProdsInCart += $val->qty;
-                            }
+                    <?php
+                    $totalProdsInCart = 0;
+                    foreach ($user_data->cart as $prod) {
+                        foreach ($prod->sizes as $size => $val) {
+                            $totalProdsInCart += $val->qty;
                         }
+                    }
                     ?>
-                        <div class="cart_prod_count">
-                            <p><?php echo $totalProdsInCart; ?></p>
-                        </div>
-                    <?php endif; ?>
+                    <div class="cart_prod_count">
+                        <p><?php echo $totalProdsInCart; ?></p>
+                    </div>
                 </a>
                 <div id="prof_wrap">
                     <?php
