@@ -9,7 +9,7 @@ y la guardamos en la sesión (para poder usarla entre páginas)
 */
 # TODO Gestionar las COOKIES
 
-const DB_HOST = 'soldemarzo.c8k10vi.mongodb.net';
+const DB_HOST = 'soldemarzo.xxxxxxxx.mongodb.net';
 const DB_NAME = 'project';  // La colección -> DB_COLLECTION debería llamarse
 const DB_PORT = 3306;  // De momento no se usa porque el código va embebido
 $DB_USER = 'soldemarzo';
@@ -75,3 +75,4 @@ if (isset($_SESSION['user']) && !isset($user_data)) {
         );
         $user_data['type'] = unserialize($_SESSION['user'])->type;
 }
+
